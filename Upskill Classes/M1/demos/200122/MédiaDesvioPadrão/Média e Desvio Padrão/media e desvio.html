@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<script src="io.js"></script>
+	<script src="matematica.js"></script>
+	<script src="estatistica.js"></script>
+    <script>
+		function main(){
+			// Inputs
+			let valores = obterValores();
+			let resultados = [];
+			
+			// Processamento 
+			let media = new Resultado("A média é: ", calcularMedia(valores));
+			let desvio = new Resultado("O desvio padrão é: ", calcularDesvioPadrao(valores));
+			resultados.push(media);
+			resultados.push(desvio);
+			
+			// Outputs
+			mostrarResultado(resultados);
+		}
+
+		main();
+	</script>
+</body>
+</html>

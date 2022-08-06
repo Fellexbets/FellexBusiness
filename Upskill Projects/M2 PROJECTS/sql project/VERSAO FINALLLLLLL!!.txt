@@ -1,0 +1,328 @@
+
+if exists (select * from sysdatabases where name='SewRight')
+		drop database SewRight
+go
+
+CREATE DATABASE SewRight;
+go
+
+USE SewRight
+GO
+
+CREATE TABLE Loja(
+    LojaID int NOT NULL PRIMARY KEY,
+    Morada nchar(150),
+    Região nvarchar(50),
+);
+
+INSERT INTO Loja (LojaID, Morada, Região)
+VALUES ('1', 'rua arantes de oliveira 55', 'Lisboa');
+INSERT INTO Loja (LojaID, Morada, Região)
+VALUES ('2', 'rua Julio Dantas 24', 'Lisboa');
+INSERT INTO Loja (LojaID, Morada, Região)
+VALUES ('3', 'rua Diogo Cassels 121', 'Vila Nova de Gaia');
+INSERT INTO Loja (LojaID, Morada, Região)
+VALUES ('4', 'rua Josefo Bonif�cio 23', 'Viseu');
+INSERT INTO Loja (LojaID, Morada, Região)
+VALUES ('5', 'rua São Banha da Silva 666', 'Braga');
+
+CREATE TABLE EstoqueLoja (
+    LojaID int,
+    ItenestoqueID int,
+    QuantidadeEmEstoque int,
+    CONSTRAINT "PK_Loja,Estoque" PRIMARY KEY  CLUSTERED 
+	(
+		"LojaID",
+		"ItenEstoqueID"
+	),
+    
+);
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('1', '1', '400');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('1', '2', '30');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('1', '3', '60');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('1', '4', '80');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('1', '5', '100');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('2', '1', '600');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('2', '2', '25');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('2', '3', '125');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('2', '4', '150');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('2', '5', '200');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('3', '1', '900');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('3', '2', '66');
+INSERT INTO EstoqueLoja (LojaID, ItenEstoqueID, QuantidadeEmEstoque)
+VALUES ('3', '3', '80');
+
+
+CREATE TABLE Estoque (
+    ItenestoqueID int NOT NULL PRIMARY KEY,
+    Descrição nvarchar(50),
+    PreçoUnidade money,
+       
+);
+
+INSERT INTO Estoque (ItenestoqueID, Descrição, PreçoUnidade)
+VALUES ('1', 'Alfinetes', '0.10');
+INSERT INTO Estoque (ItenestoqueID, Descrição, PreçoUnidade)
+VALUES ('2', 'Cola de Tecido', '2');
+INSERT INTO Estoque (ItenestoqueID, Descrição, PreçoUnidade)
+VALUES ('3', 'Pano para costura azul', '1');
+INSERT INTO Estoque (ItenestoqueID, Descrição, PreçoUnidade)
+VALUES ('4', 'Pano para costura verde', '1');
+INSERT INTO Estoque (ItenestoqueID, Descrição, PreçoUnidade)
+VALUES ('5', 'Pano para costura roxo', '1');
+
+
+CREATE TABLE Cliente (
+    NIF int NOT NULL PRIMARY KEY,
+    Nome nvarchar(50),
+    Morada nvarchar(100),
+    Região nvarchar(50),
+    email nvarchar(50) UNIQUE,
+);
+
+INSERT INTO Cliente (NIF, Nome, Morada, Região, email)
+VALUES ('298604999', 'Rui Silveira', 'avenida Lobo Rei 57', 'Lisboa', 'Ruizinho_anime@gmail.com');
+INSERT INTO Cliente (NIF, Nome, Morada, Região, email)
+VALUES ('550693214', 'Beatriz Afonso Ricardo', 'avenida de roma 22', 'Lisboa', 'biiiAh@hotmail.com');
+INSERT INTO Cliente (NIF, Nome, Morada, Região, email)
+VALUES ('231495684', 'Telma Santos','avenida Afonso Pena 67', 'Porto','TelmSantos22@gmail.com');
+INSERT INTO Cliente (NIF, Nome, Morada, Região, email)
+VALUES ('124523667', 'Lucia Rodrigues','Rua de Braga 623', 'Braga','Rorolulu@yahoo.com');
+INSERT INTO Cliente (NIF, Nome, Morada, Região, email)
+VALUES ('336771234', 'João Ricardo Pedroso', 'Rua Marcelino Cardoso 21', 'Viseu','JohnPedroso@gmail.com');
+
+CREATE TABLE Ordem (
+    OrdemID int NOT NULL PRIMARY KEY,
+    NIF int,
+    Dataordem datetime,
+    LojaID int,
+    Descrição nvarchar (80),
+    PreçoTabelado bit,
+    Devolução bit,
+    Urgente bit,
+    Cor1 nvarchar(20),
+    Cor2 nvarchar(20),
+    Cor3 nvarchar(20),
+    PreçoTotal money,
+    CONSTRAINT "FK_Ordem_Cliente" FOREIGN KEY 
+	(
+		"NIF"
+	) REFERENCES "dbo"."Cliente" (
+		"NIF"
+	),
+    CONSTRAINT "FK_Ordem_Loja" FOREIGN KEY 
+	(
+		"LojaID"
+	) REFERENCES "dbo"."Loja" (
+		"LojaID"
+	),
+);
+
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('1', '298604999', '12/10/2021', '1', 'cozer uma camisa L azul e fazer fecho de uma cal�a L roxo', 'TRUE','TRUE','FALSE','azul', 'roxo', 'NULL','30');
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('2', '336771234', '01/05/2022', '1','estilizar um casaco M roxo', 'TRUE', 'FALSE','FALSE', 'roxo','NULL','NULL', '40');
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('3', '124523667','01/23/2022', '2','reforçar uma cueca L azul', 'TRUE', 'FALSE','FALSE','azul','NULL','NULL', '10');
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('4', '231495684','02/05/2022', '3','fecho calça S verde','TRUE','FALSE','FALSE','azul','NULL','NULL','10');
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('5', '550693214', '02/12/2021', '4','reforçar casaco azul M e coser cachecol M roxo','TRUE','FALSE','FALSE','azul','roxo','NULL','25');
+INSERT INTO Ordem (OrdemID, NIF, Dataordem, LojaID, Descrição, PreçoTabelado, Urgente, Devolução, Cor1, Cor2, Cor3, PreçoTotal)
+VALUES ('6', '298604999', '02/11/2022', '1', 'colocar botões e coser fato M roxo', 'FALSE','FALSE','FALSE','roxo','NULL','NULL', 50);
+
+CREATE TABLE StatusOrdem (
+    OrdemID int,
+    Status nvarchar(20),
+    CONSTRAINT FK_StatusOrdemOrdem FOREIGN KEY (OrdemID)
+    REFERENCES Ordem(OrdemID)
+);
+INSERT INTO StatusOrdem (OrdemID, Status)
+VALUES ('1', 'finalizado');
+INSERT INTO StatusOrdem (OrdemID, Status) 
+VALUES ('2', 'finalizado');
+INSERT INTO StatusOrdem (OrdemID, Status)
+VALUES ('3', 'finalizado');
+INSERT INTO StatusOrdem (OrdemID, Status)
+VALUES ('4', 'finalizado');
+INSERT INTO StatusOrdem (OrdemID, Status)
+VALUES ('5', 'finalizado');
+INSERT INTO StatusOrdem (OrdemID, Status) 
+VALUES ('6', 'em espera');
+
+CREATE TABLE Recibo (
+    OrdemID int,
+    DataRecibo datetime DEFAULT NULL,
+    TotalPago money,
+    CONSTRAINT FK_ReciboOrdem FOREIGN KEY (OrdemID)
+    REFERENCES Ordem(OrdemID)
+);
+
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('1', '12/10/2021','30');
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('2', '01/05/2022', '40');
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('3', '01/23/2022', '10');
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('4', '02/05/2022', '10');
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('5', '02/12/2021', '25');
+INSERT INTO Recibo (OrdemID, DataRecibo, TotalPago)
+VALUES ('6', '', '0');
+
+CREATE TABLE Arranjo (
+    ArranjoID int NOT NULL PRIMARY KEY,
+    NomeArranjo nvarchar(50),
+    
+);
+
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('1', 'Coser');
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('2', 'Fecho');
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('3', 'Bainha');
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('4', 'Reforçar');
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('5', 'Estilizar');
+INSERT INTO Arranjo (ArranjoID, NomeArranjo)
+VALUES ('6', 'ArranjoEspecial');
+
+
+CREATE TABLE Peça (
+    PeçaID int NOT NULL PRIMARY KEY,
+    NomePeça nvarchar(50),
+    Sensivel bit,
+    
+);
+
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('1', 'Calça', 'FALSE');
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('2', 'Casaco', 'FALSE');
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('3', 'Camisa', 'FALSE');
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('4', 'Cueca', 'TRUE');
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('5', 'Cachecol', 'FALSE');
+INSERT INTO Peça (PeçaID, NomePeça, Sensivel)
+VALUES ('6', 'PeçaEspecial', 'FALSE'); 
+
+CREATE TABLE DetalhesOrdem (
+    OrdemID int,
+    PeçaID int,
+    ArranjoID int,
+    Preço money,
+    Tamanho nvarchar(3),
+    Cor nvarchar(20),
+    CONSTRAINT "FK_DetalhesOrdem_Ordem" FOREIGN KEY 
+	(
+		"OrdemID"
+	) REFERENCES "dbo"."Ordem" (
+		"OrdemID"
+	),
+    CONSTRAINT "FK_Pre�osCombinados_Arranjo" FOREIGN KEY 
+	(
+		"ArranjoID"
+	) REFERENCES "dbo"."Arranjo" (
+		"ArranjoID"
+	),
+CONSTRAINT "FK_PreçosCombinados_Peça" FOREIGN KEY 
+	(
+		"PeçaID"
+	) REFERENCES "dbo"."Peça" (
+		"PeçaID"
+	),
+ );
+
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('1', '1', '3', '20', 'L','azul');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('1', '2', '1', '10', 'L','roxo');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('2', '5', '2', '40', 'M', 'roxo');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('3', '4','4', '10','L', 'azul');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('4', '1','2','10','S','verde');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('5', '4', '2', '15','M','azul');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('5', '1', '5','10','M','roxo');
+INSERT INTO DetalhesOrdem (OrdemID, PeçaID, ArranjoID, Preço, Tamanho, Cor)
+VALUES ('6', '6', '6','50','L','roxo');
+
+
+
+
+
+
+CREATE TABLE PreçosCombinados (
+    ArranjoID int,
+    PeçaID int,
+    Descrição nvarchar(40),
+    Preço money,
+    CONSTRAINT "PK_Peça,Arranjo" PRIMARY KEY  CLUSTERED 
+	(
+		"PeçaID",
+		"ArranjoID"
+	),
+    
+);
+
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('1', '1', 'coser calça', '25');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('1', '2', 'coser casaco', '30');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('1', '3', 'coser camisa', '20');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('1', '4', 'coser cueca', '8');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('1', '5', 'coser cachecol', '10');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('2', '1', 'fecho calça', '10');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('2', '2', 'fecho casaco', '15');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('2', '3', 'fecho camisa', '12');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('2', '4', 'fecho cueca', '5');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('3', '1', 'bainha calça', '10');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('4', '1', 'reforçar cal�a', '10');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('4','2', 'reforçar casaco', '15');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('4', '3', 'reforçar camisa', '10');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('4', '4', 'reforçar cueca', '5');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('4', '5', 'reforçar cachecol','5');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('5', '1', 'estilizar calça', '20');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('5', '2', 'estilizar casaco', '40');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('5', '3', 'estilizar camisa', '35');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('5', '4', 'estilizar cueca', '5');
+INSERT INTO PreçosCombinados (ArranjoID, PeçaID, Descrição, Preço)
+VALUES ('5', '5', 'estilizar cachecol', '10');
+

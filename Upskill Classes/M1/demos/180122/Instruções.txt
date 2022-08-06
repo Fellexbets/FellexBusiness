@@ -1,0 +1,31 @@
+// Instruções de Sequência
+Entrada de dados:
+    prompt();
+
+Saída de dados: 
+    alert("O que pretendo escrever");
+
+// Instruções de Decisão ou Selecção
+    if(){
+
+    }
+    else{
+
+    }
+
+// Instruções de Repetição
+Ciclo condicional: repetir-até:
+    do{
+
+    }
+    while(contador < 5);
+
+Ciclo condicional: enquanto-fazer:
+    while(contador < 5){
+
+    }
+
+Ciclo determinístico: para-fazer:
+    for(contador = 0; contador < 5; contador = contador + 1){
+
+    }
