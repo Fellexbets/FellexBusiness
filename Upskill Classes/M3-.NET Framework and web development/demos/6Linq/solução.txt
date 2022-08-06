@@ -1,0 +1,3 @@
+IEnumerable<string> filteredNames = names.Where(n => n.Contains("a"));
+IEnumerable<string> sorted = filteredNames.OrderBy(n => n.Length);
+IEnumerable<string> finalQuery = sorted.Select(n => n.ToUpper());

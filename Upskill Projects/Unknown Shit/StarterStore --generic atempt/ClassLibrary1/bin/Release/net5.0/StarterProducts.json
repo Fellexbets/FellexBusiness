@@ -1,0 +1,35 @@
+[
+    {
+        "productName" : "Notebook",
+        "productPrice" : "500"
+    },
+    {
+        "productName" : "Mouse",
+        "productPrice" : "70"
+    },
+    {
+        "productName" : "MousePad",
+        "productPrice" : "40"
+    },
+    {
+        "productName" : "Keyboard",
+        "productPrice" : "60"
+    },
+    {
+        "productName" : "Webcam",
+        "productPrice" : "20"
+    },
+    {
+        "productName" : "HD Screen 27''",
+        "productPrice" : "120"
+    },
+    {
+        "productName" : "Zelda Twilight Princess for Wii-U",
+        "productPrice" : "50"
+    },
+    {
+        "productName" : "Processor Nvidia i7",
+        "productPrice" : "400"
+    }
+
+]

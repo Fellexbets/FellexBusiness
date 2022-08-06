@@ -1,0 +1,230 @@
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.exe
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.deps.json
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.json
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.dev.json
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.AssemblyReference.cache
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CopyComplete
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.genruntimeconfig.cache
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\ifpno\Desktop\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.exe
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.deps.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.dev.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CopyComplete
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR\EFCore\obj\Debug\netcoreapp3.1\EFCore.genruntimeconfig.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.exe
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.deps.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.runtimeconfig.dev.json
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CopyComplete
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.dll
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.pdb
+C:\Users\ifpno\Documents\GitHub\igor\VISUAL STUDIO PROJECTS\M3 PROJECTS\PROJETO 2 IGOR EFCORE\EFCore\obj\Debug\netcoreapp3.1\EFCore.genruntimeconfig.cache

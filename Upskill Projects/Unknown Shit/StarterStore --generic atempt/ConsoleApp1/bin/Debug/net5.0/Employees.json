@@ -1,0 +1,50 @@
+[
+  {
+    "employeeID": "1",
+    "contactName": "BILBO BAGGINS",
+    "contactTitle": "moralebooster",
+    "titleOfCourtesy": "little one",
+    "address": "Avda. de la rambla 132",
+    "city": "Sao Paulo",
+    "country": "Brasil",
+    "phone": "123123",
+    "birthdate": "15/04/1994",
+    "photo": "false"
+  },
+  {
+    "employeeID": "2",
+    "contactName": "Sauroman",
+    "contactTitle": "evilCEO",
+    "titleOfCourtesy": "your lordship",
+    "address": "MIDDLEEARTH",
+    "city": "forgot",
+    "country": "mordor",
+    "phone": "12133",
+    "birthdate": "15/04/1230",
+    "photo": "false"
+  },
+  {
+    "employeeID": "3",
+    "contactName": "Billy",
+    "contactTitle": "atendente",
+    "titleOfCourtesy": "boy",
+    "address": "Lisboa street 1",
+    "city": "Lisboa",
+    "country": "Portugal",
+    "phone": "12133423",
+    "birthdate": "22/04/2000",
+    "photo": "false"
+  },
+  {
+    "employeeID": "4",
+    "contactName": "Bruce Willis",
+    "contactTitle": "support specialist",
+    "titleOfCourtesy": "mean mfker",
+    "address": "av arantes oliveira 21",
+    "city": "Lisboa",
+    "country": "Portugal",
+    "phone": "16334243",
+    "birthdate": "22/04/1970",
+    "photo": "false"
+  }
+]

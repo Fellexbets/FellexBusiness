@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj": {}
+    "C:\\Users\\ifpno\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj": {
+    "C:\\Users\\ifpno\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
+        "projectUniqueName": "C:\\Users\\ifpno\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
         "projectName": "Igor_AIS_Proj",
-        "projectPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
-        "packagesPath": "C:\\Users\\ifelixno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\obj\\",
+        "projectPath": "C:\\Users\\ifpno\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
+        "packagesPath": "C:\\Users\\ifpno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ifpno\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ifelixno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ifpno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.15.1, )"

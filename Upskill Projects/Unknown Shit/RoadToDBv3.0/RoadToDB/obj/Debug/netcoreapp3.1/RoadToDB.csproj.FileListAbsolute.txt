@@ -1,0 +1,5 @@
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\RoadToDBv3.0\RoadToDB\obj\Debug\netcoreapp3.1\RoadToDB.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\RoadToDBv3.0\RoadToDB\obj\Debug\netcoreapp3.1\RoadToDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\RoadToDBv3.0\RoadToDB\obj\Debug\netcoreapp3.1\RoadToDB.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\RoadToDBv3.0\RoadToDB\obj\Debug\netcoreapp3.1\RoadToDB.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\RoadToDBv3.0\RoadToDB\obj\Debug\netcoreapp3.1\RoadToDB.csproj.CoreCompileInputs.cache

@@ -1,0 +1,15 @@
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\db\Files\categories.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\db\Files\customers.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\Utils.deps.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\Utils.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\Utils.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CopyComplete
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\NIGHTMARISH\RoadToDB\Utils\obj\Debug\netcoreapp3.1\Utils.pdb

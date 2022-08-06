@@ -1,0 +1,176 @@
+[
+  {
+    "supplierID": 4,
+    "companyName": "Tokyo Traders",
+    "contactName": "Yoshi Nagase",
+    "contactTitle": "Marketing Manager"
+  },
+  {
+    "supplierID": 5,
+    "companyName": "Cooperativa de Quesos \u0027Las Cabras\u0027",
+    "contactName": "Antonio del Valle Saavedra",
+    "contactTitle": "Export Administrator"
+  },
+  {
+    "supplierID": 6,
+    "companyName": "Mayumi\u0027s",
+    "contactName": "Mayumi Ohno",
+    "contactTitle": "Marketing Representative"
+  },
+  {
+    "supplierID": 7,
+    "companyName": "Pavlova Ltd.",
+    "contactName": "Ian Devling",
+    "contactTitle": "Marketing Manager"
+  },
+  {
+    "supplierID": 8,
+    "companyName": "Specialty Biscuits Ltd.",
+    "contactName": "Peter Wilson",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 9,
+    "companyName": "PB Kn\u00E4ckebr\u00F6d AB",
+    "contactName": "Lars Peterson",
+    "contactTitle": "Sales Agent"
+  },
+  {
+    "supplierID": 10,
+    "companyName": "Refrescos Americanas LTDA",
+    "contactName": "Carlos Diaz",
+    "contactTitle": "Marketing Manager"
+  },
+  {
+    "supplierID": 11,
+    "companyName": "Heli S\u00FC\u00DFwaren GmbH \u0026 Co. KG",
+    "contactName": "Petra Winkler",
+    "contactTitle": "Sales Manager"
+  },
+  {
+    "supplierID": 2,
+    "companyName": "New Orleans Cajun Delights",
+    "contactName": "Shelley Burke",
+    "contactTitle": "Order Administrator"
+  },
+  {
+    "supplierID": 12,
+    "companyName": "Plutzer Lebensmittelgro\u00DFm\u00E4rkte AG",
+    "contactName": "Martin Bein",
+    "contactTitle": "International Marketing Mgr."
+  },
+  {
+    "supplierID": 13,
+    "companyName": "Nord-Ost-Fisch Handelsgesellschaft mbH",
+    "contactName": "Sven Petersen",
+    "contactTitle": "Coordinator Foreign Markets"
+  },
+  {
+    "supplierID": 14,
+    "companyName": "Formaggi Fortini s.r.l.",
+    "contactName": "Elio Rossi",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 15,
+    "companyName": "Norske Meierier",
+    "contactName": "Beate Vileid",
+    "contactTitle": "Marketing Manager"
+  },
+  {
+    "supplierID": 1,
+    "companyName": "Exotic Liquids",
+    "contactName": "Charlotte Cooper",
+    "contactTitle": "Purchasing Manager"
+  },
+  {
+    "supplierID": 3,
+    "companyName": "Grandma Kelly\u0027s Homestead",
+    "contactName": "Regina Murphy",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 16,
+    "companyName": "Bigfoot Breweries",
+    "contactName": "Cheryl Saylor",
+    "contactTitle": "Regional Account Rep."
+  },
+  {
+    "supplierID": 17,
+    "companyName": "Svensk Sj\u00F6f\u00F6da AB",
+    "contactName": "Michael Bj\u00F6rn",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 18,
+    "companyName": "Aux joyeux eccl\u00E9siastiques",
+    "contactName": "Guyl\u00E8ne Nodier",
+    "contactTitle": "Sales Manager"
+  },
+  {
+    "supplierID": 19,
+    "companyName": "New England Seafood Cannery",
+    "contactName": "Robb Merchant",
+    "contactTitle": "Wholesale Account Agent"
+  },
+  {
+    "supplierID": 20,
+    "companyName": "Leka Trading",
+    "contactName": "Chandra Leka",
+    "contactTitle": "Owner"
+  },
+  {
+    "supplierID": 21,
+    "companyName": "Lyngbysild",
+    "contactName": "Niels Petersen",
+    "contactTitle": "Sales Manager"
+  },
+  {
+    "supplierID": 22,
+    "companyName": "Zaanse Snoepfabriek",
+    "contactName": "Dirk Luchte",
+    "contactTitle": "Accounting Manager"
+  },
+  {
+    "supplierID": 25,
+    "companyName": "Ma Maison",
+    "contactName": "Jean-Guy Lauzon",
+    "contactTitle": "Marketing Manager"
+  },
+  {
+    "supplierID": 27,
+    "companyName": "Escargots Nouveaux",
+    "contactName": "Marie Delamare",
+    "contactTitle": "Sales Manager"
+  },
+  {
+    "supplierID": 26,
+    "companyName": "Pasta Buttini s.r.l.",
+    "contactName": "Giovanni Giudici",
+    "contactTitle": "Order Administrator"
+  },
+  {
+    "supplierID": 28,
+    "companyName": "Gai p\u00E2turage",
+    "contactName": "Eliane Noz",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 23,
+    "companyName": "Karkki Oy",
+    "contactName": "Anne Heikkonen",
+    "contactTitle": "Product Manager"
+  },
+  {
+    "supplierID": 24,
+    "companyName": "G\u0027day Mate",
+    "contactName": "Wendy Mackenzie",
+    "contactTitle": "Sales Representative"
+  },
+  {
+    "supplierID": 29,
+    "companyName": "For\u00EAts d\u0027\u00E9rables",
+    "contactName": "Chantal Goulet",
+    "contactTitle": "Accounting Manager"
+  }
+]

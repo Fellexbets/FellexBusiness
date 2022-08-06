@@ -1,0 +1,3 @@
+como no mvc eu fiz um "base de dados first", no API eu quis inverter esta lógica aqui e fazer um code first, criando a base de dados com o mysql do visual studio.
+ Outra diferença é a maneira totalmente genérica de implementação do CRUD, tal como aprendi com o João Cortes. Dividi aqui os business, controllers, models e persistence. O trio genérico T, U, V permite que qualquer modelo criado (tambem criando seu business,controller e persistence, claro) consiga facilmente implementar o CRUD e outras mais funções rapidamente. Por exemplo, no meu caso, T é o genérico do business, U o genérico do persistence e V um modelo genérico.
+Para mostrar as operações e o funcionamento do API eu utilizo aqui o swagger.

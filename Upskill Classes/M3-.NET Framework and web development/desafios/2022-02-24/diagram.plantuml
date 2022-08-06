@@ -1,0 +1,42 @@
+'It's necessary to have following installed:
+' Java : Platform for PlantUML running. 
+'        https://java.com/en/download/
+' Graphviz : PlantUML requires it to calculate positions in diagram.
+'        http://www.graphviz.org/download/
+@startuml Diagrama de Classes Animais
+skinparam classAttributeIconSize 0
+
+class Cao {
+    - idade : int 
+    - raca : string
+    - chip : bool
+    - numeroChip : int
+    - comprimento : int 
+    + Nome : string
+    + Peso : double
+    + {static} nPatas : int 
+    + {static} string IdentificacaoClasse()
+    + Cao (string nome, double peso, int idade, string raca)
+    + string Identificacao()
+    + void AfectarChip(int numeroChip)
+}
+
+class Gato {
+    - pelo : bool 
+    - raca : string
+    - idade : int
+    + Nome : string
+    + Gato(bool pelo, string nome, string raca, int idade)
+    + string Identificacao()
+}       
+
+class Peixe {
+    - tanque : int
+    - comprimento : int 
+    - peso : int 
+    + Especie : string
+    + Peixe(int tanque, int comprimento, int peso, string especie)
+    + string Identificacao()
+}
+
+@enduml

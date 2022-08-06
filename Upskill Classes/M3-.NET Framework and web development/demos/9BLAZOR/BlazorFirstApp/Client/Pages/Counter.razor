@@ -1,0 +1,18 @@
+@page "/counter"
+
+<h1>Counter</h1>
+
+<p style="@backgroundColor">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+    string backgroundColor = "background: red";
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        backgroundColor = (currentCount % 2 == 0) ? "background: yellow" : "background: red";
+    }
+}

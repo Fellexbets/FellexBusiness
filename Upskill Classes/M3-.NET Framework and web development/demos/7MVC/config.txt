@@ -1,0 +1,11 @@
+Startup.cs > ConfigureServices:
+
+	services.AddDbContext<NorthwindContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Northwind2016")));
+
+
+
+appsettings.json:
+
+	"ConnectionStrings": {
+        	"Northwind":"Server=.;Database=Northwind;User Id=sa;Password=upskill;"
+	}

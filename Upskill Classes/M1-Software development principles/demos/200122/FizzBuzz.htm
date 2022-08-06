@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FizzBuzz</title>
+</head>
+
+<body>
+  <script>
+    /*
+    * O programa deve executar um loop com 40 ciclos, que deve apresentar num elemento html Buzz se o
+    * número do ciclo em que está for múltiplo de 5, Fizz se for múltiplo de 3 e FizzBuzz se for
+    * múltiplo de 3 e de 5. Se não for múltiplo nem de 3, nem de 5, apresenta o próprio número
+    * do ciclo.
+    */
+   let text = "";
+    for(i = 0; i != 40; ++i){
+      text += `Número ${i}: `;
+      if(i % 3 == 0){
+        text += "Fizz";
+      }
+      if(i % 5 == 0){
+        text += "Buzz";
+      }
+      text += "<br/>"
+    }
+    document.write(text);
+  </script>
+</body>
+
+</html>

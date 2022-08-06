@@ -1,0 +1,5 @@
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\main\M3-.NET Framework and web development\desafios\2022-03-25\EFCore\obj\Debug\netcoreapp3.1\EFCore.csproj.CoreCompileInputs.cache

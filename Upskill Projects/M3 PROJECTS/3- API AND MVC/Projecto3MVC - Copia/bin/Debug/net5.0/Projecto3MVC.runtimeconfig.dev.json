@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ifpno\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ifpno\\.nuget\\packages"
+    ]
+  }
+}

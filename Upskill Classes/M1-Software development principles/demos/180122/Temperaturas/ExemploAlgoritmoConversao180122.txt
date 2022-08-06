@@ -1,0 +1,14 @@
+Converter 'graus Celsius' em 'graus Fahrenheit'
+
+Entrada: valorCelsius
+Saída: 	 valorFahrenheit
+inicio
+	escrever "Indique o valor em celsius que pretende converter"
+	ler valorCelsius 
+	se valorCelsius = 0
+		escrever "Está muito frio!"
+	senao
+		valorFahrenheit <- valorCelsius * 1.8 + 32
+		escrever valorFahrenheit
+	fim-se
+fim
