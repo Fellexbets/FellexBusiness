@@ -1,0 +1,25 @@
+entradas: numero_notas, notas
+saída:    media
+inicio
+	escrever "Quantas notas quer utilizar para calcular a média?"
+	# 5 notas
+	ler numero_notas 
+	
+	se numero_notas <= 0
+		escrever "Os valores deveriam ser positivos"
+	senão
+		acumulado <- 0
+		
+		para contador <- 0; contador < numero_notas; contador <- contador + 1 fazer
+			escrever "Introduza nota"
+			ler nota
+
+			# 10 + 10 + 10 + 14 + 15 = 59
+			acumulado <- acumulado + nota
+		fim-para
+		
+		# acumulado / numero_notas
+		media <- acumulado / numero_notas
+		escrever media
+	fim-se
+fim

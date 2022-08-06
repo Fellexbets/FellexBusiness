@@ -1,0 +1,28 @@
+h1
+{
+	color: red;
+	font-size: 5em;
+}
+
+p 
+{ 
+	font-family: Arial, Helvetica, sans-serif;
+	color: blue;
+}
+
+#paragrafoGrande{ font-size: 5em; }
+
+h1.verde 
+{
+	color: #739CB0;
+}
+
+p.verde
+{
+	font-size: 3em;
+}
+
+.verde
+{
+	color: green;
+}

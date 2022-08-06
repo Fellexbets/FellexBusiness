@@ -1,0 +1,7 @@
+/api/register (POST) — to handle new users registering
+/api/login (POST) — to handle returning users logging in
+/api/profile/USERID (GET) — to return profile details when given a USERID.
+
+
+https://www.sitepoint.com/user-authentication-mean-stack/
+https://github.com/sitepoint-editors/MEAN-stack-authentication
