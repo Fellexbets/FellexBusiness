@@ -1,0 +1,26 @@
+[
+  {
+    "supplierID": "1",
+    "supplierName": "BestPeriferics",
+    "areaOfWork": "PC periferics",
+    "country": "China"
+  },
+  {
+    "supplierID": "2",
+    "supplierName": "WawaweewaProds",
+    "areaOfWork": "colored plastic",
+    "country": "Angola"
+  },
+  {
+    "supplierID": "3",
+    "supplierName": "NVDIA",
+    "areaOfWork": "processors",
+    "country": "USA"
+  },
+  {
+    "supplierID": "4",
+    "supplierName": "Razer",
+    "areaOfWork": "gaming hardware",
+    "country": "USA"
+  }
+  ]

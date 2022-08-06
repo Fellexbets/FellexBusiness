@@ -1,0 +1,13 @@
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\bin\Release\net5.0\StarterProducts.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\bin\Release\net5.0\ClassLibrary1.deps.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\bin\Release\net5.0\ClassLibrary1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\bin\Release\net5.0\ClassLibrary1.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\refint\ClassLibrary1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ClassLibrary1.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ClassLibrary1\obj\Release\net5.0\ref\ClassLibrary1.dll

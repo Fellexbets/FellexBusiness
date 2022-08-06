@@ -1,0 +1,43 @@
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.exe
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\people.json
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.deps.json
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.runtimeconfig.json
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.runtimeconfig.dev.json
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.dll
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.pdb
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ClassLibrary1.dll
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\bin\Debug\net5.0\ClassLibrary1.pdb
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CopyComplete
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.dll
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\refint\ConsoleApp1.dll
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.pdb
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.genruntimeconfig.cache
+C:\Users\ifpno\source\repos\StarterStore\ConsoleApp1\obj\Debug\net5.0\ref\ConsoleApp1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\refint\ConsoleApp1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.exe
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.deps.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.runtimeconfig.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.runtimeconfig.dev.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ClassLibrary1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\ClassLibrary1.pdb
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CopyComplete
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.genruntimeconfig.cache
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\obj\Debug\net5.0\ref\ConsoleApp1.dll
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\DB\Customers.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\DB\Employees.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\DB\StarterProducts.json
+C:\Users\ifpno\Documents\GitHub\igor\projetos visual studio\StarterStore\ConsoleApp1\bin\Debug\net5.0\DB\Suppliers.json

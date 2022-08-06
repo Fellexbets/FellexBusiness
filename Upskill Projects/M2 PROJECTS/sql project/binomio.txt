@@ -1,0 +1,34 @@
+0x^2 + 3x + 2 = 0
+
+a = 2
+b = 3
+c = 2
+
+a == 0
+b == 0
+c == 0 - impossível (2 = 0)
+
+
+
+static void
+double a = 4;
+double b = 8;
+double c = 2;
+double binomio = Math.Pow(b, 2) - 4 * a * c;
+
+if (a == 0 && b!= 0) {
+System.Console.Writeline("Equação do primeiro grau");
+double x1 = -c / b;
+System.Console.Writeline("A solução é {0}, x1");
+}
+
+if (a == 0 && b==0 %% c==0){
+	System.Console.Writeline
+
+if (binomio > 0)
+	System.Console.Writeline("Raiz de valor negativo")
+
+if (a!=0){
+double solucao1 = (-b + Math.Sqrt(binomio)) / 2 (2 * a);
+double solucao2 = (-b - Math.Sqrt(binomio)) / 2 (2 * a);
+System.Console.Writeline("As soluções são {0} e {1}
