@@ -9,7 +9,8 @@ CREATE TABLE Users (
    Created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
    Email varchar(50) not NULL unique,
    Username varchar(25) not NULL unique,
-   UserPassword varchar(50) not NULL
+   UserPassword varchar(50) not null,
+   Updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE TABLE Accounts (
    AccountId integer GENERATED always AS identity PRIMARY KEY,
@@ -17,6 +18,7 @@ CREATE TABLE Accounts (
    Created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
    Currency varchar(15) not NULL,
    Balance NUMERIC(10) not NULL,
+   Updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
    constraint fk_user
    FOREIGN KEY (UserId)
 	REFERENCES Users (UserId)
@@ -27,6 +29,7 @@ CREATE TABLE Transfers (
    DestinationAccountId integer not NULL,
    TransferAmount NUMERIC(10) not NULL,
    TransferTime TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   Updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
    CONSTRAINT Transfer_PK  PRIMARY KEY (TransferId, OriginAccountId, DestinationAccountId),
    CONSTRAINT OriginAccountId_FK FOREIGN KEY (OriginAccountId)
         REFERENCES Accounts (AccountId),
@@ -49,3 +52,4 @@ CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON Users
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
+

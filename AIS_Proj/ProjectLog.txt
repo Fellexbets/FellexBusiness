@@ -4,3 +4,6 @@ Project log
 -utilized a scaffold command to import the db to the visual studio project
 -removed the connectionstring from the postgresContext and placed it on appsettings.json
 -called the appsettings.json connection string on the OnConfiguring method
+-implemented the generic division of the project: persistence layer (db), business layer and controller layer.
+-implemented the basic CRUD on the base persistence, base business and base controller.
+-Tested the crud on swagger and on postman, all working (there was a bug on the update method, i corrected it - it was a problem on the db - i didnt have the updated at field).

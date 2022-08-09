@@ -1,0 +1,10 @@
+INSERT INTO Users(email, username, userpassword)
+VALUES ('teste@email.com','testador', 'testador'),
+('igor@email.com','igor', 'igor'),
+('nttdata@email.com','nttdata', 'nttdata');
+
+
+insert into accounts (userid, currency, balance)
+values (1, 'EUR', 2000),
+(1, 'USD', 500),
+(2, 'EUR', 1000);
