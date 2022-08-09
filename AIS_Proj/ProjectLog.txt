@@ -1,0 +1,6 @@
+Project log
+
+-executed a sql script to create 1st version of database
+-utilized a scaffold command to import the db to the visual studio project
+-removed the connectionstring from the postgresContext and placed it on appsettings.json
+-called the appsettings.json connection string on the OnConfiguring method

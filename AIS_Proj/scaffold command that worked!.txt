@@ -1,0 +1,14 @@
+Scaffold-DbContext "Host=localhost:49155;Database=Postgres;Username=postgres;Password=postgrespw" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
+
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                optionsBuilder.UseNpgsql(configuration.GetConnectionString("AISProject"));
+            }
+        }

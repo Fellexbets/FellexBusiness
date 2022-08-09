@@ -1,0 +1,51 @@
+DROP TABLE IF EXISTS Transfers;
+DROP TABLE IF EXISTS Accounts;
+DROP TABLE IF EXISTS Users;
+
+
+
+CREATE TABLE Users (
+   UserId integer GENERATED always AS identity PRIMARY KEY,
+   Created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   Email varchar(50) not NULL unique,
+   Username varchar(25) not NULL unique,
+   UserPassword varchar(50) not NULL
+);
+CREATE TABLE Accounts (
+   AccountId integer GENERATED always AS identity PRIMARY KEY,
+   UserId integer not NULL,
+   Created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   Currency varchar(15) not NULL,
+   Balance NUMERIC(10) not NULL,
+   constraint fk_user
+   FOREIGN KEY (UserId)
+	REFERENCES Users (UserId)
+);
+CREATE TABLE Transfers (
+   TransferId integer not NULL,
+   OriginAccountId integer not NULL,
+   DestinationAccountId integer not NULL,
+   TransferAmount NUMERIC(10) not NULL,
+   TransferTime TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   CONSTRAINT Transfer_PK  PRIMARY KEY (TransferId, OriginAccountId, DestinationAccountId),
+   CONSTRAINT OriginAccountId_FK FOREIGN KEY (OriginAccountId)
+        REFERENCES Accounts (AccountId),
+    CONSTRAINT DestinationAccountId_FK FOREIGN KEY (DestinationAccountId)
+        REFERENCES Accounts (AccountId),
+    CONSTRAINT AccountsAreDistinct_CK  CHECK       (DestinationAccountId <> OriginAccountId),
+    CONSTRAINT AmountIsValid_CK        CHECK       (TransferAmount > 0)
+);
+
+
+CREATE OR REPLACE FUNCTION trigger_set_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_timestamp
+BEFORE UPDATE ON Users
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_set_timestamp();

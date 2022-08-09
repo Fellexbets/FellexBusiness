@@ -1,4 +1,4 @@
-using AIS_Project_Igor.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AisProjectContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("AISProject")));
+//builder.Services.AddDbContext<AisProjectContext>(options =>
+//            options.UseNpgsql(builder.Configuration.GetConnectionString("AISProject")));
 
 // options => options.UseSqlServer
 
