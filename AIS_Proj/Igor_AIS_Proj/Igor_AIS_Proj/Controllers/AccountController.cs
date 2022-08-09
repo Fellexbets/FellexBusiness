@@ -7,7 +7,6 @@ using Igor_AIS_Proj.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-using QuizzalT_API.Business;
 
 namespace QuizzalT_API.Controllers
 {
@@ -17,10 +16,10 @@ namespace QuizzalT_API.Controllers
         public AccountController() : base() => business = new AccountBusiness();
 
 
-        [HttpGet("{id1}")]
+        [HttpGet("{id}")]
         public async Task<Account> GetById(int id) => await business.GetById(id);
 
-        [HttpDelete("{id1}")]
+        [HttpDelete("{id}")]
         public async Task<bool> Delete(int id) => await business.Delete(id);
 
 

@@ -35,3 +35,4 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\obj\Debug\net6.0\Igor_AIS_Proj.pdb
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\obj\Debug\net6.0\Igor_AIS_Proj.genruntimeconfig.cache
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\obj\Debug\net6.0\ref\Igor_AIS_Proj.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Newtonsoft.Json.dll

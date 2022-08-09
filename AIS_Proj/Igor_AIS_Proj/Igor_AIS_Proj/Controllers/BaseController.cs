@@ -1,11 +1,11 @@
-﻿using QuizzalT_API.Business;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Igor_AIS_Proj.Persistence;
 using Igor_AIS_Proj.Models;
+using Igor_AIS_Proj.Business;
 
 namespace Igor_AIS_Proj.Controllers
 {

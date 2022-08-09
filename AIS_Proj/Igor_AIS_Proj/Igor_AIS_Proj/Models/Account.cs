@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Igor_AIS_Proj.Models
 {
@@ -8,18 +10,19 @@ namespace Igor_AIS_Proj.Models
         public Account()
         {
             TransferDestinationaccounts = new HashSet<Transfer>();
-            TransferOriginaccounts = new HashSet<Transfer>();
+            
         }
 
+        [Key]
         public int Accountid { get; set; }
+        [ForeignKey("UserId")]
         public int Userid { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Currency { get; set; } = null!;
         public decimal Balance { get; set; }
 
-        public virtual User User { get; set; } = null!;
+        public DateTime UpdatedAt { get; set; }
         public virtual ICollection<Transfer> TransferDestinationaccounts { get; set; }
-        public virtual ICollection<Transfer> TransferOriginaccounts { get; set; }
 
         public override List<int> ReturnId() => new List<int>() { Accountid };
     }

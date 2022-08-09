@@ -5,7 +5,6 @@ using Igor_AIS_Proj.Models;
 using Igor_AIS_Proj.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using QuizzalT_API.Business;
 
 namespace Igor_AIS_Proj.Controllers
 {

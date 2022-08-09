@@ -56,11 +56,6 @@ namespace Igor_AIS_Proj.Models
 
                 entity.Property(e => e.Userid).HasColumnName("userid");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Accounts)
-                    .HasForeignKey(d => d.Userid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_user");
             });
 
             modelBuilder.Entity<Transfer>(entity =>
@@ -90,11 +85,7 @@ namespace Igor_AIS_Proj.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("destinationaccountid_fk");
 
-                entity.HasOne(d => d.Originaccount)
-                    .WithMany(p => p.TransferOriginaccounts)
-                    .HasForeignKey(d => d.Originaccountid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("originaccountid_fk");
+               
             });
 
             modelBuilder.Entity<User>(entity =>

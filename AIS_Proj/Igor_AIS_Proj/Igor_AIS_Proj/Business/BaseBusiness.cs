@@ -3,7 +3,7 @@ using Igor_AIS_Proj.Persistence;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace QuizzalT_API.Business
+namespace Igor_AIS_Proj.Business
 {
     public abstract class BaseBusiness<U, T> where U : BasePersistence<T> where T : Entity
     {
