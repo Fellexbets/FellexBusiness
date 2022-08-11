@@ -1,5 +1,8 @@
 ﻿using Igor_AIS_Proj.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 using System.Security.Claims;
 
 namespace Igor_AIS_Proj.Persistence
@@ -10,6 +13,8 @@ namespace Igor_AIS_Proj.Persistence
 
         public async Task<Account> GetById(int id) => await _contextEntity.FindAsync(id);
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
+
+        
         public async Task<List<Account>> GetAllAccountsUser(int id) => await _contextEntity.AsNoTracking().Where(e => e.Userid == id).ToListAsync();
 
         public async Task TransferFunds(int fromAccountId, int toAccountId, decimal transferAmount)

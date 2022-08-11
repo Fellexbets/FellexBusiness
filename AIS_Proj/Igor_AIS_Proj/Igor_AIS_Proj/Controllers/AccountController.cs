@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Igor_AIS_Proj.Business;
 using Igor_AIS_Proj.Controllers;
 using Igor_AIS_Proj.Models;
 using Igor_AIS_Proj.Persistence;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -24,7 +27,17 @@ namespace QuizzalT_API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<List<Account>> GetAllAccountsUser(int id) => await business.GetAllAccountsUser(id);
+        public async Task<List<Account>> GetAllAccountsUser(int id)
+        {
+            if (HttpContext.User.Identity is ClaimsIdentity identity)
+            {
+                await business.GetAllAccountsUser(id);
+            }
+            return null;
+        }
+
+            
+            
 
     }
 }

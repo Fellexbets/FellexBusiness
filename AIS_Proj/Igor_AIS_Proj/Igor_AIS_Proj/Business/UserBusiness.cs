@@ -2,6 +2,7 @@
 using Igor_AIS_Proj.Models;
 using Igor_AIS_Proj.Persistence;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Igor_AIS_Proj.Business
@@ -15,6 +16,11 @@ namespace Igor_AIS_Proj.Business
         public User Register(User user) => database.Register(user);
 
 
+        // 
+        //public string SubjectId(this ClaimsPrincipal user) 
+        //{ 
+        //    return user?.Claims?.FirstOrDefault(c => c.Type.Equals("sub", StringComparison.OrdinalIgnoreCase))?.Value;
+        //}
 
 
     }

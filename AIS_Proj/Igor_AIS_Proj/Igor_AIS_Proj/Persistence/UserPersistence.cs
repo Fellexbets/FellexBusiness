@@ -43,34 +43,34 @@ namespace Igor_AIS_Proj.Persistence
 
         public User Register(User user)
         {
-            //var existingUser =  _contextEntity.Find(user.Email);
-            //if (existingUser != null)
-            //    return new AuthenticationResult
-            //    {
-            //        Errors = new[] { "A user with this email already is already registered." }
-            //    };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(configuration["Secret"]);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            try
             {
-                Subject = new ClaimsIdentity(new[]
+              
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(configuration["Secret"]);
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
+                    Subject = new ClaimsIdentity(new[]
+                    {
                     new Claim(type: JwtRegisteredClaimNames.Sub, value: user.Email),
                     new Claim(type: JwtRegisteredClaimNames.Jti, value: Guid.NewGuid().ToString()),
                     new Claim(type: JwtRegisteredClaimNames.Email, value: user.Email)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(5),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.UserToken = tokenHandler.WriteToken(token);
-            _context.Add(user);
-            _context.SaveChanges();
-            return user;
+                    Expires = DateTime.UtcNow.AddMinutes(5),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                user.UserToken = tokenHandler.WriteToken(token);
+                _context.Add(user);
+                _context.SaveChanges();
+                return user;
 
-
-
+            }
+            catch 
+            {
+                return null;
+            }            
+            
 
         }
 
