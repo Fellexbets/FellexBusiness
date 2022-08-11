@@ -13,7 +13,9 @@ namespace Igor_AIS_Proj.Business
         public async Task<User> GetById(int id) => await database.GetById(id);
         public async Task<bool> Delete(int id) => await database.Delete(id);
 
-        public User Register(User user) => database.Register(user);
+        public async Task<AuthenticationResult> RegisterAsync(string email, string password) => await database.RegisterAsync(email, password);
+
+        //public User Register(User user) => database.Register(user);
 
 
         // 

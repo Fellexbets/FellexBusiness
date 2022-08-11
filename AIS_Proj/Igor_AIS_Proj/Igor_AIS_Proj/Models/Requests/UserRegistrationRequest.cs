@@ -4,16 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Igor_AIS_Proj.Models
 {
-    public class CreateUserRequest
+    public class UserRegistrationRequest
     {
-        
-        [Key]
-        public int Userid { get; set; }
-        public DateTime CreatedAt { get; set; }
-        [Required]
+  
         public string Email { get; set; } = null!;
-        [Required]
-        public string Username { get; set; } = null!;
        
         public string Userpassword { get; set; } = null!;
 
