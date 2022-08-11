@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Igor_AIS_Proj.Models
 {
-    public partial class User : Entity
+    public class CreateUserRequest
     {
-        public User()
-        {
-            Accounts = new HashSet<Account>();
-        }
+        
         [Key]
         public int Userid { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -20,14 +16,6 @@ namespace Igor_AIS_Proj.Models
         public string Username { get; set; } = null!;
        
         public string Userpassword { get; set; } = null!;
-
-        public DateTime UpdatedAt { get; set; }
-
-        public string? UserToken { get; set; }
-
-        public virtual ICollection<Account>? Accounts { get; set; }
-
-        public override List<int> ReturnId() => new List<int>() { Userid };
 
     }
 }

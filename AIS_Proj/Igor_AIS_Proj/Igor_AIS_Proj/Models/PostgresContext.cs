@@ -50,6 +50,10 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Currency)
                     .HasMaxLength(15)
                     .HasColumnName("currency");
@@ -79,6 +83,10 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("transfertime")
                     .HasDefaultValueSql("now()");
 
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.HasOne(d => d.Destinationaccount)
                     .WithMany(p => p.TransferDestinationaccounts)
                     .HasForeignKey(d => d.Destinationaccountid)
@@ -106,6 +114,10 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
                     .HasColumnName("email");
@@ -117,6 +129,10 @@ namespace Igor_AIS_Proj.Models
                 entity.Property(e => e.Userpassword)
                     .HasMaxLength(50)
                     .HasColumnName("userpassword");
+
+                entity.Property(e => e.UserToken)
+                    .HasMaxLength(600)
+                    .HasColumnName("usertoken");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Igor_AIS_Proj.Auxiliary;
 using Igor_AIS_Proj.Business;
 using Igor_AIS_Proj.Models;
 using Igor_AIS_Proj.Persistence;
@@ -20,7 +21,10 @@ namespace Igor_AIS_Proj.Controllers
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id) => await business.Delete(id);
 
-  
+        [HttpPost]
+        public User Register(User user) => business.Register(user);
+
+
 
 
     }

@@ -36,3 +36,14 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\obj\Debug\net6.0\Igor_AIS_Proj.genruntimeconfig.cache
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\obj\Debug\net6.0\ref\Igor_AIS_Proj.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\Igor_AIS_Proj\bin\Debug\net6.0\Swashbuckle.Core.dll
