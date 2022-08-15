@@ -1,7 +1,7 @@
-INSERT INTO Users(email, username, userpassword, userToken)
-VALUES ('teste@email.com','testador', 'testador', ''),
-('igor@email.com','igor', 'igor', ''),
-('nttdata@email.com','nttdata', 'nttdata', '');
+INSERT INTO Users(email, username, userpassword, passwordsalt, userToken)
+VALUES ('teste@email.com','testador', 'testador', '', ''),
+('igor@email.com','igor', 'igor', '', ''),
+('nttdata@email.com','nttdata', 'nttdata', '', '');
 
 
 insert into accounts (userid, currency, balance)

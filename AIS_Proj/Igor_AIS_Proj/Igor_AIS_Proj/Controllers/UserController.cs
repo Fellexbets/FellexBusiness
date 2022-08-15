@@ -5,9 +5,11 @@ using Igor_AIS_Proj.Auxiliary;
 using Igor_AIS_Proj.Business;
 using Igor_AIS_Proj.Models;
 using Igor_AIS_Proj.Persistence;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using QuizzalT_API.Models;
 
 namespace Igor_AIS_Proj.Controllers
 {
@@ -26,12 +28,9 @@ namespace Igor_AIS_Proj.Controllers
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id) => await business.Delete(id);
 
-        [HttpPost]
-        public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
-        {
-            var authResponse = await business.RegisterAsync(request.Email, request.Userpassword);
-            return Ok();
-        }
+        [HttpPost, AllowAnonymous]
+        public async Task<User> Authenticate(UserCredentials model) => await business.Authenticate(model);
+        
 
         //[HttpPost]
         //public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Igor_AIS_Proj.Models
 {
@@ -20,6 +21,9 @@ namespace Igor_AIS_Proj.Models
         public string Username { get; set; } = null!;
        
         public string Userpassword { get; set; } = null!;
+
+        
+        public string PasswordSalt { get; set; } 
 
         public DateTime UpdatedAt { get; set; }
 

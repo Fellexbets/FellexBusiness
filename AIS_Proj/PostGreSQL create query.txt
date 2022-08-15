@@ -10,6 +10,7 @@ CREATE TABLE Users (
    Email varchar(50) not NULL unique,
    Username varchar(25) not NULL unique,
    UserPassword varchar(50) not null,
+   PasswordSalt varchar(250) null,
    UserToken varchar(600),
    UpdatedAt TIMESTAMPTZ DEFAULT NOW()
 );

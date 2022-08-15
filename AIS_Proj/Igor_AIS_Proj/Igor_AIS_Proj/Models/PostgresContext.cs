@@ -131,6 +131,10 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(50)
                     .HasColumnName("userpassword");
 
+                entity.Property(e => e.PasswordSalt)
+                    .HasMaxLength(250)
+                    .HasColumnName("passwordsalt");
+
                 entity.Property(e => e.UserToken)
                     .HasMaxLength(600)
                     .HasColumnName("usertoken");
