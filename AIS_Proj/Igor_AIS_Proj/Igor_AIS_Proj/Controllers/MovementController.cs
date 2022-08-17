@@ -10,25 +10,25 @@ using Microsoft.Extensions.Logging;
 namespace Igor_AIS_Proj.Controllers
 {
     [ApiController, Route("[controller]/[action]")]
-    public class TransferController : BaseController<TransferBusiness, TransferPersistence, Transfer>   
+    public class MovementController : BaseController<MovementBusiness, MovementPersistence, Movement>
     {
-        public TransferController() : base() => business = new TransferBusiness();
+        public MovementController() : base() => business = new MovementBusiness();
 
 
         [HttpGet("{id1}")]
-        public async Task<Transfer> GetById(int id1) => await business.GetById(id1);
+        public async Task<Movement> GetById(int id1) => await business.GetById(id1);
 
         [HttpDelete("{id1}")]
         public async Task<bool> Delete(int id1) => await business.Delete(id1);
 
 
-        [HttpGet("{id}")]
-        public void GettAllTransfersUser(int id)
-        {
+        //[HttpGet("{id}")]
+        //public void GettAllMovementsUser(int id)
+        //{
             
-            business.GetAllTransfersUser(id);
+        //    business.GetAllMovementsUser(id);
 
-        }
+        //}
 
     }
 }

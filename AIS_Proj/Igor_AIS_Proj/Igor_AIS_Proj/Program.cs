@@ -28,12 +28,12 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 
-var jwtSettings = new JwtSettings();
-builder.Configuration.Bind(key: nameof(jwtSettings), jwtSettings);
-builder.Services.AddSingleton(jwtSettings);
+//var jwtSettings = new JwtSettings();
+//builder.Configuration.Bind(key: nameof(jwtSettings), jwtSettings);
+//builder.Services.AddSingleton(jwtSettings);
 
-builder.Services.AddDbContext<PostgresContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("AISProject")));
+//builder.Services.AddDbContext<PostgresContext>(options =>
+//            options.UseNpgsql(builder.Configuration.GetConnectionString("AISProject")));
 
 builder.Services.AddSwaggerGen(x =>
 {

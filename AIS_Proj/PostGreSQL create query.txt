@@ -25,22 +25,26 @@ CREATE TABLE Accounts (
    FOREIGN KEY (UserId)
 	REFERENCES Users (UserId) ON DELETE CASCADE
 );
-CREATE TABLE Transfers (
-   TransferId integer not NULL,
-   OriginAccountId integer not NULL,
-   DestinationAccountId integer not NULL,
-   TransferAmount NUMERIC(10) not NULL,
-   TransferTime TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-   UpdatedAt TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-   CONSTRAINT Transfer_PK  PRIMARY KEY (TransferId, OriginAccountId, DestinationAccountId),
-   CONSTRAINT OriginAccountId_FK FOREIGN KEY (OriginAccountId)
-        REFERENCES Accounts (AccountId),
-    CONSTRAINT DestinationAccountId_FK FOREIGN KEY (DestinationAccountId)
-        REFERENCES Accounts (AccountId),
-    CONSTRAINT AccountsAreDistinct_CK  CHECK       (DestinationAccountId <> OriginAccountId),
-    CONSTRAINT AmountIsValid_CK        CHECK       (TransferAmount > 0)
+CREATE TABLE Movements (
+   MovementId integer GENERATED always AS identity PRIMARY KEY,
+   AccountId integer not null,
+   Amount NUMERIC(10) not NULL,
+   Currency varchar(3) not null default ('EUR'),
+   MovimentTime TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   CONSTRAINT AccountId_FK FOREIGN KEY (AccountId)
+        REFERENCES Accounts (AccountId)
 );
 
+create table Transfers(
+	TransferId integer GENERATED always AS identity PRIMARY KEY,
+	OriginAccountId integer not NULL,
+    DestinationAccountId integer not NULL,
+	Amount NUMERIC(10) not null,
+	Currency varchar(15) not NULL,
+	TransferDate TIMESTAMPTZ not null default NOW(),
+	    CONSTRAINT AmountIsValid_CK        CHECK       (Amount > 0),
+	    CONSTRAINT AccountsAreDistinct_CK  CHECK       (DestinationAccountId <> OriginAccountId)
+);
 
 CREATE OR REPLACE FUNCTION trigger_set_timestamp()
 RETURNS TRIGGER AS $$

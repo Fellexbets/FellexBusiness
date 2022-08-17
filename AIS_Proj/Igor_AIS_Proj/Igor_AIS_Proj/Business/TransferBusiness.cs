@@ -10,10 +10,10 @@ namespace Igor_AIS_Proj.Business
         public TransferBusiness() => database = new TransferPersistence();
 
 
-        public async Task<Transfer> GetById(int id1, int id2, int id3) => await database.GetById(id1, id2, id3);
-        public async Task<bool> Delete(int id1, int id2, int id3) => await database.Delete(id1, id2, id3);
+        public async Task<Transfer> GetById(int id1) => await database.GetById(id1);
+        public async Task<bool> Delete(int id1) => await database.Delete(id1);
 
-        public void GetAllTransfersUser (int id) => database.GetAllTransfersUser(id);
+        public void GetAllTransfersUser(int id) => database.GetAllTransfersUser(id);
 
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -18,6 +17,7 @@ namespace Igor_AIS_Proj.Models
         }
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
+        public virtual DbSet<Movement> Movements { get; set; } = null!;
         public virtual DbSet<Transfer> Transfers { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
@@ -51,50 +51,75 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnName("created_at")
+                entity.Property(e => e.Currency)
+                    .HasMaxLength(15)
+                    .HasColumnName("currency");
+
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("updatedat")
                     .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Userid).HasColumnName("userid");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Accounts)
+                    .HasForeignKey(d => d.Userid)
+                    .HasConstraintName("fk_user");
+            });
+
+            modelBuilder.Entity<Movement>(entity =>
+            {
+                entity.ToTable("movements");
+
+                entity.Property(e => e.Movementid)
+                    .HasColumnName("movementid")
+                    .UseIdentityAlwaysColumn();
+
+                entity.Property(e => e.Accountid).HasColumnName("accountid");
+
+                entity.Property(e => e.Amount)
+                    .HasPrecision(10)
+                    .HasColumnName("amount");
+
+                entity.Property(e => e.Currency)
+                    .HasMaxLength(3)
+                    .HasColumnName("currency")
+                    .HasDefaultValueSql("'EUR'::character varying");
+
+                entity.Property(e => e.Movimenttime)
+                    .HasColumnName("movimenttime")
+                    .HasDefaultValueSql("now()");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Movements)
+                    .HasForeignKey(d => d.Accountid)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("accountid_fk");
+            });
+
+            modelBuilder.Entity<Transfer>(entity =>
+            {
+                entity.ToTable("transfers");
+
+                entity.Property(e => e.Transferid)
+                    .HasColumnName("transferid")
+                    .UseIdentityAlwaysColumn();
+
+                entity.Property(e => e.Amount)
+                    .HasPrecision(10)
+                    .HasColumnName("amount");
 
                 entity.Property(e => e.Currency)
                     .HasMaxLength(15)
                     .HasColumnName("currency");
 
-                entity.Property(e => e.Userid).HasColumnName("userid");
-
-            });
-
-            modelBuilder.Entity<Transfer>(entity =>
-            {
-                entity.HasKey(e => new { e.Transferid, e.Originaccountid, e.Destinationaccountid })
-                    .HasName("transfer_pk");
-
-                entity.ToTable("transfers");
-
-                entity.Property(e => e.Transferid).HasColumnName("transferid");
+                entity.Property(e => e.Destinationaccountid).HasColumnName("destinationaccountid");
 
                 entity.Property(e => e.Originaccountid).HasColumnName("originaccountid");
 
-                entity.Property(e => e.Destinationaccountid).HasColumnName("destinationaccountid");
-
-                entity.Property(e => e.Transferamount)
-                    .HasPrecision(10)
-                    .HasColumnName("transferamount");
-
-                entity.Property(e => e.Transfertime)
-                    .HasColumnName("transfertime")
+                entity.Property(e => e.Transferdate)
+                    .HasColumnName("transferdate")
                     .HasDefaultValueSql("now()");
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnName("created_at")
-                    .HasDefaultValueSql("now()");
-
-                entity.HasOne(d => d.Destinationaccount)
-                    .WithMany(p => p.TransferDestinationaccounts)
-                    .HasForeignKey(d => d.Destinationaccountid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("destinationaccountid_fk");
-
-               
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -115,13 +140,17 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnName("created_at")
-                    .HasDefaultValueSql("now()");
-
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
                     .HasColumnName("email");
+
+                entity.Property(e => e.Passwordsalt)
+                    .HasMaxLength(250)
+                    .HasColumnName("passwordsalt");
+
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("updatedat")
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Username)
                     .HasMaxLength(25)
@@ -131,11 +160,7 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(50)
                     .HasColumnName("userpassword");
 
-                entity.Property(e => e.PasswordSalt)
-                    .HasMaxLength(250)
-                    .HasColumnName("passwordsalt");
-
-                entity.Property(e => e.UserToken)
+                entity.Property(e => e.Usertoken)
                     .HasMaxLength(600)
                     .HasColumnName("usertoken");
             });

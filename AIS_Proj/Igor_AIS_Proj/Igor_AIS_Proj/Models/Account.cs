@@ -1,29 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Igor_AIS_Proj.Models
 {
-    public class Account : Entity
+    public partial class Account : Entity
     {
         public Account()
         {
-            TransferDestinationaccounts = new HashSet<Transfer>();
-            
+            Movements = new HashSet<Movement>();
         }
 
-        [Key]
         public int Accountid { get; set; }
-        [ForeignKey("UserId")]
         public int Userid { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Currency { get; set; } = null!;
         public decimal Balance { get; set; }
+        public DateTime Updatedat { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
-        public virtual ICollection<Transfer> TransferDestinationaccounts { get; set; }
-
-        public override List<int> ReturnId() => new List<int>() { Accountid };
+        public virtual User User { get; set; } = null!;
+        public virtual ICollection<Movement> Movements { get; set; }
     }
 }

@@ -16,11 +16,11 @@ namespace Igor_AIS_Proj.Controllers
     [ApiController, Route("[controller]/[action]")]
     public class UserController : BaseController<UserBusiness, UserPersistence, User>
     {
-       
+
 
         public UserController() : base() => business = new UserBusiness();
 
-       
+
 
         [HttpGet("{id}")]
         public async Task<User> GetById(int id) => await business.GetById(id);
@@ -30,7 +30,9 @@ namespace Igor_AIS_Proj.Controllers
 
         [HttpPost, AllowAnonymous]
         public async Task<User> Authenticate(UserCredentials model) => await business.Authenticate(model);
-        
+
+        [HttpPost]
+        public int? ValidateJwt(string token) => business.ValidateJwt(token);
 
         //[HttpPost]
         //public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)

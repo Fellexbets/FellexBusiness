@@ -16,12 +16,14 @@ namespace Igor_AIS_Proj.Business
 
         public async Task<User> Authenticate(UserCredentials model) => await database.Authenticate(model);
 
+        public int? ValidateJwt(string token) => database.ValidateJwt(token);
+
         //public User Register(User user) => database.Register(user);
 
 
-        // 
-        //public string SubjectId(this ClaimsPrincipal user) 
-        //{ 
+
+        //public string SubjectId(this ClaimsPrincipal user)
+        //{
         //    return user?.Claims?.FirstOrDefault(c => c.Type.Equals("sub", StringComparison.OrdinalIgnoreCase))?.Value;
         //}
 
