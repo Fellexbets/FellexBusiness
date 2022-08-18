@@ -31,21 +31,6 @@ namespace Igor_AIS_Proj.Controllers
         [HttpPost, AllowAnonymous]
         public async Task<User> Authenticate(UserCredentials model) => await business.Authenticate(model);
 
-        [HttpPost]
-        public int? ValidateJwt(string token) => business.ValidateJwt(token);
-
-        //[HttpPost]
-        //public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
-        //{
-        //    
-        //}
-
-
-        //[HttpPost]
-        //public User Register(User user) => business.Register(user);
-
-
-
 
     }
 }

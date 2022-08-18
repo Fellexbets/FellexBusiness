@@ -16,10 +16,10 @@ namespace Igor_AIS_Proj.Models
         {
         }
 
-        public virtual DbSet<Account> Accounts { get; set; } = null!;
-        public virtual DbSet<Movement> Movements { get; set; } = null!;
-        public virtual DbSet<Transfer> Transfers { get; set; } = null!;
-        public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Account> Accounts { get; set; } 
+        public virtual DbSet<Movement> Movements { get; set; }
+        public virtual DbSet<Transfer> Transfers { get; set; } 
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,7 +39,7 @@ namespace Igor_AIS_Proj.Models
             {
                 entity.ToTable("accounts");
 
-                entity.Property(e => e.Accountid)
+                entity.Property(e => e.AccountId)
                     .HasColumnName("accountid")
                     .UseIdentityAlwaysColumn();
 
@@ -52,7 +52,7 @@ namespace Igor_AIS_Proj.Models
                     .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Currency)
-                    .HasMaxLength(15)
+                    .HasMaxLength(3)
                     .HasColumnName("currency");
 
                 entity.Property(e => e.Updatedat)
@@ -63,8 +63,9 @@ namespace Igor_AIS_Proj.Models
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Accounts)
-                    .HasForeignKey(d => d.Userid)
+                .HasForeignKey(d => d.Userid)
                     .HasConstraintName("fk_user");
+
             });
 
             modelBuilder.Entity<Movement>(entity =>

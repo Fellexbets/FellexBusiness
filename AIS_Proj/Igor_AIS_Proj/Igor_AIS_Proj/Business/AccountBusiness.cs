@@ -10,10 +10,12 @@ namespace Igor_AIS_Proj.Business
         public AccountBusiness() => database = new AccountPersistence();
 
 
-        public async Task<Account> GetById(int id) => await database.GetById(id);
+        public Account GetById(int id) =>  database.GetById(id);
         public async Task<bool> Delete(int id) => await database.Delete(id);
 
         public async Task<List<Account>> GetAllAccountsUser(int id) => await database.GetAllAccountsUser(id);
+
+        public async Task<bool> TransferFunds(int fromAccountId, int toAccountId, decimal transferAmount) => await database.TransferFunds(fromAccountId, toAccountId, transferAmount);
 
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.Swagger;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,21 +20,14 @@ IConfigurationRoot configuration = new ConfigurationBuilder()
                    .Build();
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-//builder.Services.AddScoped<IIdentityService, IdentityService>();
 
-
-//var jwtSettings = new JwtSettings();
-//builder.Configuration.Bind(key: nameof(jwtSettings), jwtSettings);
-//builder.Services.AddSingleton(jwtSettings);
-
-//builder.Services.AddDbContext<PostgresContext>(options =>
-//            options.UseNpgsql(builder.Configuration.GetConnectionString("AISProject")));
 
 builder.Services.AddSwaggerGen(x =>
 {
@@ -45,24 +39,6 @@ builder.Services.AddSwaggerGen(x =>
     Type = SecuritySchemeType.ApiKey,
     Scheme = "Bearer"
 });
-//x.AddSecurityRequirement(new OpenApiSecurityRequirement()
-//      {
-//        {
-//          new OpenApiSecurityScheme
-//          {
-//            Reference = new OpenApiReference
-//              {
-//                Type = ReferenceType.SecurityScheme,
-//                Id = "Bearer"
-//              },
-//              Scheme = "oauth2",
-//              Name = "Bearer",
-//              In = ParameterLocation.Header,
-
-//            },
-//            new List<string>()
-//          }
-//        });
 });
 
 
