@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Igor_AIS_Proj.Business;
@@ -16,7 +17,13 @@ namespace QuizzalT_API.Controllers
     [ApiController, Route("[controller]/[action]")]
     public class AccountController : BaseController<AccountBusiness, AccountPersistence, Account>
     {
-        public AccountController() : base() => business = new AccountBusiness();
+        
+
+        public AccountController() : base()
+        {
+            business = new AccountBusiness();
+            
+        }
 
 
         [HttpGet("{id}")]
@@ -27,29 +34,25 @@ namespace QuizzalT_API.Controllers
 
 
         [HttpGet("{id}")]
-        [Authorize]
-        public async Task<List<Account>> GetAllAccountsUser(int id)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public List<Account> GetAllAccountsUser(int id)
         {
-            try
-            {
-                //if (id == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-                    return await business.GetAllAccountsUser(id);
-                //return null;
-            }   
-            catch
-            {
-                return null;
-            }
-                
+            if (id == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
+                    return  business.GetAllAccountsUser(id);
+            var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
+            throw new System.Web.Http.HttpResponseException(msg);
         }
 
-        [Authorize]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
-        public async Task<bool> TransferFunds(int fromAccountId, int toAccountId, decimal transferAmount)
+        public async Task<bool> TransferFunds(TransferRequest request)
         {
-            await business.TransferFunds(fromAccountId, toAccountId, transferAmount);
-            return true;
-        }
+            if (GetById(request.FromAccountId).UserId == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
+                await business.TransferFunds(request);
+                return true;
+            var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Transfer Failed! You can only make transfers from your account" };
+            throw new System.Web.Http.HttpResponseException(msg);
+        }   
 
 
 

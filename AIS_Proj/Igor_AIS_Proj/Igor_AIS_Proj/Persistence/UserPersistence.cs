@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using QuizzalT_API.Models;
+using Igor_AIS_Proj.Models.Responses;
 
 namespace Igor_AIS_Proj.Persistence
 {
@@ -21,28 +22,27 @@ namespace Igor_AIS_Proj.Persistence
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-
         public UserPersistence()
         {
             _contextEntity = _context.Users;
-
         }
-
-
 
         public async Task<User> GetById(int id) => await _contextEntity.FindAsync(id);
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
 
-        public override async Task<User> Create(User user)
+        public async Task<CreateUserResponse> Register(UserRegistrationRequest model)
         {
 
-            (user.Userpassword, user.Passwordsalt) = Auxiliary.PasswordHasher.ReturnHashedPasswordAndSalt(user.Userpassword);
+            (model.UserPassword, model.PasswordSalt) = Auxiliary.PasswordHasher.ReturnHashedPasswordAndSalt(model.UserPassword);
 
             try
             {
-                await _context.AddAsync(user);
+                await _context.AddAsync(model);
                 await _context.SaveChangesAsync();
-                return user;
+                return new CreateUserResponse
+                {
+                    PasswordSalt = model.PasswordSalt
+                };
             }
             catch
             {
@@ -50,47 +50,53 @@ namespace Igor_AIS_Proj.Persistence
             }
         }
 
-        [AllowAnonymous]
-        public async Task<User> Authenticate(UserCredentials model)
+
+        public async Task<LoginUserResponse> Authenticate(LoginUserRequest model)
         {
             var user = _contextEntity.SingleOrDefault(x => x.Email == model.Email);
 
             if (model == null) { return null; }
-
-            bool confirmedPassword = PasswordHasher.CompareHashedPasswords(model.UserPassword, user.Userpassword, user.Passwordsalt);
-            if (confirmedPassword)
+            try
             {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(configuration["Secret"]);
+                bool confirmedPassword = PasswordHasher.CompareHashedPasswords(model.UserPassword, user.UserPassword, user.PasswordSalt);
+                if (confirmedPassword)
+                {
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var key = Encoding.ASCII.GetBytes(configuration["Secret"]);
 
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(new Claim[]
+                    var tokenDescriptor = new SecurityTokenDescriptor
                     {
-                        new Claim(ClaimTypes.NameIdentifier, user.Userid.ToString())
-                     }),
-                    Expires = DateTime.UtcNow.AddMinutes(5),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                };
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-                user.Usertoken = tokenHandler.WriteToken(token);
-                try
-                {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
+                            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
+                         }),
+                        Expires = DateTime.UtcNow.AddMinutes(5),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    };
+                    var token = tokenHandler.CreateToken(tokenDescriptor);
+                    user.UserToken = tokenHandler.WriteToken(token);
                     _contextEntity.Update(user);
-                    return user;
-                }
-                catch
-                {
-                    return null;
+                    return new LoginUserResponse
+                    {
+                        UserToken = user.UserToken
+                    };
                 }
             }
+            catch
+            {
+                return null;
+            }
             return null;
+
         }
+    }
+}
 
 
  
-    }
-}
+
+
+
 
 
 

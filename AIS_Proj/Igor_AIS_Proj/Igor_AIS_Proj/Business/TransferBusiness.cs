@@ -7,13 +7,17 @@ namespace Igor_AIS_Proj.Business
 {
     public class TransferBusiness : BaseBusiness<TransferPersistence, Transfer>
     {
-        public TransferBusiness() => database = new TransferPersistence();
-
+        
+        
+        public TransferBusiness()
+        {
+            database = new TransferPersistence();
+        }
 
         public async Task<Transfer> GetById(int id1) => await database.GetById(id1);
         public async Task<bool> Delete(int id1) => await database.Delete(id1);
-
         public void GetAllTransfersUser(int id) => database.GetAllTransfersUser(id);
 
+        
     }
 }

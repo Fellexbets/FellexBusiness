@@ -1,5 +1,6 @@
 ﻿using Igor_AIS_Proj.Auxiliary;
 using Igor_AIS_Proj.Models;
+using Igor_AIS_Proj.Models.Responses;
 using Igor_AIS_Proj.Persistence;
 using QuizzalT_API.Models;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace Igor_AIS_Proj.Business
         public async Task<User> GetById(int id) => await database.GetById(id);
         public async Task<bool> Delete(int id) => await database.Delete(id);
 
-        public async Task<User> Authenticate(UserCredentials model) => await database.Authenticate(model);
+        public async Task<CreateUserResponse> Register(UserRegistrationRequest model) => await database.Register(model);
+
+        public async Task<LoginUserResponse> Authenticate(LoginUserRequest model) => await database.Authenticate(model);
 
 
         //public User Register(User user) => database.Register(user);

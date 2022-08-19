@@ -9,7 +9,7 @@ namespace Igor_AIS_Proj.Persistence
         protected PostgresContext _context = new PostgresContext();
         protected DbSet<T> _contextEntity;
 
-        public virtual async Task<List<T>> GetAll() => await _contextEntity!.AsNoTracking().ToListAsync();
+        public virtual List<T> GetAll() =>  _contextEntity!.AsNoTracking().ToList();
         public virtual async Task<T> Create(T entity)
         {
             try

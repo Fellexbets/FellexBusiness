@@ -10,14 +10,16 @@ namespace Igor_AIS_Proj.Models
             Accounts = new HashSet<Account>();
         }
 
-        public int Userid { get; set; }
+        public int UserId { get; set; }
         public DateTime? CreatedAt { get; set; }
-        public string Email { get; set; } = null!;
-        public string Username { get; set; } = null!;
-        public string Userpassword { get; set; } = null!;
-        public string? Passwordsalt { get; set; }
-        public string? Usertoken { get; set; }
-        public DateTime? Updatedat { get; set; }
+        public string Email { get; set; } 
+        public string Username { get; set; } 
+
+        public string FullName { get; set; }
+        public string UserPassword { get; set; } 
+        public string? PasswordSalt { get; set; }
+        public string? UserToken { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
     }

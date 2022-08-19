@@ -13,7 +13,5 @@ namespace Igor_AIS_Proj.Business
         public async Task<Movement> GetById(int id1) => await database.GetById(id1);
         public async Task<bool> Delete(int id1) => await database.Delete(id1);
 
-        //public void GetAllMovementsUser(int id) => database.GetAllMovementsUser(id);
-
     }
 }

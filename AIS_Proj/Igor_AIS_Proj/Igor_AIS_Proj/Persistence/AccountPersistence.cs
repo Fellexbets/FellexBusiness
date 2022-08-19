@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Security.Claims;
 using System.Linq;
+using AutoMapper.EF6;
 
 namespace Igor_AIS_Proj.Persistence
 {
@@ -17,43 +18,9 @@ namespace Igor_AIS_Proj.Persistence
 
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
 
-
-        public async Task<List<Account>> GetAllAccountsUser(int id) => await _contextEntity.AsNoTracking().Where(e => e.Userid == id).ToListAsync();
-
-        public async Task<bool> TransferFunds(int fromAccountId, int toAccountId, decimal transferAmount)
+        public void Create(CreateAccountRequest request)
         {
-            if (transferAmount <= 0)
-            {
-                throw new ArgumentException("Transfer amount must be positive");
-                return false;
-            }
-
-            Account fromAccount = GetById(fromAccountId);
-            Account toAccount = GetById(toAccountId);
-            if (fromAccount.Currency != toAccount.Currency)
-            {
-                throw new ArgumentException("You can only transfer in the same currency");
-                return false;
-            }
-            if (fromAccount.Balance < transferAmount)
-            {
-                throw new ApplicationException("insufficient funds");
-                return false;
-            }
-
-            fromAccount.Balance -= transferAmount;
-            toAccount.Balance += transferAmount;
-            var transfer1 = new Transfer { Originaccountid = fromAccount.AccountId, Destinationaccountid = toAccount.AccountId, Amount = transferAmount, Currency = fromAccount.Currency };
-            var mov1 = new Movement { Accountid = fromAccount.AccountId, Amount = -transferAmount, Currency = fromAccount.Currency };
-            var mov2 = new Movement { Accountid = toAccount.AccountId, Amount = +transferAmount, Currency = toAccount.Currency };
-            _context.Transfers.Add(transfer1);
-            _context.Movements.Add(mov1);
-            _context.Movements.Add(mov2);
-            _context.SaveChangesAsync();
-            return true;
+            _contextEntity.Add(request);
         }
-
-
-
     }
 }

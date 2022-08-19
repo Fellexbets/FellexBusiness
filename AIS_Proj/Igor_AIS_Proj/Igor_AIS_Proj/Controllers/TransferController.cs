@@ -12,7 +12,11 @@ namespace Igor_AIS_Proj.Controllers
     [ApiController, Route("[controller]/[action]")]
     public class TransferController : BaseController<TransferBusiness, TransferPersistence, Transfer>   
     {
-        public TransferController() : base() => business = new TransferBusiness();
+        public TransferController() : base()
+        {
+            business = new TransferBusiness();
+          
+        }
 
 
         [HttpGet("{id1}")]

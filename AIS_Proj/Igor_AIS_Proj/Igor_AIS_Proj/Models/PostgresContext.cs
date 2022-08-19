@@ -55,15 +55,15 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(3)
                     .HasColumnName("currency");
 
-                entity.Property(e => e.Updatedat)
+                entity.Property(e => e.UpdatedAt)
                     .HasColumnName("updatedat")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.Userid).HasColumnName("userid");
+                entity.Property(e => e.UserId).HasColumnName("userid");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Accounts)
-                .HasForeignKey(d => d.Userid)
+                .HasForeignKey(d => d.UserId)
                     .HasConstraintName("fk_user");
 
             });
@@ -72,11 +72,11 @@ namespace Igor_AIS_Proj.Models
             {
                 entity.ToTable("movements");
 
-                entity.Property(e => e.Movementid)
+                entity.Property(e => e.MovementId)
                     .HasColumnName("movementid")
                     .UseIdentityAlwaysColumn();
 
-                entity.Property(e => e.Accountid).HasColumnName("accountid");
+                entity.Property(e => e.AccountId).HasColumnName("accountid");
 
                 entity.Property(e => e.Amount)
                     .HasPrecision(10)
@@ -87,13 +87,13 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("currency")
                     .HasDefaultValueSql("'EUR'::character varying");
 
-                entity.Property(e => e.Movimenttime)
+                entity.Property(e => e.MovimentTime)
                     .HasColumnName("movimenttime")
                     .HasDefaultValueSql("now()");
 
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Movements)
-                    .HasForeignKey(d => d.Accountid)
+                    .HasForeignKey(d => d.AccountId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("accountid_fk");
             });
@@ -102,7 +102,7 @@ namespace Igor_AIS_Proj.Models
             {
                 entity.ToTable("transfers");
 
-                entity.Property(e => e.Transferid)
+                entity.Property(e => e.TransferId)
                     .HasColumnName("transferid")
                     .UseIdentityAlwaysColumn();
 
@@ -114,11 +114,11 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(15)
                     .HasColumnName("currency");
 
-                entity.Property(e => e.Destinationaccountid).HasColumnName("destinationaccountid");
+                entity.Property(e => e.DestinationaccountId).HasColumnName("destinationaccountid");
 
-                entity.Property(e => e.Originaccountid).HasColumnName("originaccountid");
+                entity.Property(e => e.OriginaccountId).HasColumnName("originaccountid");
 
-                entity.Property(e => e.Transferdate)
+                entity.Property(e => e.TransferDate)
                     .HasColumnName("transferdate")
                     .HasDefaultValueSql("now()");
             });
@@ -133,7 +133,7 @@ namespace Igor_AIS_Proj.Models
                 entity.HasIndex(e => e.Username, "users_username_key")
                     .IsUnique();
 
-                entity.Property(e => e.Userid)
+                entity.Property(e => e.UserId)
                     .HasColumnName("userid")
                     .UseIdentityAlwaysColumn();
 
@@ -145,11 +145,15 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(50)
                     .HasColumnName("email");
 
-                entity.Property(e => e.Passwordsalt)
+                entity.Property(e => e.FullName)
+                    .HasMaxLength(50)
+                    .HasColumnName("fullname");
+
+                entity.Property(e => e.PasswordSalt)
                     .HasMaxLength(250)
                     .HasColumnName("passwordsalt");
 
-                entity.Property(e => e.Updatedat)
+                entity.Property(e => e.UpdatedAt)
                     .HasColumnName("updatedat")
                     .HasDefaultValueSql("now()");
 
@@ -157,11 +161,11 @@ namespace Igor_AIS_Proj.Models
                     .HasMaxLength(25)
                     .HasColumnName("username");
 
-                entity.Property(e => e.Userpassword)
+                entity.Property(e => e.UserPassword)
                     .HasMaxLength(50)
                     .HasColumnName("userpassword");
 
-                entity.Property(e => e.Usertoken)
+                entity.Property(e => e.UserToken)
                     .HasMaxLength(600)
                     .HasColumnName("usertoken");
             });

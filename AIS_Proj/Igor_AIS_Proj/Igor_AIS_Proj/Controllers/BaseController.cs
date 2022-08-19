@@ -17,7 +17,7 @@ namespace Igor_AIS_Proj.Controllers
 
 
         [HttpGet]
-        public virtual async Task<List<T>> GetAll() => await business.GetAll();
+        public virtual  List<T> GetAll() =>  business.GetAll();
 
 
         [HttpPost, AllowAnonymous]

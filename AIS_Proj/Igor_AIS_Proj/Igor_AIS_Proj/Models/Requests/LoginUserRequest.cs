@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Igor_AIS_Proj.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,14 +8,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizzalT_API.Models
 {
-    public partial class UserCredentials
+    public class LoginUserRequest : Entity
     {
         
         public string Email { get; set; }
         
         public string UserPassword { get; set; }
 
-        public string Token { get; set; }
+        //public string Token { get; set; }
 
     }
 }

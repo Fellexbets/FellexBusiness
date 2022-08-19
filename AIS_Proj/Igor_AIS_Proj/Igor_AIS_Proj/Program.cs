@@ -29,16 +29,31 @@ builder.Services.AddSwaggerGen();
 
 
 
-builder.Services.AddSwaggerGen(x =>
+builder.Services.AddSwaggerGen(options =>
 {
-    x.AddSecurityDefinition(name: "Bearer", new OpenApiSecurityScheme
-{
-    Description = "JWT Authorization header using the bearer scheme",
-    Name = "Authorization",
-    In = ParameterLocation.Header,
-    Type = SecuritySchemeType.ApiKey,
-    Scheme = "Bearer"
-});
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Description = "Bearer Authentication with JWT Token",
+        Type = SecuritySchemeType.Http
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Id = "Bearer",
+                    Type = ReferenceType.SecurityScheme
+                }
+            },
+            new List<string>()
+        }
+    });
 });
 
 
@@ -75,7 +90,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseDeveloperExceptionPage();
 
 app.UseAuthorization();
 

@@ -4,6 +4,7 @@ using IdentityModel;
 using Igor_AIS_Proj.Auxiliary;
 using Igor_AIS_Proj.Business;
 using Igor_AIS_Proj.Models;
+using Igor_AIS_Proj.Models.Responses;
 using Igor_AIS_Proj.Persistence;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -29,7 +30,16 @@ namespace Igor_AIS_Proj.Controllers
         public async Task<bool> Delete(int id) => await business.Delete(id);
 
         [HttpPost, AllowAnonymous]
-        public async Task<User> Authenticate(UserCredentials model) => await business.Authenticate(model);
+        public async Task<IActionResult> Authenticate(LoginUserRequest model)
+        {
+            return Ok(business.Authenticate(model));
+        }
+
+        [HttpPost, AllowAnonymous]
+        public async Task<IActionResult> Register(UserRegistrationRequest model)
+        {
+            return  Ok(business.Register(model));
+        }
 
 
     }
