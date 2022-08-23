@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-
+﻿
 namespace Igor_AIS_Proj.Models
 {
     public partial class PostgresContext : DbContext
@@ -61,10 +57,10 @@ namespace Igor_AIS_Proj.Models
 
                 entity.Property(e => e.UserId).HasColumnName("userid");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Accounts)
-                .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("fk_user");
+                //entity.HasOne(d => d.User)
+                //    .WithMany(p => p.Accounts)
+                //.HasForeignKey(d => d.UserId)
+                //    .HasConstraintName("fk_user");
 
             });
 
@@ -91,11 +87,11 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("movimenttime")
                     .HasDefaultValueSql("now()");
 
-                entity.HasOne(d => d.Account)
-                    .WithMany(p => p.Movements)
-                    .HasForeignKey(d => d.AccountId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("accountid_fk");
+                //entity.HasOne(d => d.Account)
+                //    .WithMany(p => p.Movements)
+                //    .HasForeignKey(d => d.AccountId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("accountid_fk");
             });
 
             modelBuilder.Entity<Transfer>(entity =>

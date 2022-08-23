@@ -1,21 +1,7 @@
-﻿using Igor_AIS_Proj.Auxiliary;
-using Igor_AIS_Proj.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using QuizzalT_API.Models;
-using Igor_AIS_Proj.Models.Responses;
-
+﻿
 namespace Igor_AIS_Proj.Persistence
 {
-    public class UserPersistence : BasePersistence<User>
+    public class UserPersistence : BasePersistence<User>, IUserPersistence
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -29,28 +15,21 @@ namespace Igor_AIS_Proj.Persistence
 
         public async Task<User> GetById(int id) => await _contextEntity.FindAsync(id);
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
-
-        public async Task<CreateUserResponse> Register(UserRegistrationRequest model)
+        public async override Task<User> Create(User user)
         {
-
-            (model.UserPassword, model.PasswordSalt) = Auxiliary.PasswordHasher.ReturnHashedPasswordAndSalt(model.UserPassword);
-
-            try
-            {
-                await _context.AddAsync(model);
-                await _context.SaveChangesAsync();
-                return new CreateUserResponse
-                {
-                    PasswordSalt = model.PasswordSalt
-                };
-            }
-            catch
-            {
-                return null;
-            }
+            if (await _contextEntity.AnyAsync(x => x.Email == user.Email))
+                throw new ArgumentException("This email is already registered.");
+            if (await _contextEntity.AnyAsync(x => x.Email == user.Username))
+                throw new ArgumentException("This username is already registered.");
+            (user.UserPassword, user.PasswordSalt) = PasswordHasher.ReturnHashedPasswordAndSalt(user.UserPassword);
+            await _context.AddAsync(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
-
-
+        public async Task<User> GetByEmail (string Email)
+        {
+            return await _contextEntity.FirstOrDefaultAsync(x => x.Email == Email);
+        }
         public async Task<LoginUserResponse> Authenticate(LoginUserRequest model)
         {
             var user = _contextEntity.SingleOrDefault(x => x.Email == model.Email);

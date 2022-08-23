@@ -1,36 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Net;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Igor_AIS_Proj.Business;
-using Igor_AIS_Proj.Controllers;
-using Igor_AIS_Proj.Models;
-using Igor_AIS_Proj.Persistence;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-
+﻿
 namespace QuizzalT_API.Controllers
 {
     [ApiController, Route("[controller]/[action]")]
-    public class AccountController : BaseController<AccountBusiness, AccountPersistence, Account>
+    public class AccountController : ControllerBase
     {
-        
+        private readonly IAccountBusiness _accountBusiness;
 
-        public AccountController() : base()
+        public AccountController(IAccountBusiness accountBusiness)
         {
-            business = new AccountBusiness();
-            
+            _accountBusiness = accountBusiness;
         }
 
-
         [HttpGet("{id}")]
-        public Account GetById(int id) => business.GetById(id);
+        public Account GetById(int id) => _accountBusiness.GetById(id);
 
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id) => await business.Delete(id);
+        public async Task<bool> Delete(int id) => await _accountBusiness.Delete(id);
+
+        [HttpGet]
+        public List<Account> GetAll() => _accountBusiness.GetAll();
+
+        [HttpPut]
+        public Task<bool> Update(Account account) => _accountBusiness.Update(account);
+
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPost]
+        public async Task<Account> Create(Account account)
+        {
+            if (account.UserId == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
+                return await _accountBusiness.Create(account);
+            var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You are only authorized to create an account on your userpage!" };
+            throw new System.Web.Http.HttpResponseException(msg);
+            
+        }
 
 
         [HttpGet("{id}")]
@@ -38,7 +41,7 @@ namespace QuizzalT_API.Controllers
         public List<Account> GetAllAccountsUser(int id)
         {
             if (id == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-                    return  business.GetAllAccountsUser(id);
+                    return _accountBusiness.GetAllAccountsUser(id);
             var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
             throw new System.Web.Http.HttpResponseException(msg);
         }
@@ -48,7 +51,7 @@ namespace QuizzalT_API.Controllers
         public async Task<bool> TransferFunds(TransferRequest request)
         {
             if (GetById(request.FromAccountId).UserId == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-                await business.TransferFunds(request);
+                await _accountBusiness.TransferFunds(request);
                 return true;
             var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Transfer Failed! You can only make transfers from your account" };
             throw new System.Web.Http.HttpResponseException(msg);

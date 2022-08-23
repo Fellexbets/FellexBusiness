@@ -1,16 +1,5 @@
 
-using Igor_AIS_Proj.Auxiliary;
-using Igor_AIS_Proj.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using Swashbuckle.Swagger;
-using System.Reflection;
-using System.Text;
-using System.Text.Json.Serialization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +15,14 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IAccountPersistence, AccountPersistence>();
+builder.Services.AddScoped<IMovementPersistence, MovementPersistence>();
+builder.Services.AddScoped<ITransferPersistence, TransferPersistence>();
+builder.Services.AddScoped<IUserPersistence, UserPersistence>();
+builder.Services.AddScoped<IAccountBusiness, AccountBusiness>();
+builder.Services.AddScoped<IUserBusiness, UserBusiness>();
+builder.Services.AddScoped<IMovementBusiness, MovementBusiness>();
+builder.Services.AddScoped<ITransferBusiness, TransferBusiness>();
 
 
 

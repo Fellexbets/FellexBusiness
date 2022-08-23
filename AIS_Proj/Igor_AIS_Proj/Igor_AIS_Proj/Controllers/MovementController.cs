@@ -1,34 +1,33 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Igor_AIS_Proj.Auxiliary;
-using Igor_AIS_Proj.Business;
-using Igor_AIS_Proj.Models;
-using Igor_AIS_Proj.Persistence;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
+﻿
 namespace Igor_AIS_Proj.Controllers
 {
     [ApiController, Route("[controller]/[action]")]
-    public class MovementController : BaseController<MovementBusiness, MovementPersistence, Movement>
+    public class MovementController : ControllerBase
     {
-        public MovementController() : base() => business = new MovementBusiness();
+        private readonly IMovementBusiness _movementBusiness;
+        private readonly ILogger<MovementController> _logger;
 
+        public MovementController(IMovementBusiness movementBusiness, ILogger<MovementController> logger)
+        {
+            _movementBusiness = movementBusiness;
+            _logger = logger;
+        }
 
-        [HttpGet("{id1}")]
-        public async Task<Movement> GetById(int id1) => await business.GetById(id1);
+        [HttpGet("{id}")]
+        public async Task<Movement> GetById(int id) => await _movementBusiness.GetById(id);
 
-        [HttpDelete("{id1}")]
-        public async Task<bool> Delete(int id1) => await business.Delete(id1);
+        [HttpDelete("{id}")]
+        public async Task<bool> Delete(int id) => await _movementBusiness.Delete(id);
 
+        [HttpGet]
+        public List<Movement> GetAll() => _movementBusiness.GetAll();
 
-        //[HttpGet("{id}")]
-        //public void GettAllMovementsUser(int id)
-        //{
-            
-        //    business.GetAllMovementsUser(id);
+        [HttpPut]
+        public Task<bool> Update(Movement movement) => _movementBusiness.Update(movement);
 
-        //}
+        [HttpPost]
+        public async Task<Movement> Create(Movement movement) => await _movementBusiness.Create(movement);
+
 
     }
 }

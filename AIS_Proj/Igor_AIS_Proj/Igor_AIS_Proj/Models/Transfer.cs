@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace Igor_AIS_Proj.Models
 {
     public partial class Transfer : Entity

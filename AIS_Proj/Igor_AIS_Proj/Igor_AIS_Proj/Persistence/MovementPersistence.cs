@@ -1,9 +1,7 @@
-﻿using Igor_AIS_Proj.Models;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Igor_AIS_Proj.Persistence
 {
-    public class MovementPersistence : BasePersistence<Movement>
+    public class MovementPersistence : BasePersistence<Movement>, IMovementPersistence
     {
         public MovementPersistence() => _contextEntity = _context.Movements;
 

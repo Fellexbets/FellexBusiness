@@ -1,7 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-
+﻿
 namespace Igor_AIS_Proj.Auxiliary
 {
     public static class VerifyJwt

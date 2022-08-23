@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace Igor_AIS_Proj.Models
 {
-    public partial class Account : Entity
+    public class Account : Entity
     {
-        public Account()
-        {
-           
-        }
+
 
         public int AccountId { get; set; }
         public int UserId { get; set; }
@@ -17,8 +12,8 @@ namespace Igor_AIS_Proj.Models
         public decimal Balance { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        public User User { get; set; }
-        public List<Movement> Movements { get; set; }
+        //public User User { get; set; }
+        public List<Movement>? Movements { get; set; }
 
     }
 }

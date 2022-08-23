@@ -6263,19 +6263,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ifpno\\.nuget\\packages\\": {}
+    "C:\\Users\\ifelixno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\VISUAL STUDIO PROJECTS\\M3 PROJECTS\\PROJETO 2 IGOR EFCORE\\EFCore\\EFCore.csproj",
+      "projectUniqueName": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\2- PROJETO 2 IGOR EFCORE\\EFCore\\EFCore.csproj",
       "projectName": "EFCore",
-      "projectPath": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\VISUAL STUDIO PROJECTS\\M3 PROJECTS\\PROJETO 2 IGOR EFCORE\\EFCore\\EFCore.csproj",
-      "packagesPath": "C:\\Users\\ifpno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\VISUAL STUDIO PROJECTS\\M3 PROJECTS\\PROJETO 2 IGOR EFCORE\\EFCore\\obj\\",
+      "projectPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\2- PROJETO 2 IGOR EFCORE\\EFCore\\EFCore.csproj",
+      "packagesPath": "C:\\Users\\ifelixno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\2- PROJETO 2 IGOR EFCORE\\EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ifpno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ifelixno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6335,7 +6335,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

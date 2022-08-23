@@ -1,9 +1,7 @@
-﻿using Igor_AIS_Proj.Models;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Igor_AIS_Proj.Persistence
 {
-    public class TransferPersistence : BasePersistence<Transfer>
+    public class TransferPersistence : BasePersistence<Transfer>, ITransferPersistence
     {
         public TransferPersistence() => _contextEntity = _context.Transfers;
 

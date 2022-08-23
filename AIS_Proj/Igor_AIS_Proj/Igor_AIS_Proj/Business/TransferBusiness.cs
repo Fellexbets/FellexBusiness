@@ -1,23 +1,25 @@
-﻿using Igor_AIS_Proj.Models;
-using Igor_AIS_Proj.Persistence;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
+﻿
 namespace Igor_AIS_Proj.Business
 {
-    public class TransferBusiness : BaseBusiness<TransferPersistence, Transfer>
+    public class TransferBusiness : ITransferBusiness
     {
         
         
-        public TransferBusiness()
+        public TransferBusiness(ITransferPersistence transferPersistence)
         {
-            database = new TransferPersistence();
+           _transferPersistence = transferPersistence;
         }
+        private readonly ITransferPersistence _transferPersistence;
 
-        public async Task<Transfer> GetById(int id1) => await database.GetById(id1);
-        public async Task<bool> Delete(int id1) => await database.Delete(id1);
-        public void GetAllTransfersUser(int id) => database.GetAllTransfersUser(id);
+        public async Task<Transfer> GetById(int id) => await _transferPersistence.GetById(id);
+        public async Task<bool> Delete(int id) => await _transferPersistence.Delete(id);
+        public void GetAllTransfersUser(int id) => _transferPersistence.GetAllTransfersUser(id);
 
-        
+        public List<Transfer> GetAll() => _transferPersistence.GetAll();
+
+        public async Task<Transfer> Create(Transfer transfer) => await _transferPersistence.Create(transfer);
+        public async Task<bool> Update(Transfer transfer) => await _transferPersistence.Update(transfer);
+
+
     }
 }

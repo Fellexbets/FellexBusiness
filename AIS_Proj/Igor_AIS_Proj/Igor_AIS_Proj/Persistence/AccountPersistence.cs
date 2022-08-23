@@ -1,15 +1,7 @@
-﻿using Igor_AIS_Proj.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
-using System.Security.Claims;
-using System.Linq;
-using AutoMapper.EF6;
-
+﻿
 namespace Igor_AIS_Proj.Persistence
 {
-    public class AccountPersistence : BasePersistence<Account>
+    public class AccountPersistence : BasePersistence<Account>, IAccountPersistence
     {
         public AccountPersistence() => _contextEntity = _context.Accounts;
 
@@ -18,9 +10,5 @@ namespace Igor_AIS_Proj.Persistence
 
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
 
-        public void Create(CreateAccountRequest request)
-        {
-            _contextEntity.Add(request);
-        }
     }
 }

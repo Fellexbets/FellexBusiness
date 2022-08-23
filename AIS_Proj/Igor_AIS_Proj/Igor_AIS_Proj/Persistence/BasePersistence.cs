@@ -1,6 +1,4 @@
-﻿using Igor_AIS_Proj.Models;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Igor_AIS_Proj.Persistence
 {
     public class BasePersistence<T> where T : Entity

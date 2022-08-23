@@ -1,36 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Igor_AIS_Proj.Auxiliary;
-using Igor_AIS_Proj.Business;
-using Igor_AIS_Proj.Models;
-using Igor_AIS_Proj.Persistence;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
+﻿
 namespace Igor_AIS_Proj.Controllers
 {
     [ApiController, Route("[controller]/[action]")]
-    public class TransferController : BaseController<TransferBusiness, TransferPersistence, Transfer>   
+    public class TransferController : ControllerBase
     {
-        public TransferController() : base()
+        private readonly ITransferBusiness _transferBusiness;
+        private readonly ILogger<TransferController> _logger;
+        public TransferController(ITransferBusiness transferBusiness, ILogger<TransferController> logger)
         {
-            business = new TransferBusiness();
-          
+            _transferBusiness = transferBusiness;
+            _logger = logger;
         }
 
 
-        [HttpGet("{id1}")]
-        public async Task<Transfer> GetById(int id1) => await business.GetById(id1);
+        [HttpGet("{id}")]
+        public async Task<Transfer> GetById(int id) => await _transferBusiness.GetById(id);
 
-        [HttpDelete("{id1}")]
-        public async Task<bool> Delete(int id1) => await business.Delete(id1);
+        [HttpDelete("{id}")]
+        public async Task<bool> Delete(int id) => await _transferBusiness.Delete(id);
+
+        [HttpGet]
+        public List<Transfer> GetAll() => _transferBusiness.GetAll();
+
+        [HttpPut]
+        public Task<bool> Update(Transfer transfer) => _transferBusiness.Update(transfer);
+
+        [HttpPost]
+        public async Task<Transfer> Create(Transfer transfer) => await _transferBusiness.Create(transfer);
 
 
         [HttpGet("{id}")]
         public void GettAllTransfersUser(int id)
         {
-            
-            business.GetAllTransfersUser(id);
+
+            _transferBusiness.GetAllTransfersUser(id);
 
         }
 
