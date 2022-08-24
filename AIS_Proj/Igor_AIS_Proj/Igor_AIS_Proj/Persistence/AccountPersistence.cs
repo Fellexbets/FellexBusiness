@@ -5,10 +5,10 @@ namespace Igor_AIS_Proj.Persistence
     {
         public AccountPersistence() => _contextEntity = _context.Accounts;
 
-
+        
         public Account GetById(int id) =>  _contextEntity.Include(a => a.Movements).FirstOrDefault(a => a.AccountId == id);
 
-        public List<Account> GetAllAccountsUser(int id) => _contextEntity.Where(e => e.UserId == id).Include(a => a.Movements).ToList();
+        public async Task<List<Account>> GetAllAccountsUser(int id) => await _contextEntity.Where(e => e.UserId == id).Include(a => a.Movements).ToListAsync();
 
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
 
@@ -28,6 +28,6 @@ namespace Igor_AIS_Proj.Persistence
             return EntityMapper.MapAccountModelToContract(account);
         }
 
-        
+      
     }
 }

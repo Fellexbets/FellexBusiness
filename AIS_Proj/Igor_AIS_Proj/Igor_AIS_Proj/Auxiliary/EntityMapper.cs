@@ -1,11 +1,7 @@
 ﻿namespace Igor_AIS_Proj.Auxiliary
 {
-     public static class EntityMapper /*: IHardEntityMapper*/
+     public static class EntityMapper
     {
-
-        //account business
-
-
         public static CreateAccountResponse MapAccountModelToContract(Account modelAccount) =>
               new CreateAccountResponse()
               {
@@ -51,7 +47,6 @@
                 CreatedAt = DateTime.UtcNow
             };
 
-        //transfer business
         public static Transfer MapRequestToTransfer(TransferRequest transferRequest) =>
             new Transfer()
             {

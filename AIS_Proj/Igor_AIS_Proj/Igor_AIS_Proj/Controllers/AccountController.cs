@@ -13,12 +13,6 @@ namespace QuizzalT_API.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [HttpGet("{id}")]
-        public Account GetById(int id) => _accountBusiness.GetById(id);
-
-        [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id) => await _accountBusiness.Delete(id);
-
         [HttpGet]
         public List<Account> GetAll() => _accountBusiness.GetAll();
 
@@ -34,10 +28,23 @@ namespace QuizzalT_API.Controllers
         public async Task<ActionResult<CreateAccountResponse>> Create(CreateAccountRequest request)
         {
             if (!ValidateLoggedUser(out int userId)) { return Unauthorized("Access not authorized."); }
-            CreateAccountResponse? account = await _accountBusiness.Create(request, userId);
-            if (account == null) { return BadRequest(); }
-            return await _accountBusiness.Create(request, userId);
-            return CreatedAtAction("GetAccount", new { accountId = account.AccountId }, account);
+
+            try
+            {
+                CreateAccountResponse? account = await _accountBusiness.Create(request, userId);
+                if (account == null) { return BadRequest(); }
+                await _accountBusiness.Create(request, userId);
+                return CreatedAtAction("GetAccount", new { accountId = account.AccountId }, account);
+            }
+            catch(Exception ex)
+            {
+                switch(ex)
+                {
+                    case ArgumentException: return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                    default: return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                }
+            }
+            
         }
         [HttpGet("{accountId}")]
         [ProducesResponseType(typeof(AccountMovims), StatusCodes.Status200OK)]
@@ -48,21 +55,49 @@ namespace QuizzalT_API.Controllers
         {
             if (!ValidateLoggedUser(out int userId))
             { return Unauthorized("Access not authorized."); }
-
-            AccountMovims? accountMovims = await _accountBusiness.GetAccount(accountId);
-            if (accountMovims == null) { return NoContent(); }
-            return Ok(accountMovims);
+            
+            try
+            {
+                AccountMovims? accountMovims = await _accountBusiness.GetAccount(accountId);
+                if (accountMovims == null) { return NoContent(); }
+                return Ok(accountMovims);
+            }
+            catch (Exception ex)
+            {
+                    switch(ex)
+                    {
+                        case ArgumentException: return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                        default: return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                    }
+            }
+            
         }
 
-
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
         [HttpGet("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public List<Account> GetAllAccountsUser(int id)
+        public async Task<ActionResult<List<Account>>> GetAllAccountsUser(int id)
         {
-            if (id == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-                return _accountBusiness.GetAllAccountsUser(id);
-            var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
-            throw new System.Web.Http.HttpResponseException(msg);
+            if (id != Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
+            {
+                var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
+                throw new System.Web.Http.HttpResponseException(msg);
+            }
+            try
+            {
+                return await _accountBusiness.GetAllAccountsUser(id);
+            }
+            catch (Exception ex)
+            {
+                switch (ex)
+                {
+                    case ArgumentException: return  StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                    default: return  StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                }
+            }
+
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]

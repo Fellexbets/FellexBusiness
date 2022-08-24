@@ -49,8 +49,10 @@ namespace Igor_AIS_Proj.Persistence
                         Subject = new ClaimsIdentity(new Claim[]
                         {
                             new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                            new Claim("id", user.UserId.ToString())
-                            
+                            new Claim("id", user.UserId.ToString()),
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            new Claim(JwtRegisteredClaimNames.Name, user.Username)
+
                     }),
                         Expires = DateTime.UtcNow.AddMinutes(5),
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

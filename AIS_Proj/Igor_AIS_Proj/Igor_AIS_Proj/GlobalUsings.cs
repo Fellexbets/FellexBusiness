@@ -17,6 +17,7 @@ global using System.Text.Json.Serialization;
 global using System.Net;
 global using Microsoft.AspNetCore.Authorization;
 global using System.ComponentModel.DataAnnotations.Schema;
+global using System.ComponentModel.DataAnnotations;
 
 namespace Igor_AIS_Proj
 {

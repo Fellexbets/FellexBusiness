@@ -35,6 +35,6 @@ namespace Igor_AIS_Proj.Business
         public async Task<User> GetByEmail(string Email) => await _userPersistence.GetByEmail(Email);
 
 
-
+            
     }
 }

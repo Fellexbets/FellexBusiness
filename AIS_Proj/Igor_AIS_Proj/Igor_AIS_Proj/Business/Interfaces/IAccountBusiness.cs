@@ -7,7 +7,7 @@ namespace Igor_AIS_Proj.Business.Interfaces
 
         Task<bool> Delete(int id);
         Task<bool> TransferFunds(TransferRequest request);
-        List<Account> GetAllAccountsUser(int id);
+        Task<List<Account>> GetAllAccountsUser(int id);
         List<Account> GetAll();
         Task<bool> Update(Account account);
 

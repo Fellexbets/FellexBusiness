@@ -64,7 +64,7 @@ namespace Igor_AIS_Proj.Business
             
         }
 
-        public List<Account> GetAllAccountsUser(int id) => _accountPersistence.GetAllAccountsUser(id);
+        public async Task<List<Account>> GetAllAccountsUser(int id) => await _accountPersistence.GetAllAccountsUser(id);
 
         public  List<Account> GetAll() => _accountPersistence.GetAll();
 
