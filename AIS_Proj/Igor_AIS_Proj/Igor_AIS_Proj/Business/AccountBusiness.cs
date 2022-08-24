@@ -1,5 +1,6 @@
 ﻿
 
+using System.Data.Entity;
 using System.Transactions;
 
 namespace Igor_AIS_Proj.Business
@@ -25,24 +26,23 @@ namespace Igor_AIS_Proj.Business
             if (request.Amount <= 0)
             {
                 throw new ArgumentException("Transfer amount must be positive");
-                return false;
             }
+            
             Account fromAccount = GetById(request.FromAccountId);
             Account toAccount = GetById(request.ToAccountId);
             if (fromAccount.Currency != toAccount.Currency)
             {
                 throw new ArgumentException("You can only transfer in the same currency");
-                return false;
             }
             if (fromAccount.Balance < request.Amount)
             {
                 throw new ApplicationException("insufficient funds");
-                return false;
             }
+
             try
             {
-                //using (TransactionScope scope = new TransactionScope())
-                //{
+                using var context = new PostgresContext();
+                using var transaction = context.Database.BeginTransaction();
                     fromAccount.Balance -= request.Amount;
                     toAccount.Balance += request.Amount;
                     var transfer1 = new Transfer { OriginaccountId = fromAccount.AccountId, DestinationaccountId = toAccount.AccountId, Amount = request.Amount, Currency = fromAccount.Currency };
@@ -53,9 +53,9 @@ namespace Igor_AIS_Proj.Business
                     await _movementPersistence.Create(mov2);
                     await _accountPersistence.Update(fromAccount);
                     await _accountPersistence.Update(toAccount);
+                    transaction.Commit();
                     return true;
-                //    scope.Complete();   
-                //}
+                
             }
             catch(Exception ex)
             {

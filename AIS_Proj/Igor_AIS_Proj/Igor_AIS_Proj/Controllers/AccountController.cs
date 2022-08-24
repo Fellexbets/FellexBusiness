@@ -33,7 +33,7 @@ namespace QuizzalT_API.Controllers
         [HttpPost]
         public async Task<ActionResult<CreateAccountResponse>> Create(CreateAccountRequest request)
         {
-            if (!ValidateLoggedUser(out int userId)) { return Unauthorized("Invalid access."); }
+            if (!ValidateLoggedUser(out int userId)) { return Unauthorized("Access not authorized."); }
             CreateAccountResponse? account = await _accountBusiness.Create(request, userId);
             if (account == null) { return BadRequest(); }
             return await _accountBusiness.Create(request, userId);
@@ -47,7 +47,7 @@ namespace QuizzalT_API.Controllers
         public async Task<ActionResult<AccountMovims>> GetAccount(int accountId)
         {
             if (!ValidateLoggedUser(out int userId))
-            { return Unauthorized("Invalid access."); }
+            { return Unauthorized("Access not authorized."); }
 
             AccountMovims? accountMovims = await _accountBusiness.GetAccount(accountId);
             if (accountMovims == null) { return NoContent(); }
@@ -67,12 +67,12 @@ namespace QuizzalT_API.Controllers
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
-        public async Task<ActionResult<bool>> TransferFunds(TransferRequest request)
+        public async Task<bool> TransferFunds(TransferRequest request)
         {
-            if (GetById(request.FromAccountId).UserId == Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-                await _accountBusiness.TransferFunds(request);
-                return true;
-            return Unauthorized("Invalid access.");
+            if (!ValidateLoggedUser(out int userId))
+                throw new ArgumentException("You can only transfer in the same currency");
+            await _accountBusiness.TransferFunds(request);
+            return true;   
         }
             
         private bool ValidateLoggedUser(out int userId) =>
