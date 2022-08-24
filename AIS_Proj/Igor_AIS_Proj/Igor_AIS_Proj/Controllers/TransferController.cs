@@ -9,9 +9,8 @@ namespace Igor_AIS_Proj.Controllers
         public TransferController(ITransferBusiness transferBusiness, ILogger<TransferController> logger)
         {
             _transferBusiness = transferBusiness;
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
-
 
         [HttpGet("{id}")]
         public async Task<Transfer> GetById(int id) => await _transferBusiness.GetById(id);

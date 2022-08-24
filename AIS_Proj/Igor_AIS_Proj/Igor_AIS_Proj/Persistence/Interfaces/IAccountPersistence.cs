@@ -9,11 +9,13 @@ namespace Igor_AIS_Proj.Persistence.Interfaces
 
         Task<bool> Delete(Account account);
 
-        Task<Account> Create(Account account);
+        Task<CreateAccountResponse> Create(CreateAccountRequest request, int userId);
 
         Account GetById(int id);
 
         Task<bool> Delete(int id);
+
+        List<Account> GetAllAccountsUser(int id);
 
 
     }

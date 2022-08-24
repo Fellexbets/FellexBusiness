@@ -15,8 +15,9 @@ namespace Igor_AIS_Proj.Persistence
 
         public async Task<User> GetById(int id) => await _contextEntity.FindAsync(id);
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
-        public async override Task<User> Create(User user)
+        public async Task<CreateUserResponse> Create(CreateUserRequest request)
         {
+            User user = EntityMapper.MapRequestToUser(request);
             if (await _contextEntity.AnyAsync(x => x.Email == user.Email))
                 throw new ArgumentException("This email is already registered.");
             if (await _contextEntity.AnyAsync(x => x.Email == user.Username))
@@ -24,7 +25,7 @@ namespace Igor_AIS_Proj.Persistence
             (user.UserPassword, user.PasswordSalt) = PasswordHasher.ReturnHashedPasswordAndSalt(user.UserPassword);
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();
-            return user;
+            return EntityMapper.MapUserToResponse(user);
         }
         public async Task<User> GetByEmail (string Email)
         {
@@ -47,8 +48,10 @@ namespace Igor_AIS_Proj.Persistence
                     {
                         Subject = new ClaimsIdentity(new Claim[]
                         {
-                            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
-                         }),
+                            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                            new Claim("id", user.UserId.ToString())
+                            
+                    }),
                         Expires = DateTime.UtcNow.AddMinutes(5),
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                     };

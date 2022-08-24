@@ -9,7 +9,5 @@ namespace Igor_AIS_Proj.Models
         
         public string UserPassword { get; set; }
 
-        //public string Token { get; set; }
-
     }
 }

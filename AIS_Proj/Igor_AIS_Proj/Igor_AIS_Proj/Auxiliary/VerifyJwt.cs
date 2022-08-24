@@ -26,7 +26,6 @@ namespace Igor_AIS_Proj.Auxiliary
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var IdToken = int.Parse(jwtToken.Claims.First(x => x.Type == "nameid").Value);
-
                 return IdToken;
             }
             catch

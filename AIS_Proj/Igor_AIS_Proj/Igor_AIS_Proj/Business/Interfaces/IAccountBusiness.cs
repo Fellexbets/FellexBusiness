@@ -10,8 +10,9 @@ namespace Igor_AIS_Proj.Business.Interfaces
         List<Account> GetAllAccountsUser(int id);
         List<Account> GetAll();
         Task<bool> Update(Account account);
-      
-        Task<Account> Create(Account account);
+
+        Task<AccountMovims?> GetAccount(int accountId);
+        Task<CreateAccountResponse> Create(CreateAccountRequest accountRequest, int userId);
 
 
 

@@ -12,7 +12,7 @@ namespace Igor_AIS_Proj.Business.Interfaces
         List<User> GetAll();
 
         Task<bool> Update(User user);
-        Task<User> Create(User user);
+        Task<CreateUserResponse> Create(CreateUserRequest request);
         Task<User> GetByEmail(string Email);
 
     }

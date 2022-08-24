@@ -51,6 +51,8 @@ namespace Igor_AIS_Proj.Business
                     await _transferPersistence.Create(transfer1);
                     await _movementPersistence.Create(mov1);
                     await _movementPersistence.Create(mov2);
+                    await _accountPersistence.Update(fromAccount);
+                    await _accountPersistence.Update(toAccount);
                     return true;
                 //    scope.Complete();   
                 //}
@@ -62,11 +64,26 @@ namespace Igor_AIS_Proj.Business
             
         }
 
-        public List<Account> GetAllAccountsUser(int id) => _accountPersistence.GetAll().Where(e => e.UserId == id).ToList();
+        public List<Account> GetAllAccountsUser(int id) => _accountPersistence.GetAllAccountsUser(id);
 
         public  List<Account> GetAll() => _accountPersistence.GetAll();
 
-        public async Task<Account> Create(Account account) => await _accountPersistence.Create(account);
+        public async Task<CreateAccountResponse> Create(CreateAccountRequest request, int userId)
+        {
+            return await _accountPersistence.Create(request, userId);
+        }
+        public async Task<AccountMovims?> GetAccount(int accountId)
+        {
+            Account? account = GetById(accountId);
+            if (account == null) { return null; }
+
+            CreateAccountResponse contractsAccount = EntityMapper.MapAccountModelToContract(account);
+
+            ICollection<Movim> movims = EntityMapper.MapMovementEnumerableToMovim(
+                 _movementPersistence.GetAll().Where(movement => movement.AccountId == accountId));
+            return new AccountMovims(contractsAccount, movims);
+        }
+
         public  async Task<bool> Update(Account account) => await _accountPersistence.Update(account);
 
     }

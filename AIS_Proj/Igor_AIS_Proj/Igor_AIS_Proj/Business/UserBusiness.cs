@@ -24,16 +24,12 @@ namespace Igor_AIS_Proj.Business
 
         public Task<bool> Update(User user) => _userPersistence.Update(user);
 
-        public async Task<User> Create(User user)
+        public async Task<CreateUserResponse> Create(CreateUserRequest request)
 
         {
-            var passwordHasher = new PasswordHasher<User>();
-            string passwordHash = passwordHasher.HashPassword(user, user.UserPassword);
-            return await _userPersistence.Create(user);
+            return await _userPersistence.Create(request);
 
         }
-
-
         public async Task<LoginUserResponse> Authenticate(LoginUserRequest model) => await _userPersistence.Authenticate(model);
 
         public async Task<User> GetByEmail(string Email) => await _userPersistence.GetByEmail(Email);

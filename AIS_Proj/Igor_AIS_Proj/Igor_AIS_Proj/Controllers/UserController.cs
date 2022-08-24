@@ -11,7 +11,7 @@ namespace Igor_AIS_Proj.Controllers
         public UserController(IUserBusiness userBusiness, ILogger<UserController> logger)
         {
             _userBusiness = userBusiness;
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
 
@@ -33,10 +33,16 @@ namespace Igor_AIS_Proj.Controllers
             return Ok(_userBusiness.Authenticate(model));
         }
 
+
+        [ProducesResponseType(typeof(CreateUserResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
         [HttpPost, AllowAnonymous]
-        public async Task<User> Create(User user)
+        public async Task<ActionResult<CreateUserResponse>> Create(CreateUserRequest request)
         {
-            return await _userBusiness.Create(user);
+            var user = await _userBusiness.Create(request);
+            if(user == null) { return BadRequest("User could not be created"); }
+            return Ok(user);
         }
 
     }

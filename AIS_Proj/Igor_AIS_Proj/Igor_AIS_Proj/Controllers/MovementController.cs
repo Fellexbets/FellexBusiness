@@ -10,8 +10,9 @@ namespace Igor_AIS_Proj.Controllers
         public MovementController(IMovementBusiness movementBusiness, ILogger<MovementController> logger)
         {
             _movementBusiness = movementBusiness;
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+    
 
         [HttpGet("{id}")]
         public async Task<Movement> GetById(int id) => await _movementBusiness.GetById(id);
@@ -27,7 +28,7 @@ namespace Igor_AIS_Proj.Controllers
 
         [HttpPost]
         public async Task<Movement> Create(Movement movement) => await _movementBusiness.Create(movement);
-
-
     }
+
 }
+

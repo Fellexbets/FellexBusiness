@@ -10,8 +10,6 @@ namespace Igor_AIS_Proj.Models
 
         public string? UserPassword { get; set; } 
 
-        public string? PasswordSalt { get; set; }
-
         public string Username { get; set; }
 
     }
