@@ -3,6 +3,8 @@ namespace Igor_AIS_Proj.Persistence
 {
     public class UserPersistence : BasePersistence<User>, IUserPersistence
     {
+        
+        private IAuthTools _authTools;
         IConfigurationRoot configuration = new ConfigurationBuilder()
                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                    .AddJsonFile("appsettings.json")
@@ -11,6 +13,7 @@ namespace Igor_AIS_Proj.Persistence
         public UserPersistence()
         {
             _contextEntity = _context.Users;
+           
         }
 
         public async Task<User> GetById(int id) => await _contextEntity.FindAsync(id);
@@ -52,6 +55,7 @@ namespace Igor_AIS_Proj.Persistence
                             new Claim("id", user.UserId.ToString()),
                             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                             new Claim(JwtRegisteredClaimNames.Name, user.Username)
+                            //new Claim(ClaimTypes.Sid session.Id.ToString())
 
                     }),
                         Expires = DateTime.UtcNow.AddMinutes(5),
