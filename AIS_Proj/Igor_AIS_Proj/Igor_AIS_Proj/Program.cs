@@ -15,8 +15,6 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IAuthTools, AuthTools>();
-
 builder.Services.AddScoped<IAccountPersistence, AccountPersistence>();
 builder.Services.AddScoped<IMovementPersistence, MovementPersistence>();
 builder.Services.AddScoped<ITransferPersistence, TransferPersistence>();

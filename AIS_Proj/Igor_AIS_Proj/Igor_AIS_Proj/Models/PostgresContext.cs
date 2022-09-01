@@ -12,7 +12,6 @@ namespace Igor_AIS_Proj.Models
         {
         }
 
-        public virtual DbSet<Session> Sessions { get; set; }
         public virtual DbSet<Account> Accounts { get; set; } 
         public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Transfer> Transfers { get; set; } 
@@ -165,39 +164,6 @@ namespace Igor_AIS_Proj.Models
                 entity.Property(e => e.UserToken)
                     .HasMaxLength(600)
                     .HasColumnName("usertoken");
-            });
-            modelBuilder.Entity<Session>(entity =>
-            {
-                entity.ToTable("sessions");
-
-                entity.Property(e => e.Id)
-                .HasColumnName("id")
-                .UseIdentityAlwaysColumn();
-
-                entity.Property(e => e.RefreshToken)
-                    .HasColumnName("refresk_token");
-
-                entity.Property(e => e.RefreshTokenExpiresAt)
-                    .HasColumnName("refresk_token_expire_at");
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnName("created_at")
-                    .HasDefaultValueSql("now()");
-
-                entity.Property(e => e.Active)
-                    .HasColumnName("active");
-
-                //entity.Property(e => e.UpdatedAt)
-                //    .HasColumnName("updatedat")
-                //    .HasDefaultValueSql("now()");
-
-                //entity.Property(e => e.).HasColumnName("userid");
-
-                //entity.HasOne(d => d.u)
-                //    .WithMany(p => p.sessions)
-                //.HasForeignKey(d => d.UserId)
-                //    .HasConstraintName("fk_user");
-
             });
 
             OnModelCreatingPartial(modelBuilder);

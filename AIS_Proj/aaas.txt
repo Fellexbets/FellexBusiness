@@ -1,9 +1,0 @@
-cria interface e injeta dependence
-
-iaccountbusiness é implementada pelo account business
-
-passa como parametro para o construtor
-
-SECTION 5 BUILD ASP.CORE REST API
-
-HANDLING HTTPSTATUSCODE

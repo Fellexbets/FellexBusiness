@@ -1,24 +1,4 @@
 TODO
-
-
-domain driven design
-interfaces
-business
-transfer em bloco
-
-TO-DO
-
-retornar erro controlado -- bad request 400 no create
-TIRAR currency na transferencia
-colocar no development key, conectionstring
-tags codigos de erro do chat
-
-retornar mais objetos transfer string opcional para exceção
-ou
-business exception
-
-
-beggin transaction
-rollback
-
-_context.Database.begintransaction
+validação create, authenticate
+getbyid mostrando movements
+transfer no business
