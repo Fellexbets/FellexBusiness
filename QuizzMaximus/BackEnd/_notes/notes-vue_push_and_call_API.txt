@@ -1,0 +1,152 @@
+# Vue - notes on version 22-06-01
+
+# param to push to url (id) *****************************************************************************************************************
+
+## on router-index.ts, :id sets the variable 
+	path: '/userDetails/:id'
+
+## on view.vue
+### needs import IUser object
+
+import type { IUser } from "@/models/User";
+
+export default defineComponent({
+  data() {
+    return {
+      users: [] as IUser[]
+    }
+  },
+
+### needs button and respective buttom:
+
+  methods: {
+    userDetails(userId?: number){
+      //this.$router.push({ name: 'userDetails', params: { userId } })
+      this.$router.push(`/userDetails/${userId}`)
+    },
+
+
+# api getAll() call *****************************************************************************************************************
+
+# on userIndexView.vue
+
+## import the UserApi
+import UserApi from "@/api/UserApi";
+
+## and call the method on "mounted"
+### and set it on the data  -> this.users = response.data;
+
+  mounted(){
+    UserApi.getAll()
+      .then((response) =>{
+        this.users = response.data;
+        console.log(response);
+        })
+      .catch((error) =>{
+        console.log(error);
+      })
+  },
+
+# on the html template, use v-for for the Data user array:
+
+<div>
+  <ul>
+    <li v-for="item in users">
+      {{ item }} 
+      <button @click="userDetails(item.userId)">Details</button> <!--https://vuejs.org/guide/essentials/event-handling.html#listening-to-events-->
+	(...)
+    </li>
+  </ul>
+</div>
+
+
+
+# code: *****************************************************************************************************************
+
+# router -> index.ts --- :
+
+import (...)
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    { 
+	(...)
+    {
+      path: '/userDetails/:id',
+      name: 'userDetails',
+      component: UserDetailsView
+    },
+	(...)
+
+
+# UserIndexView.vue --- :
+
+<template>
+<div>
+  <ul>
+    <li v-for="item in users">
+      {{ item }} 
+      <button @click="userDetails(item.userId)">Details</button> <!--https://vuejs.org/guide/essentials/event-handling.html#listening-to-events-->
+      <button onclick="userEdit(item.userId)">Edit</button> 
+      <button onclick="userDelete(item.userId)">Delete</button>
+    </li>
+  </ul>
+</div>
+</template>
+
+<script lang="ts">
+import UserApi from "@/api/UserApi";
+import type { IUser } from "@/models/User";
+(...)
+
+export default defineComponent({
+  data() {
+    return {
+      users: [] as IUser[]
+    }
+  },
+  methods: {
+    userDetails(userId?: number){
+      //this.$router.push({ name: 'userDetails', params: { userId } })
+      this.$router.push(`/userDetails/${userId}`)    //https://router.vuejs.org/guide/essentials/dynamic-matching.html#reacting-to-params-changes
+    },
+    userEdit(userId?: number){
+      this.$router.push(`/userEdit/${userId}`)
+    },
+    userDelete(userId?: number){
+      this.$router.push(`/userDelete/${userId}`)
+    },
+  },
+  mounted(){
+    UserApi.getAll()
+      .then((response) =>{
+        this.users = response.data;
+        console.log(response);
+        })
+      .catch((error) =>{
+        console.log(error);
+      })
+  }, (...)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

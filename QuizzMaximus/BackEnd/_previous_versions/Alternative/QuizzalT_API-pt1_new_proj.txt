@@ -1,0 +1,75 @@
+QuizzalT_API - pt1 - new proj
+
+# new ASP.NET Core web API
+
+# manage Nu-get packages for solution
+	dotnet tool install --global dotnet-ef
+	dotnet add package Microsoft.EntityFrameworkCore           5.0.17
+	dotnet add package Microsoft.EntityFrameworkCore.SqlServer 5.0.17
+	dotnet add package Microsoft.EntityFrameworkCore.Design    5.0.17
+# re-build
+
+# scaffold dbcontext
+	dotnet-ef dbcontext scaffold "Server = .; Database = QuizzalT; Trusted_Connection = true; TrustServerCertificate = true;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+# fix Quizz and PlayedQuizz class names 
+
+# decorate models with EF attr
+
+# fix Context connection string
+## on appsettings.json, add:
+
+(...)
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "QuizzalTContext": "Server = .; Database = QuizzalT; Trusted_Connection = true; TrustServerCertificate = true;"
+  }
+}
+
+## on start.cs, add service to ConfigureServices method:
+	using QuizzalT_API.Models;
+	using Microsoft.EntityFrameworkCore;
+	services.AddDbContext<QuizzalTContext>(options => options.UseSqlServer(Configuration.GetConnectionString("QuizzalTContext")));
+
+## on QuizzalTContext - comment OnConfiguring method
+
+# create controllers
+	dotnet tool install -g dotnet-aspnet-codegenerator
+	dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design   5.0.2
+
+# adding controllers - 2 ways: 1)by terminal command 2)VS wizard  
+## 1) terminal:
+	cd QuizzalT_API
+	dotnet aspnet-codegenerator controller -name UserController -async -api -m User -dc QuizzalTContext -outDir Controllers
+
+## 2) VS wizard:
+	Solution Explorer -> Rmouse over "Controllers" folder -> Add -> Controller 
+	API Controller with actions, using Entity Framework -> Model: any one / Context: QuizzalTContext  /  (place name in singular (optional))
+
+# fix composite keys - FriendController / QuizzQuestionController
+
+# added "action" to controllers RouteAttribute -> [Route("api/[controller]/[action]")]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

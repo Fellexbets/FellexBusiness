@@ -1,0 +1,51 @@
+Vue - starting a new project - https://vuejs.org/guide/quick-start.html
+(new project template - NorthwindVue - seguindo exemplo da aula - 22-05-17 - formador João Cortes)
+#####################################################################################################################################
+
+# needs node.js installed - https://nodejs.org/en/     (node.js -> as versoes par são LTS  (cagar pas impar))
+## verificar versão instalada -  >node -v
+
+# Visual Code no folder onde vamos criar a pasta do proj - terminal (o folder do proj em si é criado pelos comandos):
+	npm init vue@latest
+## dizer que sim: y
+## inserir nome do proj
+## inserir nome do package
+## Typescript: sim
+## JSX: nao
+## sigle page app: sim
+## Pinia: sim
+## Vitest: nao
+## Cypress: nao
+## ESLint: nao
+
+# correr linhas de comando que aparecem on-screen
+	cd NorthwindVue    	#entra na pasta do projecto
+	npm install			#instala os packages - package.json
+	npm run dev			#corre a app no localhost
+
+# se pretender actualizar as packages no futuro (versões no package.json)
+	npm update
+
+# instalar axios
+	npm install axios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

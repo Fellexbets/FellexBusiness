@@ -1,0 +1,94 @@
+# VUE ANATOMY - vue files, what they have and what they do ********************************************************************************************************
+
+# package.json 
+## defines the project: name, version, dependencies...
+## note about version anotations:
+### version example : "axios": "^0.27.2",
+### 1st number: -major
+### 2nd number: -new features / deleted features 
+### 3rd number: -bug fixes
+### note: ^ -> install compatible to this version at least
+## scripts:
+### we can make custom scripts to run on terminal:
+### (TurboRepo / NPX / NPS (?) - plugin pa encadear scripts entre apps)
+#* package.json
+*    "scripts": {
+*    "start":"vite",
+*#   "dev": "vite", (...)
+
+npm start
+npm run dev
+
+
+# package-lock.json
+## validador - checka compatibilidades (não convém mexer)
+## detecta incompatibilidades entre bibliotecas instaladas
+## isto é tudo node.js  -> "(...)  "node_modules/@babel/parser": {  (...)"
+
+
+# note about http
+## in the app, we can make any http request in several ways:
+### 1) html5 - fetch : may not be compatible with all browsers
+### 2) axios - https://axios-http.com/docs/intro
+#### npm install axios
+#### npm install axios@15.0.2  (whateva)
+### 3) any other library like axios
+
+
+# index.html
+## where the app "starts" (to the user at least)
+## kind like Layout from MVC but dynamic (not a "static" view, but a view with dynamic html/css/js content)
+## vue (with its respective views) is rendered in the body:
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+
+
+# main.ts
+## kind like Start.cs
+### creates the vue app
+### gives it its needed dependency injections (Pinia and the router for example)
+### and mounts it on the app id for the html
+
+
+# router -> index.ts
+## routes vue "obj" -> components and views
+## estabelece o url para cada ficheiro.vue (nomeadamente views)
+
+
+# App.vue
+## kind like the Layout from MVC  (in single page aplications its the "base" of the app)
+## everything inside <template> will be rendered inside the <div id="app"></div> on index.html
+## can use "router" for views with:
+### 1) <RouterLink to="/">Login</RouterLink>
+### creates a link to given url
+### 2) 
+### where the views are rendered 
+
+
+#ThisIsAView.vue
+## a vue view - everything inside <template> will be rendered inside the <RouterView /> on App.vue
+
+
+#ThisIsAComponent.vue
+## a vue component, to be used inside the Views.vue
+
+
+# models -> ThisIsAModel.ts
+## our "model classes"
+
+
+# api -> ThisIsAApi.ts
+## where we set the http requests (urls, http method, ...) to connect to our web API 
+## each model has it's own api.ts  (at least for now)
+## must import its corresponding Model  (must also import Axios)
+## baseUrl must be the same used in the API 
+ 
+
+# stores -> something.ts
+## extra computation
+
+
+# assets
+## app assets -> css, images...

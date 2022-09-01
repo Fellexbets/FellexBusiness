@@ -1,0 +1,148 @@
+.light #app {
+    background: #f3f3f3;
+    color: #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light {
+    min-height: 100vh;
+    background: #f3f3f3;
+    color: #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light nav {
+    background: #235390;
+    transition: 0.3s ease-in-out;
+}
+
+.light .footer {
+    background: #235390;
+    transition: 0.3s ease-in-out;
+}
+
+.light a {
+    color: #f3f3f3;
+    transition: 0.3s ease-in-out;
+}
+
+.light a:hover {
+    background: #58cc02;
+}
+
+.light button {
+    color: #f3f3f3;
+    background: #53ad42;
+    transition: 0.3s ease-in-out;
+}
+
+.light button:hover {
+    background: #7596e4;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.light .table {
+    border-color: #212121;
+    background-color: #235390;
+    box-shadow: 0px 1px 1px #212121, 0px 0px 8px #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light th {
+    color: #53ad42;
+    transition: 0.3s ease-in-out;
+}
+
+.light td {
+    color: #f3f3f3;
+    transition: 0.3s ease-in-out;
+}
+
+
+.light .dropdown {
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s ease-in-out;
+}
+
+.light .dropdown:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    box-shadow: 0px 0px 8px #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light .searchbar {
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s ease-in-out;
+}
+
+.light .searchbar:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    box-shadow: 0px 0px 8px #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light .form-control {
+    border-color: #f3f3f3;
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s ease-in-out;
+}
+
+.light .form-control:focus {
+    border-color: #9c9c9c;
+    outline: none;
+    background-color: #e3e3e3;
+    box-shadow: 0px 0px 8px #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.light #quizzSelect td{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.light .pointsTable{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.light .musicButton{
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.light .selectedQuestionHeader {
+    color: #53ad42;
+    transition: 0.3s ease-in-out;
+}
+
+.light .selectedQuestion{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.light #loginDiv, #signUpDiv{
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* dashboard area */
+/* .dashboard_userImg {}*/
+  
+.light .pointsBar {
+    color: white;
+    background-color: #53ad42;
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* end of dashboard area */

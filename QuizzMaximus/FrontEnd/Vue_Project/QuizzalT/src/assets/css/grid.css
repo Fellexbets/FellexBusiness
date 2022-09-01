@@ -1,0 +1,99 @@
+/*@media screen and (min-width: 600px) {}*/
+
+.autogrid {
+  /*  background-color: lightcoral;*/
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: grid;
+  gap: 1em;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+
+.gridCell {
+  /* background-color: lightcyan;*/
+  padding: 0.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.grid_row {
+  grid-column: 1 / 10;
+}
+
+.centerAlign, .centerAlign > .gridCell {
+  text-align: center;
+  justify-items: center;
+}
+.leftAlign, .leftAlign > .gridCell {
+  text-align: left;
+  justify-items: left;
+}
+.rightAlign, .rightAlign > .gridCell {
+  text-align: right;
+  justify-items: right;
+}
+
+.grid_Table_Headers > .gridCell {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.grid9 { /* make table -> https://www.w3schools.com/css/tryit.asp?filename=trycss_grid */
+  grid-template-areas: 'auto auto auto auto auto auto auto auto auto';
+}
+
+/* grid Table3 - 3 equal columns -------------------------------------- Table3 - */
+.grid9_Table3_columnLeft {
+  grid-column: 1 / 3;
+}
+.grid9_Table3_columnMiddle {
+  grid-column: 3 / 4;
+}
+.grid9_Table3_columnRight {
+  grid-column: 4 / 10;
+}
+
+/* grid Table3Dash - 3 columns, 1st doubled 2nd once 3th rest (largest) ------------ Table3 - for Dashboard Points per theme */
+
+.grid9_Table3Dash_columnLeft {
+  grid-column: 1 / 3;
+}
+.grid9_Table3Dash_columnMiddle {
+  grid-column: 3 / 4;
+}
+.grid9_Table3Dash_columnRight {
+  grid-column: 4 / 10;
+}
+
+@media only screen and (max-width: 800px) {
+  .grid9_Table3Dash_columnLeft {
+    grid-column: 1 / 2;
+  }
+  .grid9_Table3Dash_columnMiddle {
+    grid-column: 2 / 10;
+  }
+  .grid9_Table3Dash_columnRight {
+    grid-column: 1 / 10;
+  }
+}
+
+/* grid Table5 - 4 equal columns, 5th largest ------------------------- Table5 -  */
+.grid9_Table5_column1 {
+  grid-column: 1 / 2;
+}
+.grid9_Table5_column2 {
+  grid-column: 2 / 3;
+}
+.grid9_Table5_column3 {
+  grid-column: 3 / 4;
+}
+.grid9_Table5_column4 {
+  grid-column: 4 / 5;
+}
+.grid9_Table5_column5 {
+  grid-column: 5 / 10;
+}
+

@@ -1,0 +1,142 @@
+.dark #app {
+    background: #F3F3F3;
+    color: #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.dark {
+    min-height: 100vh;
+    color: #f3f3f3;
+    background: #212121;
+    transition: 0.3s ease-in-out;
+}
+
+.dark nav {
+    background: #404040;
+    transition: 0.3s ease-in-out;
+}
+
+.dark .footer {
+    background: #404040;
+    transition: 0.3s ease-in-out;
+}
+
+.dark a {
+    color: #f3f3f3;
+    transition: 0.3s ease-in-out;
+}
+
+.dark a:hover {
+    background: #f6ad04;
+    transition: 0.3s ease-in-out;
+}
+
+.dark button {
+    color: #f3f3f3;
+    background: #926908;
+    transition: 0.3s ease-in-out;
+}
+
+.dark button:hover {
+    background: #f6ad04;
+    transition: 0.3s ease-in-out;
+}
+
+.dark .table {
+    border-color: #212121;
+    background-color: #404040;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.19), 0px 0px 8px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
+}
+
+.dark th {
+    color: #f6ad04;
+    transition: 0.3s ease-in-out;
+}
+
+.dark td {
+    color: #f3f3f3;
+    transition: 0.3s ease-in-out;
+}
+
+.dark .dropdown {
+    outline: none;
+    background-color: rgb(94, 94, 94);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .dropdown:focus {
+    outline: none;
+    background-color: #9c9c9c;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .searchbar {
+    outline: none;
+    background-color: rgb(94, 94, 94);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .searchbar:focus {
+    outline: none;
+    background-color: #9c9c9c;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .form-control {
+    border-color: rgb(94, 94, 94);
+    outline: none;
+    background-color: rgb(94, 94, 94);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .form-control:focus {
+    /*on click*/
+    border-color: #9c9c9c;
+    outline: none;
+    background-color: #9c9c9c;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
+}
+
+.questionText{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.questionDiv{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.dark .pointsTable{
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.dark .musicBackground{
+    background-color: rgba(255, 255, 255, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.dark .musicButton{
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* dashboard area */
+/* .dashboard_userImg {}*/
+  
+.dark .pointsBar {
+    color: white;
+    background-color: #f6ad04;
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* end of dashboard area */

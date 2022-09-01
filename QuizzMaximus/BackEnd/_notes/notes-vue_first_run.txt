@@ -1,0 +1,23 @@
+# TERMINAL COMMANDS - vue app first run **************************************************************************************************************************
+
+## instalar dependencias do projecto - terminal na base do projecto
+npm install 
+npm i 
+
+## instalar as novas e checka as antigas
+npm update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

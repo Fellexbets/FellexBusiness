@@ -1,0 +1,40 @@
+TODO:
+
+prioridade 1)
+- terminar quizz -> submissão -> historico (playedQuizz playedQuestions)
+
+- profile (autenticação/autorização) -> roles | permissões (o que vê...)
+
+- integridade das Stores - não breakar no refresh
+
+
+
+prioridade 2)
+- refresh token - como mandar token no axios ???
+
+- profile page - show logged in users info
+- badges
+- relations
+
+
+prioridade 3)
+
+
+
+(extra)
+- metodos async 
+- IEntity (generics)
+
+
+
+(extra)(extra)(extra)(extra)
+-templates css
+
+
+
+
+
+
+
+
+
