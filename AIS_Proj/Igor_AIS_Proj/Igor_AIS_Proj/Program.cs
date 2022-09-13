@@ -19,11 +19,18 @@ builder.Services.AddScoped<IAccountPersistence, AccountPersistence>();
 builder.Services.AddScoped<IMovementPersistence, MovementPersistence>();
 builder.Services.AddScoped<ITransferPersistence, TransferPersistence>();
 builder.Services.AddScoped<IUserPersistence, UserPersistence>();
+builder.Services.AddScoped<ISessionPersistence, SessionPersistence>();
 builder.Services.AddScoped<IAccountBusiness, AccountBusiness>();
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
 builder.Services.AddScoped<IMovementBusiness, MovementBusiness>();
 builder.Services.AddScoped<ITransferBusiness, TransferBusiness>();
-
+builder.Services.AddScoped<ISessionBusiness, SessionBusiness>();
+builder.Services.AddTransient<IBasePersistence<User>, UserPersistence>();
+builder.Services.AddTransient<IBasePersistence<Account>, AccountPersistence>();
+builder.Services.AddTransient<IBasePersistence<Transfer>, TransferPersistence>();
+builder.Services.AddTransient<IBasePersistence<Movement>, MovementPersistence>();
+builder.Services.AddTransient<IBasePersistence<Session>, SessionPersistence>();
+builder.Services.AddSingleton<IJwtServices, JwtServices>();
 
 
 builder.Services.AddSwaggerGen(options =>
@@ -88,7 +95,7 @@ app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseDeveloperExceptionPage();
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 app.UseAuthorization();
 
 app.MapControllers();

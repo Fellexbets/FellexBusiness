@@ -14,10 +14,9 @@ namespace Igor_AIS_Proj.Persistence.Interfaces
 
         Task<bool> Delete(int id);
 
+        //Task<LoginUserResponse> Authenticate(LoginUserRequest model);
 
-        Task<LoginUserResponse> Authenticate(LoginUserRequest model);
-
-        Task<User> GetByEmail(string Email);
+        User GetByEmail(string email);
 
 
 

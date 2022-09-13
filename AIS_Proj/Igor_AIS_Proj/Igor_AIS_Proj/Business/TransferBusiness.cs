@@ -13,7 +13,7 @@ namespace Igor_AIS_Proj.Business
 
         public async Task<Transfer> GetById(int id) => await _transferPersistence.GetById(id);
         public async Task<bool> Delete(int id) => await _transferPersistence.Delete(id);
-        public void GetAllTransfersUser(int id) => _transferPersistence.GetAllTransfersUser(id);
+        public async Task<List<Transfer>> GetAllTransfersAccount(int id) => await _transferPersistence.GetAllTransfersAccount(id);
 
         public List<Transfer> GetAll() => _transferPersistence.GetAll();
 

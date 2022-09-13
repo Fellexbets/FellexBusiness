@@ -7,11 +7,12 @@ namespace Igor_AIS_Proj.Models
         {
         }
 
-        public PostgresContext(DbContextOptions<PostgresContext> options)
-            : base(options)
-        {
-        }
+        //public PostgresContext(DbContextOptions<PostgresContext> options)
+        //    : base(options)
+        //{
+        //}
 
+        public virtual DbSet<Session> Sessions { get; set; }
         public virtual DbSet<Account> Accounts { get; set; } 
         public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Transfer> Transfers { get; set; } 
@@ -25,7 +26,8 @@ namespace Igor_AIS_Proj.Models
                     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                     .AddJsonFile("appsettings.json")
                     .Build();
-                optionsBuilder.UseNpgsql(configuration.GetConnectionString("AISProject"));
+                optionsBuilder.UseNpgsql(configuration.GetConnectionString("AISProject"))
+                    .EnableSensitiveDataLogging();
             }
         }
 
@@ -63,6 +65,39 @@ namespace Igor_AIS_Proj.Models
                 //    .HasConstraintName("fk_user");
 
             });
+            modelBuilder.Entity<Session>(entity =>
+            {
+                entity.ToTable("sessions");
+
+                entity.Property(e => e.SessionId)
+                .HasColumnName("id");
+
+                entity.Property(e => e.UserId)
+                .HasColumnName("userid");
+
+                entity.Property(e => e.Active)
+                .HasColumnName("active");
+
+                entity.Property(e => e.RefreshToken)
+                .HasColumnName("refresk_token");
+
+                entity.Property(e => e.Created_At)
+                .HasColumnName("created_at")
+                .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Refresh_Token_expire_At)
+                .HasColumnName("refresk_token_expire_at");
+
+                entity.Property(e => e.TokenAccess)
+                .HasColumnName("tokenaccess");
+
+                entity.Property(e => e.TokenAccessExpireAt)
+                .HasColumnName("tokenaccessexpireat");
+
+            }
+
+
+            );
 
             modelBuilder.Entity<Movement>(entity =>
             {

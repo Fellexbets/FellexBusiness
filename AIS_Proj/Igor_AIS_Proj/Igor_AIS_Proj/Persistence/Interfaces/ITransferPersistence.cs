@@ -14,7 +14,7 @@ namespace Igor_AIS_Proj.Persistence.Interfaces
 
         Task<bool> Delete(int id);
 
-        void GetAllTransfersUser(int id);
+        Task<List<Transfer>> GetAllTransfersAccount(int id);
 
     }
 }

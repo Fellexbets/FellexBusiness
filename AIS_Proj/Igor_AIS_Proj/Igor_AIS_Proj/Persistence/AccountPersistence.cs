@@ -3,7 +3,11 @@ namespace Igor_AIS_Proj.Persistence
 {
     public class AccountPersistence : BasePersistence<Account>, IAccountPersistence
     {
-        public AccountPersistence() => _contextEntity = _context.Accounts;
+        public AccountPersistence() 
+        {
+            _contextEntity = _context.Accounts;
+        }
+        
 
         
         public Account GetById(int id) =>  _contextEntity.Include(a => a.Movements).FirstOrDefault(a => a.AccountId == id);

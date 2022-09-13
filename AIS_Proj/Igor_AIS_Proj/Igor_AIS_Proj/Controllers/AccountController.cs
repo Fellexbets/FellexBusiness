@@ -87,7 +87,8 @@ namespace QuizzalT_API.Controllers
             }
             try
             {
-                return await _accountBusiness.GetAllAccountsUser(id);
+                var result = await _accountBusiness.GetAllAccountsUser(id);
+                return Ok(result);
             }
             catch (Exception ex)
             {
