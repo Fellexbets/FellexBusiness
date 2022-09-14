@@ -7,38 +7,48 @@ namespace Igor_AIS_Proj.Business
 {
     public class AccountBusiness : IAccountBusiness
     {
+        private ILogger<AccountBusiness> _logger;
         private readonly IAccountPersistence _accountPersistence;
         private readonly IMovementPersistence _movementPersistence;
         private readonly ITransferPersistence _transferPersistence;
-        public AccountBusiness(IAccountPersistence accountPersistence, IMovementPersistence movementPersistence, ITransferPersistence transferPersistence)
+        public AccountBusiness(IAccountPersistence accountPersistence, IMovementPersistence movementPersistence, ITransferPersistence transferPersistence, ILogger<AccountBusiness> logger)
         {
             _transferPersistence = transferPersistence;
             _accountPersistence = accountPersistence;
             _movementPersistence = movementPersistence;
+            _logger = logger;
         }
 
-            
+
         public Account GetById(int id) => _accountPersistence.GetById(id);
         public async Task<bool> Delete(int id) => await _accountPersistence.Delete(id);
 
-        public async Task<bool> TransferFunds(TransferRequest request)
+        public async Task<(bool, string?)> TransferFunds(TransferRequest request)
         {
             if (request.Amount <= 0)
             {
-                throw new ArgumentException("Transfer amount must be positive");
+                return (false, "Transfer amount must be positive");
             }
             
             Account fromAccount = GetById(request.FromAccountId);
             Account toAccount = GetById(request.ToAccountId);
             if (fromAccount.Currency != toAccount.Currency)
             {
-                throw new ArgumentException("You can only transfer in the same currency");
+                return (false, "You can only transfer in the same currency");
             }
             if (fromAccount.Balance < request.Amount)
             {
-                throw new ApplicationException("insufficient funds");
+                return (false, "Insufficient funds");
             }
-
+            if (fromAccount.AccountId == toAccount.AccountId)
+            {
+                return (false, "You can´t transfer to the same account!");
+            }
+            var account = GetById(toAccount.AccountId);
+            if(account == null)
+            {
+                return (false, "Destination Account not valid!");
+            }
             try
             {
                 using var context = new PostgresContext();
@@ -54,12 +64,12 @@ namespace Igor_AIS_Proj.Business
                     await _accountPersistence.Update(fromAccount);
                     await _accountPersistence.Update(toAccount);
                     transaction.Commit();
-                    return true;
-                
+                    return (true, "Transaction Complete!");
             }
             catch(Exception ex)
             {
-                return false;
+                _logger.LogError(ex, "Transaction Failed");
+                return (false, "Transaction Failed");
             }
             
         }
@@ -86,5 +96,8 @@ namespace Igor_AIS_Proj.Business
 
         public  async Task<bool> Update(Account account) => await _accountPersistence.Update(account);
 
+        public IEnumerable<Account> VerifyTransfer(TransferRequest request, int userId) => 
+            _accountPersistence.GetAll().Where(a => a.AccountId == request.FromAccountId && a.UserId == userId);
+        
     }
 }

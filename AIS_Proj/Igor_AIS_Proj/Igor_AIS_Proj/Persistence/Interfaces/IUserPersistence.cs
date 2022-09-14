@@ -10,7 +10,7 @@ namespace Igor_AIS_Proj.Persistence.Interfaces
         Task<bool> Delete(User user);
 
         Task<CreateUserResponse> Create(CreateUserRequest request);
-        Task<User> GetById(int id);
+        User GetById(int id);
 
         Task<bool> Delete(int id);
 

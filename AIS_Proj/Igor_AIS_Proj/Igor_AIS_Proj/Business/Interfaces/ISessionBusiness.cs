@@ -13,5 +13,7 @@ namespace Igor_AIS_Proj.Business.Interfaces
         Task<Session> Create(Session session);
 
         Task<Session> GetById(Guid id);
+
+        Task<(bool, string?, Session?)> ValidateSession(Session session);
     }
 }

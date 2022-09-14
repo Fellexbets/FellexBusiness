@@ -13,7 +13,7 @@ namespace Igor_AIS_Proj.Persistence
             _contextEntity = _context.Users;
         }
     
-        public async Task<User> GetById(int id) => await _contextEntity.FindAsync(id);
+        public User GetById(int id) => _contextEntity.Find(id);
         public async Task<bool> Delete(int id) => await Delete(_contextEntity.Find(id));
         public async Task<CreateUserResponse> Create(CreateUserRequest request)
         {

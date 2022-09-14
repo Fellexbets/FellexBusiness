@@ -86,6 +86,11 @@
                 Username = user.Username
             };
 
+        public static Session MapRequestSession(RenewLoginRequest renewLoginRequest) =>
+            new Session()
+            {
+                RefreshToken = renewLoginRequest.RefreshToken
+            };
 
 
     }

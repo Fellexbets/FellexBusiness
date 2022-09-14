@@ -26,7 +26,7 @@ namespace Igor_AIS_Proj.Business
                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                    .AddJsonFile("appsettings.json")
                    .Build();
-        public async Task<User> GetById(int id) => await _userPersistence.GetById(id);
+        public User GetById(int id) => _userPersistence.GetById(id);
         public async Task<bool> Delete(int id) => await _userPersistence.Delete(id);
 
         public List<User> GetAll() => _userPersistence.GetAll();
@@ -76,6 +76,30 @@ namespace Igor_AIS_Proj.Business
             return (false, "Session not found", null);
         }
 
+        public async Task<(bool, string?, User?, Session?)> RenewLogin(Session session, string refreshToken)
+        {
+            if (session.RefreshToken == refreshToken && session.Refresh_Token_expire_At > DateTime.UtcNow)
+            {
+                var user = _userPersistence.GetById(session.UserId);
+                if (user is not null)
+                {
+                    session = _jwtServices.RenewToken(user, session);
+                    return (true, null, user, session);
+                }
+                return (false, "User not found", null, null);
+            }
+            return (false, "Token invalid or expired", null, null);
+        }
+
+        public async Task<(bool, string?, Session?)> VerifySession(Session session)
+        {
+            var sessionNew = await _sessionPersistence.GetById(session.SessionId);
+            if (sessionNew == null)
+                return (false, "No session found", null);
+            if (!sessionNew.Active)
+                return (false, "session not active", sessionNew);
+            return (true, null, sessionNew);
+        }
         public User GetByEmail(string email) => _userPersistence.GetByEmail(email);
 
 

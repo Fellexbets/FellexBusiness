@@ -27,32 +27,33 @@ namespace Igor_AIS_Proj.Controllers
         [HttpPost]
         public async Task<Transfer> Create(Transfer transfer) => await _transferBusiness.Create(transfer);
 
-        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult<List<Transfer>>> GetAllTransfersUser(int id)
-        {
-            if (id != Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-            {
-                var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
-                throw new System.Web.Http.HttpResponseException(msg);
-            }
-            try
-            {
-                return await _transferBusiness.GetAllTransfersAccount(id);
-            }
-            catch (Exception ex)
-            {
-                switch (ex)
-                {
-                    case ArgumentException: return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
-                    default: return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-                }
-            }
+        //[ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        //[ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
+        //[ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
+        //[HttpGet("{id}")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //public async Task<ActionResult<List<Transfer>>> GetAllTransfersAccount(int id)
+        //{
+        //    if (id != Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
+        //    {
+        //        var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
+        //        throw new System.Web.Http.HttpResponseException(msg);
+        //    }
+        //    try
+        //    {
+        //        _transferBusiness.GetById(id);
+        //        return await _transferBusiness.GetAllTransfersAccount(id);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        switch (ex)
+        //        {
+        //            case ArgumentException: return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+        //            default: return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //        }
+        //    }
             
-        }
+        //}
 
     }
 }

@@ -83,6 +83,8 @@ namespace Igor_AIS_Proj.Auxiliary
             session.TokenAccess = tokenHandler.WriteToken(token);
             return session;
         }
+
+        
         private static Session RefreshToken(Session session)
         {
             var randomNumber = new byte[32];
@@ -94,5 +96,8 @@ namespace Igor_AIS_Proj.Auxiliary
                 return session;
             }
         }
+
+
+
     }
 }

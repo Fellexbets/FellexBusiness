@@ -8,7 +8,6 @@ namespace Igor_AIS_Proj.Models.Responses
         public int ToAccountId { get; set; }
         public decimal Amount { get; set; }
 
-
         [JsonIgnore]
         public virtual CreateAccountResponse FromAccount { get; set; } = null!;
         [JsonIgnore]

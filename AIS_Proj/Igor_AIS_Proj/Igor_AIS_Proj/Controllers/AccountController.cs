@@ -6,11 +6,15 @@ namespace QuizzalT_API.Controllers
     {
         private readonly IAccountBusiness _accountBusiness;
         private readonly ILogger<AccountController> _logger;
+        private readonly ISessionBusiness _sessionBusiness;
+        private readonly IUserBusiness _userBusiness;
 
-        public AccountController(IAccountBusiness accountBusiness, ILogger<AccountController> logger)
+        public AccountController(IAccountBusiness accountBusiness, ILogger<AccountController> logger, ISessionBusiness sessionBusiness, IUserBusiness userBusiness)
         {
             _accountBusiness = accountBusiness;
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _sessionBusiness = sessionBusiness;
+            _userBusiness = userBusiness;
         }
 
         [HttpGet]
@@ -33,7 +37,6 @@ namespace QuizzalT_API.Controllers
             {
                 CreateAccountResponse? account = await _accountBusiness.Create(request, userId);
                 if (account == null) { return BadRequest(); }
-                await _accountBusiness.Create(request, userId);
                 return CreatedAtAction("GetAccount", new { accountId = account.AccountId }, account);
             }
             catch(Exception ex)
@@ -82,8 +85,7 @@ namespace QuizzalT_API.Controllers
         {
             if (id != Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
             {
-                var msg = new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "You can only access information about your account!" };
-                throw new System.Web.Http.HttpResponseException(msg);
+                return StatusCode(StatusCodes.Status401Unauthorized);
             }
             try
             {
@@ -101,18 +103,41 @@ namespace QuizzalT_API.Controllers
 
         }
 
+        [ProducesResponseType(typeof(AccountMovims), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
-        public async Task<bool> TransferFunds(TransferRequest request)
+        public async Task<ActionResult<bool>> TransferFunds(TransferRequest request)
         {
-            if (!ValidateLoggedUser(out int userId))
-                throw new ArgumentException("You can only transfer in the same currency");
-            await _accountBusiness.TransferFunds(request);
-            return true;   
+            var userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var accountTransfer = _accountBusiness.GetById(request.FromAccountId);
+            if (accountTransfer is null)
+                return StatusCode(StatusCodes.Status400BadRequest);
+            var userTransfer = _userBusiness.GetById(userId);
+            if (accountTransfer.UserId != userTransfer.UserId)
+                return StatusCode(StatusCodes.Status401Unauthorized);
+            try
+            {
+                var sessionId = Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
+                var newSession = await _sessionBusiness.GetById(sessionId);
+                var session = await _sessionBusiness.ValidateSession(newSession);
+                if (session.Item1 == false)
+                    return StatusCode(StatusCodes.Status401Unauthorized, session.Item2);
+                var done = await _accountBusiness.TransferFunds(request);
+                return done.Item1 ? Ok(done) : BadRequest(done.Item2);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message, ex.InnerException);
+                return Problem(ex.Message);
+            }
+            
         }
             
         private bool ValidateLoggedUser(out int userId) =>
-            int.TryParse(User.Claims.FirstOrDefault(c => c.Type == "id")?.Value, out userId);
+            int.TryParse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value, out userId);
 
 
 
