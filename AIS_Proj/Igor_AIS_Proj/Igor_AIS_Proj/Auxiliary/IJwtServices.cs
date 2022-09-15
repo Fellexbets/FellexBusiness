@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Extensions.Primitives;
 using System.Security.Cryptography;
 
 namespace Igor_AIS_Proj.Auxiliary
@@ -9,6 +10,8 @@ namespace Igor_AIS_Proj.Auxiliary
 
 
         Session RenewToken(User user, Session session);
+
+        (bool, string) CleanToken(StringValues authToken);
 
 
     }

@@ -10,12 +10,14 @@ namespace Igor_AIS_Proj.Controllers
         private readonly IUserBusiness _userBusiness;
         private readonly ILogger<UserController> _logger;
         private readonly ISessionBusiness _sessionBusiness;
+        private readonly IJwtServices _jwtServices;
 
-        public UserController(IUserBusiness userBusiness, ILogger<UserController> logger, ISessionBusiness sessionBusiness)
+        public UserController(IUserBusiness userBusiness, ILogger<UserController> logger, ISessionBusiness sessionBusiness, IJwtServices jwtServices)
         {
             _userBusiness = userBusiness;
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _sessionBusiness = sessionBusiness;
+            _jwtServices = jwtServices;
         }
 
 
@@ -94,7 +96,7 @@ namespace Igor_AIS_Proj.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Logout()
+        public async Task<ActionResult<LoginUserResponse>> Logout()
         {
             try
             {
@@ -113,8 +115,9 @@ namespace Igor_AIS_Proj.Controllers
                     TokenAccess = authToken
                 };
                 var result = await _userBusiness.Logout(session);
-                return Ok(result);
-
+                if (result.Item1)
+                    return Ok(result.Item3);
+                return BadRequest(result.Item2);
             }
             catch (Exception ex)
             {
@@ -128,16 +131,32 @@ namespace Igor_AIS_Proj.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<LoginUserResponse>> RenewLogin(RenewLoginRequest tokenRefresh)
+        public async Task<ActionResult<LoginUserResponse>> RenewLogin([FromBody]RenewLoginRequest tokenRefresh)
         {
             try
             {
                 Guid sessionId = Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
-                var session = _sessionBusiness.GetById(sessionId);
-                var resultSession = await _userBusiness.VerifySession(await session);
-                if (!resultSession.Item1)
-                    return Unauthorized(resultSession.Item2);
-                var result = await _userBusiness.RenewLogin(resultSession.Item3, tokenRefresh.RefreshToken);
+                int userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                if (!Request.Headers.TryGetValue("Authorization", out StringValues authToken))
+                    return BadRequest("Missing Authorization Header.");
+                if (userId == null)
+                    return BadRequest("No user info on token");
+                if (sessionId == null)
+                    return BadRequest("No session info on token");
+                var tokenClean = _jwtServices.CleanToken(authToken);
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var securityToken = (JwtSecurityToken)tokenHandler.ReadToken(tokenClean.Item2);
+                var session = new Session
+                {
+                    SessionId = sessionId,
+                    UserId = userId,
+                    TokenAccess = tokenClean.Item2,
+                    TokenAccessExpireAt = securityToken.ValidTo
+                };
+                var verifiedSession = await _userBusiness.VerifySession(session);
+                if (!verifiedSession.Item1)
+                    return Unauthorized(verifiedSession.Item2);
+                var result = await _userBusiness.RenewLogin(verifiedSession.Item3, tokenRefresh.RefreshToken);
                 if (result.Item1)
                 {
                     LoginUserResponse response = new LoginUserResponse

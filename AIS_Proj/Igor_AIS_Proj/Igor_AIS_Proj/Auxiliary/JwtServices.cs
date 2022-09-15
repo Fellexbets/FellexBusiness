@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Extensions.Primitives;
 using System.Security.Cryptography;
 
 namespace Igor_AIS_Proj.Auxiliary
@@ -97,7 +98,12 @@ namespace Igor_AIS_Proj.Auxiliary
             }
         }
 
-
+        public (bool, string) CleanToken(StringValues authToken)
+        {
+            string authHeader = authToken.First();
+            string token = authHeader.Substring("Bearer ".Length).Trim();
+            return (token is not null, token);
+        }
 
     }
 }
