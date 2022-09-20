@@ -25,6 +25,13 @@ namespace Igor_AIS_Proj.Controllers
 
         [HttpPost]
         public async Task<Session> Create(Session session) => await _sessionBusiness.Create(session);
+
+        [HttpPost]
+        public string? DeleteInactiveSessions()
+        {
+            _sessionBusiness.DeleteInactiveSessions();
+            return "Inactive Sessions deleted!";
+        }
     }
 
 }

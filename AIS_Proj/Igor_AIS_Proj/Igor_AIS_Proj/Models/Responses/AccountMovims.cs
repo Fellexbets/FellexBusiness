@@ -3,6 +3,10 @@ namespace Igor_AIS_Proj.Models.Responses
 {
     public class AccountMovims
     {
+        public AccountMovims()
+        {
+        }
+
         public AccountMovims(CreateAccountResponse account, ICollection<Movim> movims)
         {
             Account = account;

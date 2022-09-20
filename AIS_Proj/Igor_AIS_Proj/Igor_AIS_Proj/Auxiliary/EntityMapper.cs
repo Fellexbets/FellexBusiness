@@ -92,6 +92,18 @@
                 RefreshToken = renewLoginRequest.RefreshToken
             };
 
+        public static LoginUserResponse MapLoginToResponse(User user)
+            => new LoginUserResponse()
+            {
+                AccessToken = user.UserToken         
+            };
+        public static User MapLoginToUser(LoginUserRequest loginUserRequest)
+            => new User()
+            {
+                Email = loginUserRequest.Email,
+                UserPassword = loginUserRequest.UserPassword
+            };
+
 
     }
 }

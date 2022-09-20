@@ -15,5 +15,7 @@ namespace Igor_AIS_Proj.Business.Interfaces
         Task<Session> GetById(Guid id);
 
         Task<(bool, string?, Session?)> ValidateSession(Session session);
+
+        void DeleteInactiveSessions();
     }
 }

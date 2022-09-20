@@ -20,7 +20,21 @@ namespace Igor_AIS_Proj.Business
         }
 
 
-        public Account GetById(int id) => _accountPersistence.GetById(id);
+        public (bool, Account) GetById(int id)
+
+        {
+            try
+            {
+                return (true, _accountPersistence.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to get Account");
+                return (false, null);
+            }
+
+        }
+         
         public async Task<bool> Delete(int id) => await _accountPersistence.Delete(id);
 
         public async Task<(bool, string?)> TransferFunds(TransferRequest request)
@@ -30,22 +44,26 @@ namespace Igor_AIS_Proj.Business
                 return (false, "Transfer amount must be positive");
             }
             
-            Account fromAccount = GetById(request.FromAccountId);
-            Account toAccount = GetById(request.ToAccountId);
-            if (fromAccount.Currency != toAccount.Currency)
+            (bool, Account) fromAccount = GetById(request.FromAccountId);
+            (bool, Account) toAccount = GetById(request.ToAccountId);
+            if (fromAccount.Item2.Currency != toAccount.Item2.Currency)
             {
                 return (false, "You can only transfer in the same currency");
             }
-            if (fromAccount.Balance < request.Amount)
+            if (fromAccount.Item2.Balance < request.Amount)
             {
                 return (false, "Insufficient funds");
             }
-            if (fromAccount.AccountId == toAccount.AccountId)
+            if (fromAccount.Item2.AccountId == toAccount.Item2.AccountId)
             {
                 return (false, "You can´t transfer to the same account!");
             }
-            var account = GetById(toAccount.AccountId);
-            if(account == null)
+            if (request.FromAccountId != fromAccount.Item2.AccountId)
+            {
+                return (false, "You do not own this account! You can only transfer from your accounts.");
+            }
+            var account = GetById(toAccount.Item2.AccountId);
+            if(account.Item2 == null)
             {
                 return (false, "Destination Account not valid!");
             }
@@ -53,16 +71,16 @@ namespace Igor_AIS_Proj.Business
             {
                 using var context = new PostgresContext();
                 using var transaction = context.Database.BeginTransaction();
-                    fromAccount.Balance -= request.Amount;
-                    toAccount.Balance += request.Amount;
-                    var transfer1 = new Transfer { OriginaccountId = fromAccount.AccountId, DestinationaccountId = toAccount.AccountId, Amount = request.Amount, Currency = fromAccount.Currency };
-                    var mov1 = new Movement { AccountId = fromAccount.AccountId, Amount = -request.Amount, Currency = fromAccount.Currency };
-                    var mov2 = new Movement { AccountId = toAccount.AccountId, Amount = +request.Amount, Currency = toAccount.Currency };
+                    fromAccount.Item2.Balance -= request.Amount;
+                    toAccount.Item2.Balance += request.Amount;
+                    var transfer1 = new Transfer { OriginaccountId = fromAccount.Item2.AccountId, DestinationaccountId = toAccount.Item2.AccountId, Amount = request.Amount, Currency = fromAccount.Item2.Currency };
+                    var mov1 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = -request.Amount, Currency = fromAccount.Item2.Currency };
+                    var mov2 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = +request.Amount, Currency = toAccount.Item2.Currency };
                     await _transferPersistence.Create(transfer1);
                     await _movementPersistence.Create(mov1);
                     await _movementPersistence.Create(mov2);
-                    await _accountPersistence.Update(fromAccount);
-                    await _accountPersistence.Update(toAccount);
+                    await _accountPersistence.Update(fromAccount.Item2);
+                    await _accountPersistence.Update(toAccount.Item2);
                     transaction.Commit();
                     return (true, "Transaction Complete!");
             }
@@ -74,24 +92,53 @@ namespace Igor_AIS_Proj.Business
             
         }
 
-        public async Task<List<Account>> GetAllAccountsUser(int id) => await _accountPersistence.GetAllAccountsUser(id);
+        public async Task<(bool, List<Account>)> GetAllAccountsUser(int id)
+        {
+            try
+            {
+                return  (true, await _accountPersistence.GetAllAccountsUser(id));
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Failed to get Accounts");
+                return (false, null);
+            }
+        }
 
         public  List<Account> GetAll() => _accountPersistence.GetAll();
 
-        public async Task<CreateAccountResponse> Create(CreateAccountRequest request, int userId)
+        public async Task<(bool, CreateAccountResponse)> Create(CreateAccountRequest request, int userId)
         {
-            return await _accountPersistence.Create(request, userId);
+            try
+            {
+                return (true, await _accountPersistence.Create(request, userId));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to create Account");
+                return (false, null);
+            }
+            
         }
-        public async Task<AccountMovims?> GetAccount(int accountId)
+        public async Task<(bool, AccountMovims?, string?)> GetAccount(int accountId)
         {
-            Account? account = GetById(accountId);
-            if (account == null) { return null; }
+            try
+            {
+                (bool, Account) account = GetById(accountId);
+                if (account.Item2 == null) { return (false, null, "Account Not Found."); }
 
-            CreateAccountResponse contractsAccount = EntityMapper.MapAccountModelToContract(account);
+                CreateAccountResponse contractsAccount = EntityMapper.MapAccountModelToContract(account.Item2);
 
-            ICollection<Movim> movims = EntityMapper.MapMovementEnumerableToMovim(
-                 _movementPersistence.GetAll().Where(movement => movement.AccountId == accountId));
-            return new AccountMovims(contractsAccount, movims);
+                ICollection<Movim> movims = EntityMapper.MapMovementEnumerableToMovim(
+                     _movementPersistence.GetAll().Where(movement => movement.AccountId == accountId));
+                return (true, new AccountMovims(contractsAccount, movims), "Account found!");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to get Account");
+                return (false, null, "Failed to get Account");
+            }
+
         }
 
         public  async Task<bool> Update(Account account) => await _accountPersistence.Update(account);

@@ -92,20 +92,20 @@ namespace Igor_AIS_Proj.Controllers
 
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [ProducesResponseType(typeof(LoginUserResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<LoginUserResponse>> Logout()
+        public async Task<ActionResult<String?>> Logout()
         {
             try
             {
                 if (!Request.Headers.TryGetValue("Authorization", out StringValues authToken))
                     return BadRequest("No authorization found.");
-                int userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                int userId = GetUserIdFromClaim();
                 if (userId == null)
                     return BadRequest("User Id not found.");
-                Guid sessionId = Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
+                Guid sessionId = GetSessionIdFromClaim();
                 if (sessionId == null)
                     return BadRequest("Session Id not found.");
                 var session = new Session
@@ -116,7 +116,7 @@ namespace Igor_AIS_Proj.Controllers
                 };
                 var result = await _userBusiness.Logout(session);
                 if (result.Item1)
-                    return Ok(result.Item3);
+                    return Ok("Logout completed!");
                 return BadRequest(result.Item2);
             }
             catch (Exception ex)
@@ -135,8 +135,8 @@ namespace Igor_AIS_Proj.Controllers
         {
             try
             {
-                Guid sessionId = Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
-                int userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                Guid sessionId = GetSessionIdFromClaim();
+                int userId = GetUserIdFromClaim();
                 if (!Request.Headers.TryGetValue("Authorization", out StringValues authToken))
                     return BadRequest("Missing Authorization Header.");
                 if (userId == null)
@@ -189,5 +189,12 @@ namespace Igor_AIS_Proj.Controllers
 
 
         }
+
+        private bool BoolUseridFromClaim(out int userId) =>
+            int.TryParse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value, out userId);
+
+        private int GetUserIdFromClaim() => Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+        private Guid GetSessionIdFromClaim() => Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
     }
 }

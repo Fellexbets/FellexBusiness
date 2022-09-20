@@ -5,6 +5,7 @@ namespace Igor_AIS_Proj.Models
     {
         public PostgresContext()
         {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         //public PostgresContext(DbContextOptions<PostgresContext> options)

@@ -28,5 +28,10 @@ namespace Igor_AIS_Proj.Business
             return (true, null, currentSession);
         }
 
+        public void DeleteInactiveSessions()
+        {
+            _sessionPersistence.DeleteInactiveSessions();
+        }
+
     }
 }

@@ -18,6 +18,7 @@ global using System.Net;
 global using Microsoft.AspNetCore.Authorization;
 global using System.ComponentModel.DataAnnotations.Schema;
 global using System.ComponentModel.DataAnnotations;
+global using Serilog;
 
 namespace Igor_AIS_Proj
 {

@@ -7,12 +7,12 @@ namespace Igor_AIS_Proj.Auxiliary
     public class JwtServices : IJwtServices
     {
 
-        static JwtServices()
-        {
+        //static JwtServices()
+        //{
             
 
 
-        }
+        //}
 
 
         public Session GenerateToken(User user)

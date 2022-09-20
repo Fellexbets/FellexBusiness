@@ -13,5 +13,7 @@ namespace Igor_AIS_Proj.Persistence.Interfaces
 
         Task<Session> GetById(Guid id);
 
+        void DeleteInactiveSessions();
+
     }
 }

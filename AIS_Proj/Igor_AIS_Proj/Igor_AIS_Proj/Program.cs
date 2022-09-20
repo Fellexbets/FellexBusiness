@@ -32,6 +32,9 @@ builder.Services.AddTransient<IBasePersistence<Movement>, MovementPersistence>()
 builder.Services.AddTransient<IBasePersistence<Session>, SessionPersistence>();
 builder.Services.AddSingleton<IJwtServices, JwtServices>();
 
+// logger
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 builder.Services.AddSwaggerGen(options =>
 {

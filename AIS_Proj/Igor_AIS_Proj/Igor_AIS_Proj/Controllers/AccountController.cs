@@ -16,28 +16,42 @@ namespace QuizzalT_API.Controllers
             _sessionBusiness = sessionBusiness;
             _userBusiness = userBusiness;
         }
-
+        
         [HttpGet]
         public List<Account> GetAll() => _accountBusiness.GetAll();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
         [HttpPut]
         public Task<bool> Update(Account account) => _accountBusiness.Update(account);
 
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [ProducesResponseType(typeof(CreateAccountResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
+        
         public async Task<ActionResult<CreateAccountResponse>> Create(CreateAccountRequest request)
         {
-            if (!ValidateLoggedUser(out int userId)) { return Unauthorized("Access not authorized."); }
+            if (!BoolUseridFromClaim(out int userId))
+                return Unauthorized("Access not authorized.");
 
             try
             {
-                CreateAccountResponse? account = await _accountBusiness.Create(request, userId);
-                if (account == null) { return BadRequest(); }
-                return CreatedAtAction("GetAccount", new { accountId = account.AccountId }, account);
+                (bool, CreateAccountResponse) account = await _accountBusiness.Create(request, userId);
+                if (account.Item2 == null) { return BadRequest(); }
+                return CreatedAtAction("GetAccount", new { accountId = account.Item2.AccountId }, account);
             }
             catch(Exception ex)
             {
@@ -49,6 +63,12 @@ namespace QuizzalT_API.Controllers
             }
             
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
         [HttpGet("{accountId}")]
         [ProducesResponseType(typeof(AccountMovims), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
@@ -56,13 +76,16 @@ namespace QuizzalT_API.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<AccountMovims>> GetAccount(int accountId)
         {
-            if (!ValidateLoggedUser(out int userId))
-            { return Unauthorized("Access not authorized."); }
-            
+            if (!BoolUseridFromClaim(out int userId))
+                return Unauthorized("Access not authorized."); 
+            var account =  _accountBusiness.GetById(accountId);
+            var userIdClaim = GetUserIdFromClaim();
+            if (account.Item2.UserId != userIdClaim)
+                return Unauthorized("Access not authorized");
             try
             {
-                AccountMovims? accountMovims = await _accountBusiness.GetAccount(accountId);
-                if (accountMovims == null) { return NoContent(); }
+                (bool, AccountMovims?, string?) accountMovims = await _accountBusiness.GetAccount(accountId);
+                if (accountMovims.Item2 == null) { return NoContent(); }
                 return Ok(accountMovims);
             }
             catch (Exception ex)
@@ -79,17 +102,14 @@ namespace QuizzalT_API.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        [HttpGet("{id}")]
+        [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult<List<Account>>> GetAllAccountsUser(int id)
+        public async Task<ActionResult<List<Account>>> GetAllAccountsUser()
         {
-            if (id != Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value))
-            {
-                return StatusCode(StatusCodes.Status401Unauthorized);
-            }
+            int userId = GetUserIdFromClaim();
             try
             {
-                var result = await _accountBusiness.GetAllAccountsUser(id);
+                var result = await _accountBusiness.GetAllAccountsUser(userId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -111,16 +131,16 @@ namespace QuizzalT_API.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> TransferFunds(TransferRequest request)
         {
-            var userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var userId = GetUserIdFromClaim();
             var accountTransfer = _accountBusiness.GetById(request.FromAccountId);
-            if (accountTransfer is null)
+            if (accountTransfer.Item2 is null)
                 return StatusCode(StatusCodes.Status400BadRequest);
             var userTransfer = _userBusiness.GetById(userId);
-            if (accountTransfer.UserId != userTransfer.UserId)
+            if (accountTransfer.Item2.UserId != userTransfer.UserId)
                 return StatusCode(StatusCodes.Status401Unauthorized);
             try
             {
-                var sessionId = Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
+                var sessionId = GetSessionIdFromClaim();
                 var newSession = await _sessionBusiness.GetById(sessionId);
                 var session = await _sessionBusiness.ValidateSession(newSession);
                 if (session.Item1 == false)
@@ -136,10 +156,12 @@ namespace QuizzalT_API.Controllers
             
         }
             
-        private bool ValidateLoggedUser(out int userId) =>
+        private bool BoolUseridFromClaim(out int userId) =>
             int.TryParse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value, out userId);
 
+        private int GetUserIdFromClaim() => Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
+        private Guid GetSessionIdFromClaim() => Guid.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
 
 
     }

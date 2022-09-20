@@ -19,13 +19,12 @@ namespace Igor_AIS_Proj.Persistence
         public async Task<CreateAccountResponse> Create(CreateAccountRequest request, int userId)
         {
             Account account = EntityMapper.MapRequestToAccountModel(request, userId);
-
             try
             {
                 await _context.AddAsync(account);
                 await _context.SaveChangesAsync();
             }
-            catch
+            catch (Exception)
             {
                 return null;
             }

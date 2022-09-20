@@ -12,5 +12,20 @@ namespace Igor_AIS_Proj.Persistence
         {
             return _contextEntity.FirstOrDefault(x => x.SessionId == id);
         }
+
+        public void DeleteAllSessions()
+        {
+
+        }
+
+        public void DeleteInactiveSessions()
+        {
+            var result = _contextEntity.Where(x => x.Active == false);
+            foreach (var session in result)
+            {
+                _contextEntity.Remove(session);
+            }
+            _context.SaveChanges();
+        }
     }
 }
