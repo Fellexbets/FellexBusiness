@@ -30,6 +30,7 @@ namespace AIS_Proj.UnitTests
         private readonly Mock<IAccountPersistence> _accountPersistence;
         private readonly Mock<IMovementPersistence> _movementPersistence;
         private readonly Mock<ITransferPersistence> _transferPersistence;
+        private readonly Mock<IUserPersistence> _userPersistence;
         private Mock<ILogger<AccountBusiness>> _logger;
 
         public AccountBusinessTests()
@@ -37,9 +38,10 @@ namespace AIS_Proj.UnitTests
             _accountPersistence = new Mock<IAccountPersistence>();
             _movementPersistence = new Mock<IMovementPersistence>();
             _transferPersistence = new Mock<ITransferPersistence>();
+            _userPersistence = new Mock<IUserPersistence>();
             _logger = new Mock<ILogger<AccountBusiness>>();
 
-            _accountBusiness = new AccountBusiness(_accountPersistence.Object, _movementPersistence.Object, _transferPersistence.Object, _logger.Object);
+            _accountBusiness = new AccountBusiness(_accountPersistence.Object, _movementPersistence.Object, _transferPersistence.Object, _logger.Object, _userPersistence.Object);
 
         }
 
@@ -233,6 +235,7 @@ namespace AIS_Proj.UnitTests
             Assert.That(result, Is.EqualTo(expected));
 
         }
+        
         [Test]
         public async Task TransferFunds_ResultOk()
         {

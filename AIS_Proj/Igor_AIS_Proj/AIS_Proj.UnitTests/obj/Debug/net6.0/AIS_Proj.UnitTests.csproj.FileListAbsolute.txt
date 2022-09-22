@@ -159,3 +159,9 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Moq.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Serilog.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\AIS_Proj.UnitTests\bin\Debug\net6.0\Serilog.Sinks.Postgresql.Alternative.dll

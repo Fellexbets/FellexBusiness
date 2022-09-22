@@ -68,7 +68,7 @@ namespace Igor_AIS_Proj.Auxiliary
                    .Build();
             var key = Encoding.ASCII.GetBytes(configuration["Secret"]);
             var tokenHandler = new JwtSecurityTokenHandler();
-            session.TokenAccessExpireAt = DateTime.UtcNow.AddMinutes(10);
+            session.TokenAccessExpireAt = DateTime.UtcNow.AddMinutes(1);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -93,7 +93,7 @@ namespace Igor_AIS_Proj.Auxiliary
             {
                 generator.GetBytes(randomNumber);
                 session.RefreshToken = Convert.ToBase64String(randomNumber);
-                session.Refresh_Token_expire_At = DateTime.UtcNow.AddMinutes(10);
+                session.Refresh_Token_expire_At = DateTime.UtcNow.AddMinutes(2);
                 return session;
             }
         }
