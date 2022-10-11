@@ -1,5 +1,7 @@
 
-
+using Confluent.Kafka;
+using Igor_AIS_Proj.Infrastructure.KafkaServices;
+using Igor_AIS_Proj.MailServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,10 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var producerConfig = new ProducerConfig();
+configuration.Bind("producer", producerConfig);
+
+builder.Services.AddSingleton<ProducerConfig>(producerConfig);
 
 builder.Services.AddScoped<IAccountPersistence, AccountPersistence>();
 builder.Services.AddScoped<IMovementPersistence, MovementPersistence>();
@@ -25,13 +31,19 @@ builder.Services.AddScoped<IUserBusiness, UserBusiness>();
 builder.Services.AddScoped<IMovementBusiness, MovementBusiness>();
 builder.Services.AddScoped<ITransferBusiness, TransferBusiness>();
 builder.Services.AddScoped<ISessionBusiness, SessionBusiness>();
+builder.Services.AddScoped<IProducerHandler, ProducerHandler>();
 builder.Services.AddTransient<IBasePersistence<User>, UserPersistence>();
 builder.Services.AddTransient<IBasePersistence<Account>, AccountPersistence>();
 builder.Services.AddTransient<IBasePersistence<Transfer>, TransferPersistence>();
 builder.Services.AddTransient<IBasePersistence<Movement>, MovementPersistence>();
 builder.Services.AddTransient<IBasePersistence<Session>, SessionPersistence>();
 builder.Services.AddSingleton<IJwtServices, JwtServices>();
+//builder.Services.AddSingleton<IHostedService, KafkaConsumerHandler>();
 
+builder.Services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IMailService, MailService>();
+builder.Services.AddSingleton<IHostedService, KafkaConsumerHandler>();
+builder.Services.AddSingleton<IMailNotificationUseCase, MailNotificationUseCase>();
 // logger
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();

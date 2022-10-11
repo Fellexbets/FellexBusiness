@@ -1,4 +1,8 @@
-﻿namespace Igor_AIS_Proj.WebApi.Controllers
+﻿using Igor_AIS_Proj.Infrastructure.KafkaServices;
+using Igor_AIS_Proj.MailServices;
+using Newtonsoft.Json;
+
+namespace Igor_AIS_Proj.WebApi.Controllers
 {
     [ApiController, Route("[controller]/[action]")]
     public class AccountController : ControllerBase
@@ -7,13 +11,17 @@
         private readonly ILogger<AccountController> _logger;
         private readonly ISessionBusiness _sessionBusiness;
         private readonly IUserBusiness _userBusiness;
+        private readonly IProducerHandler _producerHandler;
+        private readonly IMailService _mailServices;
 
-        public AccountController(IAccountBusiness accountBusiness, ILogger<AccountController> logger, ISessionBusiness sessionBusiness, IUserBusiness userBusiness)
+        public AccountController(IAccountBusiness accountBusiness, ILogger<AccountController> logger, ISessionBusiness sessionBusiness, IUserBusiness userBusiness, IProducerHandler producerHandler, IMailService mailServices)
         {
             _accountBusiness = accountBusiness;
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _sessionBusiness = sessionBusiness;
             _userBusiness = userBusiness;
+            _producerHandler = producerHandler;
+            _mailServices = mailServices;
         }
 
         [HttpGet]
@@ -159,9 +167,13 @@
                 var session = await _sessionBusiness.ValidateSession(newSession);
                 if (session.Item1 == false)
                     return StatusCode(StatusCodes.Status401Unauthorized, session.Item2);
+
+                
+                
                 var done = await _accountBusiness.TransferFunds(request);
                 if (done.Item1)
                     return StatusCode(StatusCodes.Status201Created, done.Item2);
+                
                 return BadRequest(done.Item2);
             }
             catch (Exception ex)

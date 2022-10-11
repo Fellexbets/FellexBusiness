@@ -48,9 +48,17 @@
               "target": "Package",
               "version": "[2.1.1, )"
             },
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[1.9.3, )"
+            },
             "IdentityModel": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.1, )"
             },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
@@ -77,6 +85,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.15.1, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.4.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

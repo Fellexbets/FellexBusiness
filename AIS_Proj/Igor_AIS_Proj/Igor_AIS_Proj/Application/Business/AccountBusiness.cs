@@ -1,5 +1,6 @@
 ﻿
 
+using Igor_AIS_Proj.Infrastructure.KafkaServices;
 using System.Data.Entity;
 using System.Transactions;
 
@@ -12,13 +13,17 @@ namespace Igor_AIS_Proj.Business
         private readonly IMovementPersistence _movementPersistence;
         private readonly ITransferPersistence _transferPersistence;
         private readonly IUserPersistence _userPersistence;
-        public AccountBusiness(IAccountPersistence accountPersistence, IMovementPersistence movementPersistence, ITransferPersistence transferPersistence, ILogger<AccountBusiness> logger, IUserPersistence userPersistence)
+        private readonly IProducerHandler _producerHandler;
+        private readonly IUserBusiness _userBusiness;
+        public AccountBusiness(IAccountPersistence accountPersistence, IMovementPersistence movementPersistence, ITransferPersistence transferPersistence, ILogger<AccountBusiness> logger, IUserPersistence userPersistence, IProducerHandler producerHandler, IUserBusiness userBusiness)
         {
             _transferPersistence = transferPersistence;
             _accountPersistence = accountPersistence;
             _movementPersistence = movementPersistence;
             _logger = logger;
             _userPersistence = userPersistence;
+            _producerHandler = producerHandler;
+            _userBusiness = userBusiness;
         }
 
 
@@ -83,7 +88,22 @@ namespace Igor_AIS_Proj.Business
                     await _movementPersistence.Create(mov2);
                     await _accountPersistence.Update(fromAccount.Item2);
                     await _accountPersistence.Update(toAccount.Item2);
-                    transaction.Commit();
+
+                var recipientUser = _userBusiness.GetById(toAccount.Item2.UserId);
+                var transferUserFrom = _userBusiness.GetById(fromAccount.Item2.UserId);
+                var info = new TransferTopicInfo()
+                    {
+                        Amount = request.Amount,
+                        Currency = toAccount.Item2.Currency,
+                        FromUserName = transferUserFrom.FullName,
+                        RecipientName = recipientUser.FullName,
+                        RecipientMail = recipientUser.Email,
+                        FromUserMail = transferUserFrom.Email
+                       
+                    };
+                    string topic = "Teste";
+                    await _producerHandler.MessageTransfer(topic, info);
+                transaction.Commit();
                     return (true, "Transaction Complete!");
             }
             catch(Exception ex)
@@ -93,6 +113,8 @@ namespace Igor_AIS_Proj.Business
             }
             
         }
+
+
 
         public async Task<(bool, List<Account>, String?)> GetAllAccountsUser(int id)
         {
