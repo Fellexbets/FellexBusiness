@@ -15,7 +15,7 @@ namespace Igor_AIS_Proj.Infrastructure.KafkaServices
         private ILogger<KafkaConsumerHandler> _logger;
         private readonly IMailNotificationUseCase _mailNotificationUseCase;
 
-        public KafkaConsumerHandler(ILogger<KafkaConsumerHandler> logger, IMailNotificationUseCase mailNotificationUseCase)
+        public KafkaConsumerHandler(ILogger<KafkaConsumerHandler> logger, IMailService mailService, IMailNotificationUseCase mailNotificationUseCase)
         {
             topic = "Teste";
             _logger = logger;

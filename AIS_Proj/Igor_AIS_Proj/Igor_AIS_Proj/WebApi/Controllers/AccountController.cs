@@ -121,8 +121,8 @@ namespace Igor_AIS_Proj.WebApi.Controllers
             var session = await _sessionBusiness.GetById(sessionId);
             if (session.Active == false)
                 return Unauthorized("Session is no longer active.");
-            if (session.TokenAccessExpireAt > DateTime.UtcNow)
-                return Unauthorized("Token no longer valid");
+            //if (session.TokenAccessExpireAt > DateTime.Now)
+            //    return Unauthorized("Token no longer valid");
 
             try
             {

@@ -50,7 +50,7 @@ namespace Igor_AIS_Proj.Business
             {
                 return (false, "Transfer amount must be positive");
             }
-            
+            string topic = "Teste";
             (bool, Account) fromAccount = GetById(request.FromAccountId);
             (bool, Account) toAccount = GetById(request.ToAccountId);
             if (fromAccount.Item2.Currency != toAccount.Item2.Currency)
@@ -95,16 +95,18 @@ namespace Igor_AIS_Proj.Business
                     {
                         Amount = request.Amount,
                         Currency = toAccount.Item2.Currency,
-                        FromUserName = transferUserFrom.FullName,
-                        RecipientName = recipientUser.FullName,
+                        FromUserName = transferUserFrom.Username,
+                        FromUserMail = transferUserFrom.Email,
+                        FromAccountId = request.FromAccountId,
+                        RecipientName = recipientUser.Username,
                         RecipientMail = recipientUser.Email,
-                        FromUserMail = transferUserFrom.Email
+                        RecipientAccountId = request.ToAccountId
                        
                     };
-                    string topic = "Teste";
-                    await _producerHandler.MessageTransfer(topic, info);
+                    
                 transaction.Commit();
-                    return (true, "Transaction Complete!");
+                await _producerHandler.MessageTransfer(topic, info);
+                return (true, "Transaction Complete!");
             }
             catch(Exception ex)
             {

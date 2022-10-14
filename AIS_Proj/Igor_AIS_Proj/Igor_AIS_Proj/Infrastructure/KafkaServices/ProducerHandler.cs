@@ -16,14 +16,14 @@ namespace Igor_AIS_Proj.Infrastructure.KafkaServices
         }
 
 
-        public async Task<string> MessageTransfer(string topic, [FromBody] TransferTopicInfo info)
+        public async Task<string> MessageTransfer(string topic, TransferTopicInfo info)
         {
             string serializedTransfer = JsonConvert.SerializeObject(info);
             using (var producer = new ProducerBuilder<Null, string>(_config).Build())
 
             {
                 await producer.ProduceAsync(topic, new Message<Null, string> { Value = serializedTransfer });
-                producer.Flush(TimeSpan.FromSeconds(10));
+                producer.Flush()/*(TimeSpan.FromSeconds(10))*/;
                 _logger.LogInformation(serializedTransfer);
                 return serializedTransfer;
             }
