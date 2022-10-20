@@ -1,0 +1,63 @@
+﻿@page "/accounts"
+
+@using BlazorOpenBank.Data.Services.Base
+@attribute [Authorize]
+@inject HttpClient httpclient
+
+<h1>Users</h1>
+<NavLink href="users/add" class="btn btn-sm btn-success mb-2">Add User</NavLink>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">First Name</th>
+            <th style="width: 30%">Last Name</th>
+            <th style="width: 30%">Username</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (accounts != null)
+        {
+            foreach (var account in accounts)
+            {
+                <tr>
+                    <td>@account.AccountId</td>
+                    <td>@account.Currency</td>
+                    <td>@account.Balance</td>
+                    <td style="white-space: nowrap">
+                    </td>
+                </tr>
+            }
+        }
+        @if (loading)
+        {
+            <tr>
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center"></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private bool loading;
+    private List<Account> accounts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var api = new BlazorOpenBank.Data.Services.Base.Client(httpclient);
+        var accounts = await api.GetAllAccountsUserAsync();
+        loading = true;
+        loading = false;
+    }
+
+    private async void DeleteUser(string id) 
+    {
+        var user = users.First(x => x.Id == id);
+        user.IsDeleting = true;
+        await AccountService.Delete(id);
+        users.Remove(user);
+        StateHasChanged();
+    }
+}

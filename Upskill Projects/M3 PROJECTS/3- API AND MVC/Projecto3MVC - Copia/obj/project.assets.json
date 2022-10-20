@@ -7415,19 +7415,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ifpno\\.nuget\\packages\\": {}
+    "C:\\Users\\ifelixno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\LFG\\Projecto3MVC - Copia\\Projecto3MVC.csproj",
+      "projectUniqueName": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\3- API AND MVC\\Projecto3MVC - Copia\\Projecto3MVC.csproj",
       "projectName": "Projecto3MVC",
-      "projectPath": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\LFG\\Projecto3MVC - Copia\\Projecto3MVC.csproj",
-      "packagesPath": "C:\\Users\\ifpno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ifpno\\Documents\\GitHub\\igor\\LFG\\Projecto3MVC - Copia\\obj\\",
+      "projectPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\3- API AND MVC\\Projecto3MVC - Copia\\Projecto3MVC.csproj",
+      "packagesPath": "C:\\Users\\ifelixno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\Upskill Projects\\M3 PROJECTS\\3- API AND MVC\\Projecto3MVC - Copia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ifpno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ifelixno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7498,7 +7498,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
