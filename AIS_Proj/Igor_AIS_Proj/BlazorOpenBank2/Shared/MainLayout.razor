@@ -1,0 +1,75 @@
+﻿@using BlazorOpenBank2.Data
+@using BlazorOpenBank2.Data.Services
+@using BlazorOpenBank2.Data.Models
+@using MudBlazor
+
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject IAccountService AccountService
+
+@if (LoggedIn || RefreshLoggedIn)
+{
+    <MudLayout>
+	<AppBar OnSidebarToggled="ToggleSidebar" OnThemeToggled="ToggleTheme" />
+    <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>
+            <NavLink href="/accounts" class="nav-item nav-link">Accounts</NavLink>
+            <NavLink href="/CreateAccount" class="nav-item nav-link">Create Account</NavLink>
+            <NavLink href="/logout" class="nav-item nav-link">Logout</NavLink>
+            <NavLink href="/RenewLogin" class="nav-item nav-link">Refresh</NavLink>
+
+	<NavMenu SideBarOpen="_sidebarOpen" />
+
+	<MudMainContent Class="pt-16 px-16">
+		<MudContainer Class="mt-6">
+			@Body
+		</MudContainer>
+	</MudMainContent>
+</MudLayout>
+
+<MudThemeProvider Theme="_currentTheme" />
+
+    <!-- nav -->
+    <nav @*class="navbar navbar-expand navbar-dark bg-dark"*@>
+        <div @*class="navbar-nav"*@>
+            
+        </div>
+    </nav>
+}
+else
+{
+    var result = AccountService.RenewLogin();
+    if (result.IsCompletedSuccessfully)
+    {
+        LoggedIn = true;
+        RefreshLoggedIn = true;
+    }
+    LoggedIn = false;
+    
+}
+
+
+  <NavMenu />
+        <div class="main">
+            @Body
+        </div>
+
+@code {
+    private MudTheme _currentTheme = new MudTheme();
+	private bool _sidebarOpen = false;
+
+
+	private void ToggleTheme(MudTheme changedTheme) => _currentTheme = changedTheme;
+
+	private void ToggleSidebar() => _sidebarOpen = !_sidebarOpen;
+    public bool LoggedIn 
+    {
+        get { return AccountService.tokenDate > DateTimeOffset.UtcNow; }
+        set {}
+    }
+    public bool RefreshLoggedIn
+    {
+        get { return AccountService.refreshT != null; }
+        set {}
+    }
+
+}

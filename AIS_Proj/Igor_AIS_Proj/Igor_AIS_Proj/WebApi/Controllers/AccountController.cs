@@ -73,7 +73,7 @@ namespace Igor_AIS_Proj.WebApi.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<AccountMovims>> GetAccount(int accountId)
+        public async Task<ActionResult<AccountDetails>> GetAccount(int accountId)
         {
             if (!BoolSessionIdFromClaim(out Guid sessionId))
                 return Unauthorized("No authorization found!");
@@ -90,9 +90,21 @@ namespace Igor_AIS_Proj.WebApi.Controllers
                 return Unauthorized("Access not authorized");
             try
             {
-                (bool, AccountMovims?, string?) accountMovims = await _accountBusiness.GetAccount(accountId);
+                (bool, IEnumerable<Movement>?, string?) accountMovims = await _accountBusiness.GetAccount(accountId, userIdClaim);
                 if (accountMovims.Item2 == null) { return NoContent(); }
-                return Ok(accountMovims.Item2);
+                return Ok(new AccountDetails
+                {
+                    Account = account.Item2,
+
+                Movs = accountMovims.Item2.Select(x => new Movim
+                    {
+                        Amount = x.Amount,
+                        CreatedAt = x.MovimentTime
+                    })
+
+                }
+
+                    );
             }
             catch (Exception ex)
             {

@@ -1,0 +1,13 @@
+﻿@page "/RenewLogin"
+@using BlazorOpenBank2.Data
+@layout MainLayout
+
+@inject IAccountService AccountService
+
+
+@code {
+    protected override async void OnInitialized()
+    {
+        await AccountService.RenewLogin();
+    }
+}

@@ -110,6 +110,8 @@ namespace Igor_AIS_Proj.Models
 
                 entity.Property(e => e.AccountId).HasColumnName("accountid");
 
+                entity.Property(e => e.UserId).HasColumnName("userid");
+
                 entity.Property(e => e.Amount)
                     .HasPrecision(10)
                     .HasColumnName("amount");

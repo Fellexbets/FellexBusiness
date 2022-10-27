@@ -1,0 +1,92 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorOpenBank2
+build_property.RootNamespace = BlazorOpenBank2
+build_property.ProjectDir = C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank2\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank2
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Accounts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/CheckMovim.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tNb3ZpbS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/CreateAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/RenewLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVuZXdMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Transfer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dh605jqps1
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-89dzss9ajn
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ifelixno/OneDrive - NTT DATA EMEAL/Documentos/GitHub/FellexBusiness/AIS_Proj/Igor_AIS_Proj/BlazorOpenBank2/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

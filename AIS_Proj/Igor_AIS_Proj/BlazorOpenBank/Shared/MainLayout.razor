@@ -1,21 +1,82 @@
 ﻿@using BlazorOpenBank.Data
 @using BlazorOpenBank.Data.Services
-@using BlazorOpenBank.Data.Services.Base
+
 
 @inherits LayoutComponentBase
 @inject IAccountService AccountService
 @inject NavigationManager NavigationManager
 
-@if (LoggedIn)
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+    <div class="main">
+    @if (LoggedIn || RefreshLoggedIn)
+    {
+        <div class="container">
+  <div class="row">
+    <div class="col">
+        <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>
+    </div>
+    <div class="col">
+        <NavLink href="/accounts" class="nav-item nav-link">Accounts</NavLink>
+    </div>
+    <div class="col">
+        <NavLink href="/CreateAccount" class="nav-item nav-link">Create Account</NavLink>
+    </div>
+    <div class="col">
+        <NavLink href="/logout" class="nav-item nav-link">Logout</NavLink>
+    </div>
+  </div>
+  </div>
+     
+    }
+    else
+    {
+    var result = AccountService.RenewLogin();
+    if (result.IsCompletedSuccessfully)
+    {
+        LoggedIn = true;
+        RefreshLoggedIn = true;
+    }
+    LoggedIn = false;
+    
+    }
+        <div class="top-row px-4">
+             <CultureSelector />
+        </div>
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+
+
+
+@*@if (LoggedIn || RefreshLoggedIn)
 {
     <!-- nav -->
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="navbar-nav">
             <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>
-            <NavLink href="Account" class="nav-item nav-link">Users</NavLink>
+            <NavLink href="/accounts" class="nav-item nav-link">Accounts</NavLink>
+            <NavLink href="/CreateAccount" class="nav-item nav-link">Create Account</NavLink>
             <NavLink href="/logout" class="nav-item nav-link">Logout</NavLink>
+            <CultureDropDown></CultureDropDown>
         </div>
     </nav>
+}
+else
+{
+    var result = AccountService.RenewLogin();
+    if (result.IsCompletedSuccessfully)
+    {
+        LoggedIn = true;
+        RefreshLoggedIn = true;
+    }
+    LoggedIn = false;
+    
 }
 
 
@@ -23,12 +84,18 @@
         <div class="main">
             @Body
         </div>
-
+*@
 @code {
 
-     public bool LoggedIn 
+    public bool LoggedIn 
     {
         get { return AccountService.tokenDate > DateTimeOffset.UtcNow; }
+        set {}
     }
-   
+    public bool RefreshLoggedIn
+    {
+        get { return AccountService.refreshT != null; }
+        set {}
+    }
+
 }

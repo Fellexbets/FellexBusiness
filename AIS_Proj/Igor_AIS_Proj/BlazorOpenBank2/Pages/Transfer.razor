@@ -1,0 +1,83 @@
+﻿@page "/accounts/transfer"
+
+@using BlazorOpenBank2.Data
+@using BlazorOpenBank2.Data.Services
+@using BlazorOpenBank2.Data.Models
+@using System.Security.Claims
+@using Blazorise
+@attribute [Authorize]
+@inject HttpClient httpclient
+@inject ILocalStorageService LocalStorageService
+@inject IAccountService AccountService
+@inject NavigationManager NavigationManager
+
+ <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Account Origin</label>
+                <InputNumber @bind-Value="model.FromAccountId" class="form-control" />
+            </div>
+            <div class="form-group col">
+                <label>Destination Account</label>
+                <InputNumber @bind-Value="model.ToAccountId" class="form-control" />
+            </div>
+            <div class="form-group col">
+                <label>Transfer Amount</label>
+                <InputNumber @bind-Value="model.Amount" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <button disabled="@loading" class="btn btn-primary">
+                @if (loading) 
+                {
+                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                }
+                Transfer
+            </button>
+            <NavLink href="accounts" class="btn btn-link">Cancel</NavLink>
+            <Alert @ref="Success" Color="Color.Success">
+                <AlertMessage>
+                    Transfer Sucessful.
+                </AlertMessage>
+            </Alert>
+            <Alert @ref="Fail" Color="Color.Danger">
+                <AlertMessage>
+                    Transfer Failed.
+                </AlertMessage>
+            </Alert>
+        </div>
+    </EditForm>
+
+@code {
+    private TransferRequest model;
+    Alert Success;
+    Alert Fail;
+    private bool loading;
+    protected override async Task OnInitializedAsync()
+    {
+        model = new TransferRequest();
+    }
+
+    private async Task OnValidSubmit()
+    {
+        loading = true;
+
+        try
+        {
+            var result = await AccountService.TransferFunds(model);
+            if (result == true)
+            {
+                await Success.Show();
+                NavigationManager.NavigateTo("/accounts");
+            }
+
+        }
+        catch(Exception ex)
+        {
+            loading = false;
+            StateHasChanged();
+            Fail.Show();
+        }
+    }
+ 
+}

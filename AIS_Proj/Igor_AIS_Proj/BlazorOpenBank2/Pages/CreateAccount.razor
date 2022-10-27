@@ -1,0 +1,60 @@
+﻿@page "/CreateAccount"
+@using BlazorOpenBank2.Data
+@using BlazorOpenBank2.Data.Services
+@using BlazorOpenBank2.Data.Models
+@using Microsoft.AspNetCore.Mvc
+@attribute [Authorize]
+@inject HttpClient httpclient
+@inject NavigationManager NavigationManager
+@inject IAccountService AccountService
+
+<div class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />
+            <div class="form-group">
+                <label>Balance</label>
+                <InputNumber @bind-Value="model.Balance" class="form-control" />
+                <ValidationMessage For="@(() => model.Balance)" />
+            </div>
+            <div class="form-group">
+                <label>Currency</label>
+                <InputText @bind-Value="model.Currency" class="form-control" />
+                <ValidationMessage For="@(() => model.Currency)" />
+            </div>
+            <button disabled="@loading" class="btn btn-primary">
+                @if (loading) 
+                {
+                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                }
+                Create Account
+            </button>
+            <NavLink href="/accounts" class="btn btn-link">Cancel</NavLink>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private CreateAccountRequest model = new CreateAccountRequest();
+    private bool loading;
+
+
+    private async void OnValidSubmit()
+    {
+        // reset alerts on submit
+       
+
+        loading = true;
+        try
+        {
+            await AccountService.CreateAccount(model);
+            NavigationManager.NavigateTo("/accounts");
+        }
+        catch (Exception ex)
+        {
+            loading = false;
+            StateHasChanged();
+        }
+    }
+}

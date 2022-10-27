@@ -1,0 +1,88 @@
+﻿@page "/accounts"
+
+@using BlazorOpenBank.Data.Models
+@using BlazorOpenBank.Data
+@using BlazorOpenBank.Data.Services
+@using System.Security.Claims
+@using System.IdentityModel.Tokens.Jwt
+@attribute [Authorize]
+@inject HttpClient httpclient
+@inject ILocalStorageService LocalStorageService
+@inject IAccountService AccountService
+
+
+<h1>Accounts</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">AccountId</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Balance</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (accounts != null)
+        {
+            foreach (var account in accounts)
+            {
+                <tr>
+                    <td>@account.AccountId</td>
+                    <td>@account.Currency</td>
+                    <td>@account.Balance</td>
+                    <td style="white-space: nowrap">
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+</table>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <NavLink href="@("/accounts/transfer")" class="btn btn-dark">Transfer Funds</NavLink>
+                    </div>
+                    <div class="col-6">
+                        <NavLink href="@("/accounts/checkMovim")" class="btn btn-dark">Check Account Movements</NavLink>
+                    </div>
+                </div>
+            </div>
+            
+            
+        
+        @if (loading)
+        {
+            <tr>
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center"></span>
+                </td>
+            </tr>
+        }
+
+    
+
+@code {
+    private bool loading;
+    private List<Account> accounts;
+ 
+
+    public Accounts()
+    {
+    }
+
+    
+  
+
+    protected override async Task OnInitializedAsync()
+    {
+        accounts = await AccountService.GetAllAccounts();
+        loading = true;
+        loading = false;
+    }
+
+
+  
+
+ 
+}

@@ -1,0 +1,71 @@
+﻿@page "/accounts"
+
+@using BlazorOpenBank2.Data.Models
+@using BlazorOpenBank2.Data
+@using BlazorOpenBank2.Data.Services
+@using System.Security.Claims
+@attribute [Authorize]
+@inject HttpClient httpclient
+@inject ILocalStorageService LocalStorageService
+@inject IAccountService AccountService
+
+
+<h1>Accounts</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">AccountId</th>
+            <th style="width: 30%">Currency</th>
+            <th style="width: 30%">Balance</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (accounts != null)
+        {
+            foreach (var account in accounts)
+            {
+                <tr>
+                    <td>@account.AccountId</td>
+                    <td>@account.Currency</td>
+                    <td>@account.Balance</td>
+                    <td style="white-space: nowrap">
+                    </td>
+                </tr>
+            }
+            <NavLink href="@("/accounts/transfer")" class="btn btn-sm btn-primary mr-1">Transfer Funds</NavLink>
+            <NavLink href="@("/accounts/checkMovim")" class="btn btn-sm btn-primary mr-1">Check Account Movements</NavLink>
+        }
+        @if (loading)
+        {
+            <tr>
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center"></span>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@code {
+    private bool loading;
+    private List<Account> accounts;
+    //private AccountMovims accountUser;
+ 
+
+    public Accounts()
+    {
+    }
+
+    
+  
+
+    protected override async Task OnInitializedAsync()
+    {
+        accounts = await AccountService.GetAllAccounts();
+        loading = true;
+        loading = false;
+    }
+ 
+}

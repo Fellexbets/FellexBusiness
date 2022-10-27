@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace BlazorOpenBank.Models
+namespace BlazorOpenBank.Data.Models
 {
     public class LoginUserRequest
     {

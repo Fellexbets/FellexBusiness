@@ -1,0 +1,72 @@
+﻿@page "/Register"
+@using BlazorOpenBank2.Data.Services
+@using BlazorOpenBank2.Data.Models
+@using Microsoft.AspNetCore.Mvc
+@inject HttpClient httpclient
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<div class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />
+            <div class="form-group">
+                <label>Email</label>
+                <InputText @bind-Value="model.Email" class="form-control" />
+                <ValidationMessage For="@(() => model.Email)" />
+            </div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <InputText @bind-Value="model.FullName" class="form-control" />
+                <ValidationMessage For="@(() => model.FullName)" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <InputText @bind-Value="model.UserPassword" type="password" class="form-control" />
+                <ValidationMessage For="@(() => model.UserPassword)" />
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <InputText @bind-Value="model.Username" class="form-control" />
+                <ValidationMessage For="@(() => model.Username)" />
+            </div>
+            <button disabled="@loading" class="btn btn-primary">
+                @if (loading) 
+                {
+                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                }
+                Register
+            </button>
+            <NavLink href="account/login" class="btn btn-link">Cancel</NavLink>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private CreateUserRequest model = new CreateUserRequest();
+    private bool loading;
+
+    [BindProperty]
+    public CreateUserRequest CreateUser { get; set; }
+
+    private async void OnValidSubmit()
+    {
+
+
+        loading = true;
+        try
+        {
+            await httpclient.PostAsJsonAsync("/User/Create", model);
+            NavigationManager.NavigateTo("/login");
+        }
+        catch (Exception ex)
+        {
+         
+            loading = false;
+            StateHasChanged();
+        }
+    }
+
+    
+}

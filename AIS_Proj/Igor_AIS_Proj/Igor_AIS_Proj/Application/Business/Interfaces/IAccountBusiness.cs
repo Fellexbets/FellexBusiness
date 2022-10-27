@@ -11,7 +11,7 @@ namespace Igor_AIS_Proj.Business.Interfaces
         List<Account> GetAll();
         Task<bool> Update(Account account);
 
-        Task<(bool, AccountMovims?, string?)> GetAccount(int accountId);
+        Task<(bool, IEnumerable<Movement>?, string?)> GetAccount(int accountId, int userid);
         Task<(bool, CreateAccountResponse)> Create(CreateAccountRequest request, int userId);
 
         IEnumerable<Account> VerifyTransfer(TransferRequest request, int userId);

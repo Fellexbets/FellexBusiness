@@ -81,8 +81,8 @@ namespace Igor_AIS_Proj.Business
                     fromAccount.Item2.Balance -= request.Amount;
                     toAccount.Item2.Balance += request.Amount;
                     var transfer1 = new Transfer { OriginaccountId = fromAccount.Item2.AccountId, DestinationaccountId = toAccount.Item2.AccountId, Amount = request.Amount, Currency = fromAccount.Item2.Currency };
-                    var mov1 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = -request.Amount, Currency = fromAccount.Item2.Currency };
-                    var mov2 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = +request.Amount, Currency = toAccount.Item2.Currency };
+                    var mov1 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = -request.Amount, Currency = fromAccount.Item2.Currency, UserId = fromAccount.Item2.UserId };
+                    var mov2 = new Movement { AccountId = fromAccount.Item2.AccountId, Amount = +request.Amount, Currency = toAccount.Item2.Currency, UserId = toAccount.Item2.UserId };
                     await _transferPersistence.Create(transfer1);
                     await _movementPersistence.Create(mov1);
                     await _movementPersistence.Create(mov2);
@@ -105,7 +105,7 @@ namespace Igor_AIS_Proj.Business
                     };
                     
                 transaction.Commit();
-                await _producerHandler.MessageTransfer(topic, info);
+                //await _producerHandler.MessageTransfer(topic, info);
                 return (true, "Transaction Complete!");
             }
             catch(Exception ex)
@@ -156,18 +156,18 @@ namespace Igor_AIS_Proj.Business
             }
             
         }
-        public async Task<(bool, AccountMovims?, string?)> GetAccount(int accountId)
+        public async Task<(bool, IEnumerable<Movement>, string?)> GetAccount(int accountId, int userid)
         {
             try
             {
                 (bool, Account) account = GetById(accountId);
                 if (account.Item2 == null) { return (false, null, "Account Not Found."); }
 
-                CreateAccountResponse contractsAccount = EntityMapper.MapAccountModelToContract(account.Item2);
+                //CreateAccountResponse contractsAccount = EntityMapper.MapAccountModelToContract(account.Item2);
 
-                ICollection<Movim> movims = EntityMapper.MapMovementEnumerableToMovim(
-                     _movementPersistence.GetAll().Where(movement => movement.AccountId == accountId));
-                return (true, new AccountMovims(contractsAccount, movims), "Account found!");
+                IEnumerable<Movement> movims =
+                     _movementPersistence.GetAll().Where(movement => movement.AccountId == accountId && movement.UserId == userid);
+                return (true, movims, "Account found!");
             }
             catch (Exception ex)
             {

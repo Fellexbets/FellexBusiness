@@ -1,15 +1,16 @@
 ﻿
 @using BlazorOpenBank.Data
 @using BlazorOpenBank.Data.Services
-@using BlazorOpenBank.Data.Services.Base
+@using BlazorOpenBank.Data.Models
 @using BlazorOpenBank.Helpers
+@using Blazorise
 @using Microsoft.AspNetCore.Mvc
 
 @page "/Login"
 @inject NavigationManager NavigationManager
 @inject HttpClient httpClient
-@inject IAlertService AlertService
 @inject IAccountService AccountService
+@inject IJSRuntime JSRuntime
 
 
 <div class="card">
@@ -27,13 +28,14 @@
                 <InputText @bind-Value="model.UserPassword" type="password" class="form-control" />
                 <ValidationMessage For="@(() => model.UserPassword)" />
             </div>
-            <button disabled="@loading" class="btn btn-primary">
+            <button disabled="@loading"  Color="Color.Primary" class="btn btn-primary">
                 @if (loading) 
                 {
                     <span class="spinner-border spinner-border-sm mr-1"></span>
                 }
                 Login
             </button>
+          
         </EditForm>
     </div>
 </div>
@@ -43,48 +45,45 @@
     private bool loading;
     private LoginUserRequest? model = new LoginUserRequest();
 
-    public Login()
-    {
-
-    }
 
     [BindProperty]
     public LoginUserRequest LoginRequest { get; set; }
 
     public string ReturnUrl { get; set; }
 
-    //public string Errors { get; set; }
+    public string Result { get; set; }
 
     public bool ShowSignInErrors { get; set; }
 
     public bool IsProcessing { get; set; } = false;
-    //[Inject]
-    //private UserService _userServices { get; set; }
 
 
-    //[Inject]
-    //public NavigationManager _navigationManager { get; set; }
+
 
     public void OnGet()
     {
     }
     private async void OnValidSubmit()
     {
-        AlertService.Clear();
+
         loading = true;
         try
         {
-            await AccountService.Login(model);
-            var returnUrl = NavigationManager.QueryString("returnUrl") ?? "";
-            NavigationManager.NavigateTo(returnUrl);
-        }
-        catch (Exception ex)
+            var result = await AccountService.Login(model);
+            if(result.IsSuccessStatusCode)
             {
-                AlertService.Error(ex.Message);
-                loading = false;
-                StateHasChanged();
+                var returnUrl = NavigationManager.QueryString("returnUrl") ?? "";
+                NavigationManager.NavigateTo(returnUrl);
+                
             }
-          
+        }   
+        catch (Exception ex)
+        {
+            loading = false;
+            StateHasChanged();
+
         }
+          
+    }
     
 }

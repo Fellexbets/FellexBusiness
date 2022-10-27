@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 
-main[b-7srzptj6er] {
+.main[b-7srzptj6er] {
     flex: 1;
 }
 
@@ -64,14 +64,14 @@ main[b-7srzptj6er] {
         z-index: 1;
     }
 
-    .top-row[b-7srzptj6er], article[b-7srzptj6er] {
+    .main > div[b-7srzptj6er] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
 }
 /* _content/BlazorOpenBank/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-cjpexkl6ky] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: mediumvioletred
 }
 
 .top-row[b-cjpexkl6ky] {

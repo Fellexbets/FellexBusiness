@@ -1,4 +1,5 @@
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.csproj.AssemblyReference.cache
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.csproj.GenerateResource.cache
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.AssemblyInfoInputs.cache
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.AssemblyInfo.cs
@@ -21,6 +22,10 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\AutoMapper.EF6.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Blazorise.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Blazorise.Bootstrap.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Blazorise.Icons.FontAwesome.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\BootstrapBlazor.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Confluent.Kafka.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\DelegateDecompiler.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\DelegateDecompiler.EntityFramework.dll
@@ -31,8 +36,13 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -41,6 +51,9 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Localization.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Graph.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Graph.Core.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Identity.Client.dll
@@ -50,15 +63,18 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\MimeKit.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Mono.Reflection.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\MudBlazor.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Npgsql.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\RestSharp.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Serilog.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Serilog.Sinks.File.dll
@@ -73,6 +89,7 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Data.SqlClient.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Memory.Data.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\System.Security.Permissions.dll
@@ -127,3 +144,8 @@ C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.pdb
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.genruntimeconfig.cache
 C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\ref\BlazorOpenBank.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\bin\Debug\net6.0\es\BlazorOpenBank.resources.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\es\BlazorOpenBank.resources.dll
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.Shared.ResourceFiles.Resource.resources
+C:\Users\ifelixno\OneDrive - NTT DATA EMEAL\Documentos\GitHub\FellexBusiness\AIS_Proj\Igor_AIS_Proj\BlazorOpenBank\obj\Debug\net6.0\BlazorOpenBank.Shared.ResourceFiles.Resource.es.resources

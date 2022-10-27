@@ -1,0 +1,69 @@
+﻿@using BlazorOpenBank2.Data
+@using MudBlazor
+@inject IAccountService AccountService
+
+<MudDrawer @bind-Open="SideBarOpen" Elevation="1">
+	<MudDrawerHeader>
+		<MudAvatar Color="Color.Transparent" Size="Size.Large" Image="assets/Logo-CodeMaze.png" />
+		<MudText Typo="Typo.h5" Color="Color.Primary" Style="margin-top:10px; margin-left:15px;">Code-Maze</MudText>
+	</MudDrawerHeader>
+	<MudNavMenu>
+		<MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Filled.Home">Home</MudNavLink>
+		<MudNavGroup Title="Expanding" Icon="@Icons.Filled.DashboardCustomize" Expanded="true">
+			<MudNavLink Href="login" Icon="@Icons.Filled.Camera">Login</MudNavLink>
+			<MudNavLink Href="register" Icon="@Icons.Filled.Celebration">Register</MudNavLink>
+		</MudNavGroup>
+	</MudNavMenu>
+</MudDrawer>
+
+@*<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorOpenBank</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+@if(LoggedIn == false)
+        {
+            <div class="nav-item px-3">
+            <NavLink class="nav-link" href="login">
+                <span class="oi oi-plus" aria-hidden="true"></span> Login
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="register">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Register
+            </NavLink>
+        </div>
+        }
+        
+    </nav>
+</div>
+*@
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    [Parameter]
+	public bool SideBarOpen { get; set; }
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+     public bool LoggedIn 
+    {
+        get { return AccountService.tokenDate > DateTimeOffset.UtcNow; }
+        set {}
+    }
+}

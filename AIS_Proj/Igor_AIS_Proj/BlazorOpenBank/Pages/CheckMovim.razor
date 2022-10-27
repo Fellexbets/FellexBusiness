@@ -1,0 +1,87 @@
+﻿@page "/accounts/checkMovim"
+@using BlazorOpenBank.Data
+@using BlazorOpenBank.Data.Models
+@using BlazorOpenBank.Data.Services
+@using Newtonsoft.Json
+@attribute [Authorize]
+
+@inject ILocalStorageService LocalStorageService
+@inject NavigationManager NavigationManager
+@inject IAccountService AccountService
+@inject HttpClient HttpClient
+
+ <EditForm Model="@accountId" OnValidSubmit="OnValidSubmit">
+        
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Account ID</label>
+                <InputNumber @bind-Value="accountId" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+             <button disabled="@loading" class="btn btn-primary">
+            @if (loading) 
+            {
+                <span class="spinner-border spinner-border-sm mr-1"></span>
+            }
+            Check
+        </button>
+            <NavLink href="accounts" class="btn btn-link">Cancel</NavLink>
+        </div>
+    </EditForm>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Amount</th>
+            <th style="width: 30%">Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (movim != null)
+        {
+           foreach (var raga in movim.Movs)
+            {
+                <tr>
+                    <td>@raga.Amount</td>
+                    <td>@raga.CreatedAt</td>
+                    <td style="white-space: nowrap">
+                    </td>
+                </tr>
+            } 
+        }
+            
+    </tbody>
+</table>
+
+        
+                
+         
+
+@code {
+    private int accountId;
+    private bool loading;
+    private AccountDetails movim;
+    public CheckMovim()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+    }   
+
+    private async Task OnValidSubmit()
+    {
+        var result = await AccountService.GetAccount(accountId);
+        if (result != null)
+        {
+            movim = result;
+        }
+
+    }
+ 
+}

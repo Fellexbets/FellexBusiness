@@ -1,8 +1,12 @@
 using BlazorOpenBank.Data;
 using BlazorOpenBank.Data.Services;
+using Igor_AIS_Proj.Business.Interfaces;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
+using BlazorOpenBank.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,19 +14,36 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddLocalization();
 //builder.Services.AddTransient<UserService>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7271/") });
 builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
-builder.Services.AddScoped<IAlertService, AlertService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IHttpService, HttpService>();
-//builder.Services.AddScoped(x =>
-//{
-//    var apiUrl = new Uri(builder.Configuration["apiUrl"]);
-//    return new HttpClient() { BaseAddress = apiUrl };
-//});
+   builder.Services
+    .AddBlazorise(options =>
+    {
+    options.Immediate = true;
+} )
+    .AddBootstrapProviders()
+    .AddFontAwesomeIcons();
+builder.Services.AddControllers();
+
+
 var app = builder.Build();
 
+var supportedCultures = new[] { "en-US", "es-ES" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
+app.MapControllers();
+//app.MapControllers();
+//app.MapBlazorHub();
+//app.MapFallbackToPage("/_Host");
+
+//await app.RunAsync();
 
 
 // Configure the HTTP request pipeline.
