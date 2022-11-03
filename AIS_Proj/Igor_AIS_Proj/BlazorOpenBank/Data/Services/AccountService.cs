@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Net.Http;
+using BlazorOpenBank.Data.Models.APImodels;
 
 namespace BlazorOpenBank.Data
 {
@@ -29,7 +30,7 @@ namespace BlazorOpenBank.Data
         public DateTimeOffset tokenDate { get; private set; }
         public string refreshT { get; set; }
 
-        public User User { get; }
+        public User User { get; set; }
 
         public AccountService(
             NavigationManager navigationManager,
@@ -57,6 +58,10 @@ namespace BlazorOpenBank.Data
                 await _localStorageService.SetItem(_expires, response.AccessTokenExpiresAt);
                 await _localStorageService.SetItem(_userid, response.User.UserId);
                 tokenDate = response.AccessTokenExpiresAt;
+                User = new User
+                {
+                    Username = response.User.Username
+                };
                 return await ok(response);
             }
             return null;
@@ -80,13 +85,27 @@ namespace BlazorOpenBank.Data
             }
         }
         
-        protected async Task AddBearerToken()
+        public async Task AddBearerToken()
         {
             string task1 = await _localStorageService.GetItem<string>(_token);
             if (task1 != null)
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", task1);
             // adicionar bool pra trabalhar depois nos metodos
+        }
+
+        public async Task<List<UploadResult>> GetAllUploads()
+        {
+            await AddBearerToken();
+            List<UploadResult> model = null;
+            var result = await _httpClient.GetAsync("/File/GetAllUploadsUser");
+            if (result.IsSuccessStatusCode)
+            {
+                var jsonString = await result.Content.ReadAsStringAsync();
+                model = JsonConvert.DeserializeObject<List<UploadResult>>(jsonString);
+                return model;
+            }
+            return null;
         }
         public async Task<List<Account?>> GetAllAccounts()
         {
@@ -146,6 +165,7 @@ namespace BlazorOpenBank.Data
                 return true;
             return false;
         }
+
 
         async Task<HttpResponseMessage> ok(object body = null)
         {

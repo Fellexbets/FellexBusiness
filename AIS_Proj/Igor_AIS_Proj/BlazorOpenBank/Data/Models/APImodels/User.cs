@@ -1,7 +1,6 @@
-﻿
-namespace BlazorOpenBank.Data.Models
+﻿namespace BlazorOpenBank.Data.Models.APImodels
 {
-    public partial class User 
+    public partial class User
     {
         public User()
         {
@@ -10,11 +9,11 @@ namespace BlazorOpenBank.Data.Models
 
         public int UserId { get; set; }
         public DateTime? CreatedAt { get; set; }
-        public string Email { get; set; } 
-        public string Username { get; set; } 
+        public string Email { get; set; }
+        public string Username { get; set; }
 
         public string? FullName { get; set; }
-        public string UserPassword { get; set; } 
+        public string UserPassword { get; set; }
         public string? PasswordSalt { get; set; }
         public string? UserToken { get; set; }
         public DateTime? UpdatedAt { get; set; }

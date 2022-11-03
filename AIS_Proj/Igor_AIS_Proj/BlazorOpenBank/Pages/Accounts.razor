@@ -1,6 +1,6 @@
 ﻿@page "/accounts"
-
 @using BlazorOpenBank.Data.Models
+@using BlazorOpenBank.Data.Models.APImodels
 @using BlazorOpenBank.Data
 @using BlazorOpenBank.Data.Services
 @using System.Security.Claims
@@ -9,15 +9,15 @@
 @inject HttpClient httpclient
 @inject ILocalStorageService LocalStorageService
 @inject IAccountService AccountService
-
+@inject IStringLocalizer<Resource> localizer
 
 <h1>Accounts</h1>
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">AccountId</th>
-            <th scope="col">Currency</th>
-            <th scope="col">Balance</th>
+            <th scope="col">@localizer["CURRENCY"];</th>
+            <th scope="col">@localizer["BALANCE"]</th>
             <th scope="col"></th>
         </tr>
     </thead>
@@ -41,10 +41,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <NavLink href="@("/accounts/transfer")" class="btn btn-dark">Transfer Funds</NavLink>
+                        <NavLink href="@("/accounts/transfer")" class="btn btn-dark">@localizer["TRANSFERFUNDS"]</NavLink>
                     </div>
                     <div class="col-6">
-                        <NavLink href="@("/accounts/checkMovim")" class="btn btn-dark">Check Account Movements</NavLink>
+                        <NavLink href="@("/accounts/checkMovim")" class="btn btn-dark">@localizer["CHECKACCOUNT"]</NavLink>
                     </div>
                 </div>
             </div>

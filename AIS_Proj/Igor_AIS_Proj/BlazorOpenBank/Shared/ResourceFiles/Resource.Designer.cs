@@ -61,11 +61,47 @@ namespace BlazorOpenBank.Shared.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance.
+        /// </summary>
+        public static string BALANCE {
+            get {
+                return ResourceManager.GetString("BALANCE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Account Movements.
+        /// </summary>
+        public static string CHECKACCOUNT {
+            get {
+                return ResourceManager.GetString("CHECKACCOUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency.
+        /// </summary>
+        public static string CURRENCY {
+            get {
+                return ResourceManager.GetString("CURRENCY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A secure and easy platform to execute all your banking operations.
         /// </summary>
         public static string FELLEXBANKS {
             get {
                 return ResourceManager.GetString("FELLEXBANKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer Funds.
+        /// </summary>
+        public static string TRANSFERFUNDS {
+            get {
+                return ResourceManager.GetString("TRANSFERFUNDS", resourceCulture);
             }
         }
     }

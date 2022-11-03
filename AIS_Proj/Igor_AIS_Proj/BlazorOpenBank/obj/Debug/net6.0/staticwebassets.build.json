@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HYfPUnRooFrAQVADHdNcO4+tv6gtrg1Jf0vttBCZytU=",
+  "Hash": "sYsOzMsq5DwW50PxkiYxFC6Gm76vfL+SQO4CkX00d/E=",
   "Source": "BlazorOpenBank",
   "BasePath": "_content/BlazorOpenBank",
   "Mode": "Default",
@@ -1523,6 +1523,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\BlazorOpenBank\\wwwroot\\FileUpload.html",
+      "SourceId": "BlazorOpenBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\BlazorOpenBank\\wwwroot\\",
+      "BasePath": "_content/BlazorOpenBank",
+      "RelativePath": "FileUpload.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload.html"
     }
   ]
 }

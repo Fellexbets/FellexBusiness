@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BALANCE" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="CHECKACCOUNT" xml:space="preserve">
+    <value>Check Account Movements</value>
+  </data>
+  <data name="CURRENCY" xml:space="preserve">
+    <value>Currency</value>
+  </data>
   <data name="FELLEXBANKS" xml:space="preserve">
     <value>A secure and easy platform to execute all your banking operations</value>
+  </data>
+  <data name="TRANSFERFUNDS" xml:space="preserve">
+    <value>Transfer Funds</value>
   </data>
 </root>

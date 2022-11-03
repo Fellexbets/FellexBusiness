@@ -1,4 +1,5 @@
 ﻿using BlazorOpenBank.Data.Models;
+using BlazorOpenBank.Data.Models.APImodels;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorOpenBank.Data
@@ -16,6 +17,8 @@ namespace BlazorOpenBank.Data
         Task<AccountDetails> GetAccount(int accountId);
         Task<List<Account>> GetAllAccounts();
         Task RenewLogin();
+        Task<List<UploadResult>> GetAllUploads();
+        Task AddBearerToken();
         Task<CreateAccountResponse> CreateAccount(CreateAccountRequest request);
     }
 }

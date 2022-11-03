@@ -7,16 +7,18 @@ using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
 using BlazorOpenBank.Helpers;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var baseAddress = builder.Configuration.GetValue<string>("apiUrl");
 //builder.Services.AddHttpClient();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddLocalization();
 //builder.Services.AddTransient<UserService>();
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7271/") });
+builder.Services.AddScoped(sp => new HttpClient {  BaseAddress = new Uri(baseAddress) });
 builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
    builder.Services
@@ -62,5 +64,5 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
-
+app.UseStaticFiles();
 app.Run();

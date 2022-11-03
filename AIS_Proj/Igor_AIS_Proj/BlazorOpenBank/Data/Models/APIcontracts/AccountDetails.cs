@@ -1,4 +1,5 @@
 ﻿
+using BlazorOpenBank.Data.Models.APImodels;
 using System.Text.Json.Serialization;
 
 namespace BlazorOpenBank.Data.Models

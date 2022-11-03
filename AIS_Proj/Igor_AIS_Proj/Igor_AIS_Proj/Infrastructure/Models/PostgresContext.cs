@@ -18,6 +18,9 @@ namespace Igor_AIS_Proj.Models
         public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Transfer> Transfers { get; set; } 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UploadResult> Uploads { get; set; }
+
+        //public DbSet<UploadResult> Uploads => Set<UploadResult>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -204,7 +207,29 @@ namespace Igor_AIS_Proj.Models
                     .HasColumnName("usertoken");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            modelBuilder.Entity<UploadResult>(entity =>
+            {
+                entity.ToTable("uploads");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .UseIdentityAlwaysColumn();
+
+                entity.Property(e => e.FileName)
+                .HasColumnName("filename");
+
+                entity.Property(e => e.StoredFileName)
+                .HasColumnName("storedfilename");
+
+                entity.Property(e => e.ContentType)
+                .HasColumnName("contenttype");
+
+                entity.Property(e => e.UserId)
+                .HasColumnName("userid");
+
+            });
+
+                OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

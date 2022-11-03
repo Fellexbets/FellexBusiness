@@ -1,0 +1,20 @@
+login, cria sesionId
+logout, tira session id
+
+no login criar token refresh, 
+toma la token refresh e me da la um novo token
+
+
+tempo de inicio da sessao
+hora do logout
+
+
+testar as api controllers
+
+
+testes unitarios para os controllers (quase integrado)
+crair mocks da db
+
+usar moq
+usar ntest
+

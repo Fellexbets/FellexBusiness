@@ -1,0 +1,122 @@
+﻿@page "/FileUpload"
+@using System.Net.Http.Headers
+@using BlazorOpenBank.Data.Models
+@using BlazorOpenBank.Data
+@inject HttpClient httpclient
+@inject IJSRuntime JS
+@inject IAccountService AccountService
+
+<PageTitle>Upload Files</PageTitle>
+<h1>Previouslly uploaded files</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Upload ID</th>
+            <th scope="col">File Name</th>
+            <th scope="col">Stored File Name</th>
+            <th scope="col">Download it mate!</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (loadeduploads != null)
+        {
+            foreach (var upload in loadeduploads)
+            {
+                <tr>
+                    <td>@upload.Id</td>
+                    <td>@upload.FileName</td>
+                    <td>@upload.StoredFileName</td>
+                    <td style="white-space: nowrap">
+                    </td>
+                    <td><button @onclick="@(() => DownloadFile(@upload.StoredFileName, @upload.FileName))">Download file</button></td>
+                </tr>
+            }
+        }
+        </tbody>
+</table>
+
+<h1>Upload some more files!</h1>
+
+<InputFile OnChange="@OnInputFileChange" multiple />
+
+@if (fileNames.Count > 0)
+{
+    <ul>
+        @foreach (var fileName in fileNames)
+        {
+            <li>
+                File: @fileName
+                <br>
+                <span>
+                    Stored File Name: @GetStoredFileName(fileName)
+                </span>
+                <button @onclick="@(() => DownloadFile(GetStoredFileName(fileName), fileName))">Download file</button>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private int maxAllowedFiles = int.MaxValue;
+    private long maxFileSize = long.MaxValue;
+    private List<string> fileNames = new();
+    private List<UploadResult> uploadResults = new();
+    private List<UploadResult> loadeduploads;
+
+    private async Task OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        using var content = new MultipartFormDataContent();
+
+        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        {
+            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize));
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+
+            fileNames.Add(file.Name);
+
+            content.Add(
+                content: fileContent,
+                name: "\"files\"",
+                fileName: file.Name);
+        }
+        await AccountService.AddBearerToken();
+        var response = await httpclient.PostAsync("/File/UploadFile", content);
+        var newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
+
+        if(newUploadResults is not null)
+        {
+            uploadResults = uploadResults.Concat(newUploadResults).ToList();
+        }
+    }
+
+    private string? GetStoredFileName(string fileName)
+    {
+        var uploadResult = uploadResults.SingleOrDefault(f => f.FileName == fileName);
+        if (uploadResult is not null)
+            return uploadResult.StoredFileName;
+
+        return "File not found.";
+    }
+
+    private async Task DownloadFile(string storedFileName, string originalFileName)
+    {
+        await AccountService.AddBearerToken();
+        var response = await httpclient.GetAsync($"/File/DownloadFile/{storedFileName}");
+            
+        if(!response.IsSuccessStatusCode)
+        {
+            await JS.InvokeVoidAsync("alert", "File not found.");
+        }
+        else
+        {
+            var fileStream = response.Content.ReadAsStream();
+            using var streamRef = new DotNetStreamReference(stream: fileStream);
+            await JS.InvokeVoidAsync("downloadFileFromStream", originalFileName, streamRef);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        loadeduploads = await AccountService.GetAllUploads();
+    }
+}

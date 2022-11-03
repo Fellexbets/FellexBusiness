@@ -26,6 +26,7 @@ builder.Services.AddScoped<IMovementPersistence, MovementPersistence>();
 builder.Services.AddScoped<ITransferPersistence, TransferPersistence>();
 builder.Services.AddScoped<IUserPersistence, UserPersistence>();
 builder.Services.AddScoped<ISessionPersistence, SessionPersistence>();
+builder.Services.AddScoped<IUploadResultPersistence, UploadResultPersistence>();
 builder.Services.AddScoped<IAccountBusiness, AccountBusiness>();
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
 builder.Services.AddScoped<IMovementBusiness, MovementBusiness>();

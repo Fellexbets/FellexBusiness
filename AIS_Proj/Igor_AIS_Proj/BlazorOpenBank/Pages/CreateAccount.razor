@@ -1,7 +1,9 @@
 ﻿@page "/CreateAccount"
 @using BlazorOpenBank.Data
-@using BlazorOpenBank.Data.Services
 @using BlazorOpenBank.Data.Models
+@using BlazorOpenBank.Data.Services
+@using BlazorOpenBank.Data.Models.APIcontracts
+@using BlazorOpenBank.Data.Models.APImodels
 @using Microsoft.AspNetCore.Mvc
 @attribute [Authorize]
 @inject HttpClient httpclient
@@ -20,8 +22,12 @@
             </div>
             <div class="form-group">
                 <label>Currency</label>
-                <InputText @bind-Value="model.Currency" class="form-control" />
-                <ValidationMessage For="@(() => model.Currency)" />
+                <InputSelect @bind-Value="model.Currency">
+                    <option value="@Currency.BRL">BRL</option>
+                    <option value="@Currency.EUR">EUR</option>
+                    <option value="@Currency.USD">USD</option>
+                </InputSelect>
+
             </div>
             <button disabled="@loading" class="btn btn-primary">
                 @if (loading) 
@@ -39,6 +45,12 @@
     private CreateAccountRequest model = new CreateAccountRequest();
     private bool loading;
 
+    enum Currency
+        {
+            EUR,
+            USD,
+            BRL
+        };
 
     private async void OnValidSubmit()
     {
