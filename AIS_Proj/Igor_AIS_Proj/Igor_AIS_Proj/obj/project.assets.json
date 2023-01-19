@@ -8326,19 +8326,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ifelixno\\.nuget\\packages\\": {}
+    "C:\\Users\\z004pxkz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
+      "projectUniqueName": "C:\\UserData\\z004pxkz\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
       "projectName": "Igor_AIS_Proj",
-      "projectPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
-      "packagesPath": "C:\\Users\\ifelixno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ifelixno\\OneDrive - NTT DATA EMEAL\\Documentos\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\obj\\",
+      "projectPath": "C:\\UserData\\z004pxkz\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj.csproj",
+      "packagesPath": "C:\\Users\\z004pxkz\\.nuget\\packages\\",
+      "outputPath": "C:\\UserData\\z004pxkz\\Documents\\GitHub\\FellexBusiness\\AIS_Proj\\Igor_AIS_Proj\\Igor_AIS_Proj\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ifelixno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\z004pxkz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8469,7 +8469,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
       }
     }
   },
